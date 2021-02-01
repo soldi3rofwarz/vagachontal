@@ -4,6 +4,11 @@
 import BackImg from './../../assets/back.jpg'
 import Foto2Img from './../../assets/foto2.jpg'
 import Foto1Img from './../../assets/foto1.jpg'
+import Foto3Img from './../../assets/foto3.jpg'
+import Foto4Img from './../../assets/foto4.jpg'
+import Foto5Img from './../../assets/foto5.jpg'
+import Foto6Img from './../../assets/foto6.jpg'
+import Foto7Img from './../../assets/foto7.jpg'
 
 import React from 'react';
 import clsx from 'clsx';
@@ -49,6 +54,8 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Collapse from '@material-ui/core/Collapse';
 import { red } from '@material-ui/core/colors';
 import SimpleReactFooter from "simple-react-footer";
+
+import SwipeableTextMobileStepper from '../../steeper/stepper'
 
 const drawerWidth = 240; 
 
@@ -436,7 +443,21 @@ const Home = () => {
                             <Paper className={classes.paper}>
                               <div>
                                 <Parallax
-                                  bgImage={require('../../assets/foto3.jpg')}
+                                  bgImage={Foto3Img}
+                                  bgImageAlt="the cat"
+                                  strength={500}
+                                >
+                                  <div style={{ height: 200 }}>
+                                  </div>
+                                </Parallax>
+                              </div>
+                            </Paper>
+                          </Grid>
+                          <Grid item xs={4}>
+                            <Paper className={classes.paper}>  
+                              <div>
+                                <Parallax
+                                  bgImage={Foto4Img}
                                   bgImageAlt="the cat"
                                   strength={500}
                                 >
@@ -450,21 +471,7 @@ const Home = () => {
                             <Paper className={classes.paper}>
                               <div>
                                 <Parallax
-                                  bgImage={require('../../assets/foto4.jpg')}
-                                  bgImageAlt="the cat"
-                                  strength={500}
-                                >
-                                  <div style={{ height: 200 }}>
-                                  </div>
-                                </Parallax>
-                              </div>
-                            </Paper>
-                          </Grid>
-                          <Grid item xs={4}>
-                            <Paper className={classes.paper}>
-                              <div>
-                                <Parallax
-                                  bgImage={require('../../assets/foto5.jpg')}
+                                  bgImage={Foto5Img}
                                   bgImageAlt="the cat"
                                   strength={500}
                                 >
@@ -478,7 +485,7 @@ const Home = () => {
                             <Paper className={classes.paper}>
                               <div>
                                 <Parallax
-                                  bgImage={require('../../assets/foto6.jpg')}
+                                  bgImage={Foto6Img}
                                   bgImageAlt="the cat"
                                   strength={500}
                                 >
@@ -492,7 +499,7 @@ const Home = () => {
                             <Paper className={classes.paper}>
                               <div>
                                 <Parallax
-                                  bgImage={require('../../assets/foto7.jpg')}
+                                  bgImage={Foto7Img}
                                   bgImageAlt="the cat"
                                   strength={500}
                                 >
