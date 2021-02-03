@@ -1,18 +1,21 @@
 import React from 'react';
-import Header from './../../header/Head'
+
 import './informacion.css'
 import Gallery from 'react-photo-gallery'
-import Lugares from './../../gallery/lugares'
+import Lugares from './../gallery/lugares'
+import garrobo from './../../assets/garrobogrande.jpg'
+import garrobo2 from './../../assets/garrobogrande2.jpg'
+
 const PhotosSet= [
 
 {
-	src: '/res/garrobogrande.jpg',
+	src: garrobo,
 	width: 4,
 	height: 3
 },
 
 {
-	src: '/res/garrobogrande2.jpg',
+	src: garrobo2,
 	width: 4,
 	height: 3
 },

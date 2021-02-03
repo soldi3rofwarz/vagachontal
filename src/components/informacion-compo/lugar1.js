@@ -1,19 +1,21 @@
 import React from 'react';
-import Header from './../../header/Head'
+
 import './informacion.css'
 import Gallery from 'react-photo-gallery'
-import Lugares from './../../gallery/lugares'
+import Lugares from './../gallery/lugares'
+import Nancitalpic from './../../assets/elnancital.jpg'
+import Nancitalpic2 from './../../assets/elnancital2.jpg'
 
 const PhotosSet= [
 
 {
-	src: '/res/elnancital.jpg',
+	src: Nancitalpic,
 	width: 4,
 	height: 3
 },
 
 {
-	src: '/res/elnancital2.jpg',
+	src: Nancitalpic2,
 	width: 4,
 	height: 3
 },

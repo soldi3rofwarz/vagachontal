@@ -166,12 +166,18 @@ const AgregarActividades=(props) =>{
       <div style={{height: '70px'}}></div>
     <form className={classes.root} noValidate autoComplete="off" 
         onSubmit={Validar} 
-        style={{width: '600px', border:'1px solid black', borderRadius:'15px',height:'70vh' }}
+        style={{width: '600px', border:'1px solid black', borderRadius:'15px',height:'75vh' }}
     >
         {error? alert("debe ser numero"): null}
         <FormControl>
             <Input id="my-input" aria-describedby="my-helper-text" 
                 type="text" value= {actividad} placeholder="Actividad" onChange={handleActividadChange}
+            />
+         </FormControl>
+
+         <FormControl>
+            <Input id="my-input" aria-describedby="my-helper-text" 
+                type="text" value= {salida} placeholder="lugar de salida" onChange={handleSalidaChange}
             />
          </FormControl>
 
@@ -241,6 +247,12 @@ const AgregarActividades=(props) =>{
             type="text" value= {latitud2} placeholder="Latitud2" onChange={handlelatitudChange2}
             />
          </FormControl>
+         <FormControl>
+            
+            <Input id="my-input" aria-describedby="my-helper-text" 
+            type="text" value= {longitud2} placeholder="Longitud2" onChange={handlelongitudChange2}
+            />
+         </FormControl>
 
          <FormControl>
             
@@ -255,12 +267,7 @@ const AgregarActividades=(props) =>{
             />
          </FormControl>
 
-         <FormControl>
-            
-            <Input id="my-input" aria-describedby="my-helper-text" 
-            type="text" value= {longitud2} placeholder="Longitud2" onChange={handlelongitudChange2}
-            />
-         </FormControl>
+         
 
          <FormControl>
             

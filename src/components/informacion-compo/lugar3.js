@@ -1,18 +1,21 @@
 import React from 'react';
-import Header from './../../header/Head'
+
 import './informacion.css'
 import Gallery from 'react-photo-gallery'
-import Lugares from './../../gallery/lugares'
+import Lugares from './../gallery/lugares'
+import piedra from './../../assets/piedra1.jpg'
+import piedra2 from './../../assets/piedra2.jpg'
+
 const PhotosSet= [
 
 {
-	src: '/res/piedra1.jpeg',
+	src: piedra,
 	width: 4,
 	height: 3
 },
 
 {
-	src: '/res/piedra2.jpeg',
+	src: piedra2,
 	width: 4,
 	height: 3
 },

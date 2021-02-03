@@ -1,12 +1,12 @@
 import React,{useEffect, useState} from 'react'
 import './mapview.css'
 import 'leaflet/dist/leaflet.css'
-import { MapContainer, TileLayer, Popup,Polyline,Marker } from 'react-leaflet'
+import { Map, TileLayer,Polyline, } from 'react-leaflet'
 import Marcador from './Marker'
-import {Rutas} from './Rutas'
+import Routing from './Rutas'
 import L from "leaflet";
 import "leaflet-routing-machine";
-import Icon from './icon.svg'
+
 
 const MapView = ({latitud1, longitud1,latitud2, longitud2,latitud3, longitud3}) => {
 
@@ -32,20 +32,27 @@ const MapView = ({latitud1, longitud1,latitud2, longitud2,latitud3, longitud3}) 
   
     
     
-   console.log('holoa', latitud2, longitud2)
+   console.log('holoa', latitud3, longitud3)
     return ( 
-        <MapContainer center={geo} zoom={13} >
+        <Map center={geo} zoom={13}  ref={onMapLoad}>
             <TileLayer
-                attribution='&copy; <a href="http://osm.org/copyright">VagaChontal</a> contributors'
-                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                attribution='Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
+                url="https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png"
             />
-                <Marker position={{lat:latitud2, lng:longitud2}} icon={Icon}/>
+                <Marcador latitud1={latitud1} longitud1={longitud1}
+                    latitud2={latitud2} longitud2={longitud2}
+                    latitud3={latitud3} longitud3={longitud3}
+                />
                 <Polyline positions={linea}/>
 
-              
-             
+              {/*   <Routing
+              latitud1={latitud1} longitud1={longitud1}
+              latitud2={latitud2} longitud2={longitud2}
+              latitud3={latitud3} longitud3={longitud3} map={mapRef}
+              />  
+              */}
             
-        </MapContainer> 
+        </Map> 
         
     );
 }

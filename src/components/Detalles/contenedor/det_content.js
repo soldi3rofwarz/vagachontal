@@ -5,7 +5,7 @@ import Detalles from './../componentes/detalles'
 
 const Det_content = (props) => {
 
-    const{actividad,fecha,precio, salida,hora,cupos,latitud1,longitud1,latitud2,longitud2,latitud3,longitud3,descripcion}= props
+    const{actividad,fecha,precio, salida,hora,cupos,latitud1,longitud1,latitud2,longitud2,latitud3,longitud3,descripcion,fileUrl}= props
 
 
     const [band,setband]= useState(false)
@@ -32,10 +32,10 @@ const Det_content = (props) => {
         localStorage.setItem('localuser',JSON.stringify(puser))
     }
         const Limite=()=>{
-            setValue(value + 1)
+            setValue(cupos -1)
 
-            if(value === cupos){
-                setValue(value===0)
+            if(cupos ===0 ){
+                setValue(cupos)
                 setband(true)
             }
         }
@@ -82,6 +82,7 @@ const Det_content = (props) => {
         longitud3={longitud3}
         descripcion={descripcion}
         getUser={getuser}
+        fileUrl={fileUrl}
         />
     );
 }

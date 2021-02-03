@@ -1,19 +1,21 @@
 import React from 'react';
-import Header from './../../header/Head'
+
 import './informacion.css'
 import Gallery from 'react-photo-gallery'
-import Lugares from './../../gallery/lugares'
+import Lugares from './../gallery/lugares'
+import amerrique from './../../assets/elnancital.jpg'
+import amerrique2 from './../../assets/elnancital.jpg'
 
 const PhotosSet= [
 
 {
-	src: '/res/amerrique.jpg',
+	src: amerrique,
 	width: 4,
 	height: 3
 },
 
 {
-	src: '/res/amerrique2.jpg',
+	src: amerrique2,
 	width: 4,
 	height: 3
 },

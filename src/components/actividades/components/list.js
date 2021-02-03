@@ -15,6 +15,7 @@ import EyeIcon from '@material-ui/icons/Visibility';
 import { red } from '@material-ui/core/colors';
 import './list.styles.css';
 import {Link}from 'react-router-dom';
+import SwipeableTextMobileStepper from '../../../steeper/stepper'
 //import Detalle from './../../Detalles/componentes/detalles'
 
 const useStyles = makeStyles((theme) => ({
@@ -26,18 +27,21 @@ const useStyles = makeStyles((theme) => ({
     },
     rootGrid: {
       flexGrow: 1,
-      margin: theme.spacing(2),
+      margin: theme.spacing(12),
     },
     paper: {
-      padding: theme.spacing(2),
+      padding: theme.spacing(12),
       textAlign: 'center',
       color: theme.palette.text.secondary,
+      
+      
     },
     rootCard: {
       width: '100%',
     },
     media: {
       height: 140,
+      
     },
     rootC: {
       width: '100%',
@@ -64,7 +68,7 @@ export const List = (props) => {
 
     return (
         <>
-
+            <SwipeableTextMobileStepper/>
             {listActividades ?
 
              
@@ -77,7 +81,7 @@ export const List = (props) => {
                         {listActividades.map ((item) =>
                             <p key={item.id}>
                                 
-                                <Grid item xs={12}>
+                            <Grid item xs={12} style={{marginLeft: '60px'}}>
                         <Card className={classes.rootC}>
                             <CardHeader
                            

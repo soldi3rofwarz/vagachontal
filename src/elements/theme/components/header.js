@@ -1,4 +1,4 @@
-import React from 'react'
+
 import React from 'react';
 import clsx from 'clsx';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
@@ -42,6 +42,7 @@ import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Collapse from '@material-ui/core/Collapse';
 import { red } from '@material-ui/core/colors';
+import {Link} from 'react-router-dom'
 
 const drawerWidth = 240; 
 
@@ -51,6 +52,7 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     flexGrow: 1,
+    color:'green'
   },
   appBar: {
     transition: theme.transitions.create(['margin', 'width'], {
@@ -231,33 +233,48 @@ const Header =()=>{
               <Divider />
               <List>
                   <ListItem button>
-                    <ListItemIcon><HomeIcon/></ListItemIcon>
-                    <ListItemText primary={'Inicio'} />
+                  
+                      <ListItemIcon><HomeIcon/></ListItemIcon>
+                      <Link to='/' style={{textDecoration: 'none'}}>
+                      <ListItemText primary={'Inicio'} />
+                      </Link>
                   </ListItem>
                   <Divider />
                   <ListItem button>
+                    
                     <ListItemIcon><PicturesIcon/></ListItemIcon>
+                    <Link to='/galeria' style={{textDecoration: 'none'}}>
                     <ListItemText primary={'Galería'} />
+                    </Link>
                   </ListItem>
                   <Divider />
                   <ListItem button>
+                    
                     <ListItemIcon><EventAvailableIcon/></ListItemIcon>
+                    <Link to='/actividades' style={{textDecoration: 'none'}}>
                     <ListItemText primary={'Actividades'} />
+                    </Link>
                   </ListItem>
                   <Divider />
                   <ListItem button>
                     <ListItemIcon><PollIcon/></ListItemIcon>
-                    <ListItemText primary={'Estadísticas'} />
+                    <Link to='/datos' style={{textDecoration: 'none'}}>
+                      <ListItemText primary={'Estadísticas'} />
+                    </Link>
                   </ListItem>
                   <Divider />
                   <ListItem button>
                     <ListItemIcon><ListIcon/></ListItemIcon>
-                    <ListItemText primary={'Formulario'} />
+                    <Link to='/form' style={{textDecoration: 'none'}}>
+                      <ListItemText primary={'Formulario'} />
+                    </Link>
                   </ListItem>
                   <Divider />
                   <ListItem button>
                     <ListItemIcon><UserIcon/></ListItemIcon>
-                    <ListItemText primary={'Cliente'} />
+                    <Link to='/loginGoogle' style={{textDecoration: 'none'}}>
+                      <ListItemText primary={'Cliente'} />
+                    </Link>
                   </ListItem>
                   <Divider />
               </List>

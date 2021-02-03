@@ -1,18 +1,22 @@
 import React from 'react';
-import Header from './../../header/Head'
+
 import './informacion.css'
 import Gallery from 'react-photo-gallery'
-import Lugares from './../../gallery/lugares'
+import Lugares from './../gallery/lugares'
+import corozo from './../../assets/corozo1.jpg'
+import corozo2 from './../../assets/corozo2.jpg'
+
+
 const PhotosSet= [
 
 {
-	src: '/res/corozo1.jpg',
+	src: corozo,
 	width: 4,
 	height: 3
 },
 
 {
-	src: '/res/corozo2.jpg',
+	src: corozo2,
 	width: 4,
 	height: 3
 },

@@ -2,8 +2,8 @@ import React, {useState, useEffect, createContext} from 'react'
 import firebase from './firebase-config'
 import { db } from './firebase-config'
 import 'firebase/auth'
-import Login from './../components/login/Cliente/componente/login-cliente'
-import Header from './../../elements/theme/components/header'
+import Login from './../components/login/Cliente/loginCliente'
+import Header from './../elements/theme/components/header'
 
 export const UserContext = createContext()
 

@@ -1,5 +1,6 @@
 import React ,{useEffect,useState}from 'react';
-import {Select} from '../data/actividades'
+import {Layout} from './../elements/theme/components/layout'
+import {Select} from './../data/actividades'
 import Detcontent from '../components/Detalles/contenedor/det_content'
 
 const DetallePage = (props) => {
@@ -19,6 +20,7 @@ const DetallePage = (props) => {
     const [latitud3, setLatitud3] = useState('');
     const [longitud3, setLongitud3] = useState('');
     const [descripcion, setDescripcion] = useState('');
+    const [fileUrl, setfileUrl] = useState(null)
 
     useEffect(()=>{
         (async()=>{
@@ -38,7 +40,9 @@ const DetallePage = (props) => {
             longitud2,
             latitud3,
             longitud3,
-            descripcion}= producto;
+            descripcion,
+            fileUrl
+        }= producto;
                 console.log(producto)
 
             setActividad(actividad)
@@ -54,11 +58,12 @@ const DetallePage = (props) => {
             setLatitud3(latitud3)
             setLongitud3(longitud3)
             setDescripcion(descripcion)
+            setfileUrl(fileUrl)
         })()
     },[])
 
     return (  
-        
+        <Layout>
             <Detcontent
                 actividad={actividad}
                 fecha ={fecha}
@@ -73,8 +78,9 @@ const DetallePage = (props) => {
                 latitud3={latitud3}
                 longitud3={longitud3}
                 descripcion={descripcion}
+                fileUrl={fileUrl}
             /> 
-       
+        </Layout>
     );
 }
  

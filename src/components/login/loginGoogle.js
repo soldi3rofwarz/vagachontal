@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import firebase from './../../data/firebase-config'
 import { Link } from 'react-router-dom';
 import Header from './../../elements/theme/components/header'
+import Loginpic from './../../assets/login.png'
 
 class GoogleLogin extends Component{
     /** @param {Record<string, any>} props */
@@ -58,14 +59,16 @@ componentDidMount = () =>{
 }
     render(){
         return(
+            <>
+            <div style={{height: '150px'}}></div>
             <section >
-            <div className="login" >
+            <div className="login">
                 {this.state.isLogIn === false ?
                     <div className = "p-5" style={{
                         background: 'linear-gradient(#f8f8f8, #6EEDFA )', alignItems: 'center',justifyContent:'center', height: '400px',
                         boxShadow:'16px 16px 16px', borderRadius: '15px', maxWidth: '500px', marginLeft: '400px', minWidth: '400px'
                         }}>  
-                        <img src={`${process.env.PUBLIC_URL}/res/login.png`} style={{width: '200px', display: 'flex', flex: '2', marginLeft: '50px'}} />
+                        <img src={Loginpic} style={{width: '200px', display: 'flex', flex: '2', marginLeft: '50px'}} />
                        <button
                         type="button"
                         className="btn "
@@ -73,7 +76,7 @@ componentDidMount = () =>{
                         style={{
                             width: '160px', boxShadow:'5px 5px 5px', background: '#698DFA', top: '500px', margin: '10px 10px 10px', marginLeft: '60px'
                         }}
-                        > <Link to ='/' style={{color:'white', textDecoration: 'none'}}>
+                        > <Link to ='/' style={{color:'white', textDecoration: 'none', width: '80px', height:'40px'}}>
                             Login Google
                         </Link>
                     </button>
@@ -98,6 +101,7 @@ componentDidMount = () =>{
                 }
             </div>   
             </section>
+            </>
         )
     }
 }

@@ -1,8 +1,9 @@
 import React from 'react';
 import {Marker, Popup } from 'react-leaflet'
 import {IconLocation} from './icon'
+import {IconLocation2} from './iconoPartida'
+import {IconLocation3} from './icono3'
 
-import "leaflet-routing-machine";
 
 
 const Marcador = ({latitud1, longitud1,latitud2, longitud2,latitud3, longitud3}) => {
@@ -42,8 +43,9 @@ const Marcador = ({latitud1, longitud1,latitud2, longitud2,latitud3, longitud3})
    
     return ( 
         <>
-         <Marker position={center} icon={IconLocation}/>
-       
+         <Marker position={center} icon= {IconLocation}/>
+         <Marker position={center2} icon= {IconLocation2}/>
+         <Marker position={center3} icon= {IconLocation3}/>
          
         </>
     );

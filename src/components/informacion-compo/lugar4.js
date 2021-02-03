@@ -1,18 +1,21 @@
 import React from 'react';
-import Header from './../../header/Head'
+
 import './informacion.css'
 import Gallery from 'react-photo-gallery'
-import Lugares from './../../gallery/lugares'
+import Lugares from './../gallery/lugares'
+import cuapa from './../../assets/cuapa1.jpg'
+import cuapa2 from './../../assets/cuapa2.jpg'
+
 const PhotosSet= [
 
 {
-	src: '/res/cuapa1.jpg',
+	src: cuapa,
 	width: 4,
 	height: 3
 },
 
 {
-	src: '/res/cuapa2.jpg',
+	src: cuapa2,
 	width: 4,
 	height: 3
 },

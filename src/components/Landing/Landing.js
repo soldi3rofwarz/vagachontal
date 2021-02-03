@@ -62,6 +62,7 @@ const drawerWidth = 240;
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
+    zIndex:'1'
   },
   title: {
     flexGrow: 1,
@@ -99,6 +100,7 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(0, 1),
     ...theme.mixins.toolbar,
     justifyContent: 'flex-end',
+    
   },
   content: {
     flexGrow: 1,
@@ -264,79 +266,7 @@ const Home = () => {
         <>
           <div className={classes.root}>
             <CssBaseline />
-            <AppBar
-              position="fixed"
-              className={clsx(classes.appBar, {
-                [classes.appBarShift]: open,
-              })}
-            >
-              <Toolbar>
-                <IconButton
-                  color="inherit"
-                  aria-label="open drawer"
-                  onClick={handleDrawerOpen}
-                  edge="start"
-                  className={clsx(classes.menuButton, open && classes.hide)}
-                >
-                  <MenuIcon />
-                </IconButton>
-                <Typography variant="h6" className={classes.title} noWrap>
-                  VagaChontal
-                </Typography>
-                <IconButton color="inherit">
-                    <AccountCircle/>
-                </IconButton>
-              </Toolbar>
-            </AppBar>
-            <Drawer
-              className={classes.drawer}
-              variant="persistent"
-              anchor="left"
-              open={open}
-              classes={{
-                paper: classes.drawerPaper,
-              }}
-            >
-              <div className={classes.drawerHeader}>
-                <IconButton onClick={handleDrawerClose}>
-                  {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
-                </IconButton>
-              </div>
-              <Divider />
-              <List>
-                  <ListItem button>
-                    <ListItemIcon><HomeIcon/></ListItemIcon>
-                    <ListItemText primary={'Inicio'} />
-                  </ListItem>
-                  <Divider />
-                  <ListItem button>
-                    <ListItemIcon><PicturesIcon/></ListItemIcon>
-                    <ListItemText primary={'Galería'} />
-                  </ListItem>
-                  <Divider />
-                  <ListItem button>
-                    <ListItemIcon><EventAvailableIcon/></ListItemIcon>
-                    <ListItemText primary={'Actividades'} />
-                  </ListItem>
-                  <Divider />
-                  <ListItem button>
-                    <ListItemIcon><PollIcon/></ListItemIcon>
-                    <ListItemText primary={'Estadísticas'} />
-                  </ListItem>
-                  <Divider />
-                  <ListItem button>
-                    <ListItemIcon><ListIcon/></ListItemIcon>
-                    <ListItemText primary={'Formulario'} />
-                  </ListItem>
-                  <Divider />
-                  <ListItem button>
-                    <ListItemIcon><UserIcon/></ListItemIcon>
-                    <ListItemText primary={'Cliente'} />
-                  </ListItem>
-                  <Divider />
-              </List>
-
-            </Drawer>
+            
             <main
               className={clsx(classes.content, {
                 [classes.contentShift]: open,
@@ -345,7 +275,7 @@ const Home = () => {
               <div className={classes.drawerHeader} />
                 <div>
                   <Parallax
-                    bgImage={BackImg}
+                    bgImage={BackImg} 
                     bgImageAlt="the cat"
                     strength={500}
                   >
@@ -429,7 +359,7 @@ const Home = () => {
                             <Paper className={classes.paper}>
                               <div>
                                 <Parallax
-                                  bgImage={Foto1Img}
+                                  bgImage={Foto1Img} 
                                   bgImageAlt="the cat"
                                   strength={500}
                                 >
@@ -701,12 +631,11 @@ const Home = () => {
                   description={description} 
                   title={title}
                   columns={columns}
-                  linkedin="fluffy_cat_on_linkedin"
+                  
                   facebook="fluffy_cat_on_fb"
                   twitter="fluffy_cat_on_twitter"
                   instagram="fluffy_cat_live"
-                  youtube="UCFt6TSF464J8K82xeA?"
-                  pinterest="fluffy_cats_collections"
+                  
                   copyright="VagaChontal 2021"
                   iconColor="white"
                   backgroundColor="blue"
