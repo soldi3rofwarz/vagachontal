@@ -6,7 +6,7 @@ import
 
 const UploadForm = (props) => {
   let imgID
-  if(props.match) imgID = props.match.params.actividadId;
+  if(props.match) imgID = props.match.params.imgID;
 
 
   const [file, setFile] = useState(null);

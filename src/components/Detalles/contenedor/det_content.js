@@ -9,7 +9,7 @@ const Det_content = (props) => {
 
 
     const [band,setband]= useState(false)
-    const[value, setValue]= useState(0)
+    const[value, setValue]= useState(cupos)
 
     
 
@@ -34,17 +34,15 @@ const Det_content = (props) => {
         const Limite=()=>{
             setValue(cupos -1)
 
-            if(cupos ===0 ){
-                setValue(cupos)
-                setband(true)
+            if(value ===0){
+                setValue()
             }
         }
 
-        const Agregado =()=>{
+        const Agregado =()=>{ 
             setValue(value+1)
             if (value === 0){
                 setband(true)
-                
             }
 
             agregaruser('lunarbaulla@gmail.com');

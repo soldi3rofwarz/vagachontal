@@ -35,8 +35,8 @@ const Detalles = (props) => {
     return ( 
         <>
             <div style={{height: '140px'}}></div>
-        <section style={{height:'auto' }}>
-            <h2 style={{fontSize: '50px',background:'green',color:'white',textAlign:'center',fontFamily: 'Roboto, sans-serif'}}>{actividad}</h2>
+        <section style={{height:'auto'}}>
+            <h2 style={{fontSize: '50px',background:'#3B36E0',color:'white',textAlign:'center',fontFamily: 'Roboto, sans-serif'}}>{actividad}</h2>
             <div className="h" style={{display:'flex', flex:'2', }} >
                
                 <div style={{width:'100vw', overflow:'hidden' }} className='pic'>
@@ -65,7 +65,7 @@ const Detalles = (props) => {
                 </div>
             </div>
             <div style={{display:'flex', flex:'2', marginTop:'20px',marginBottom:'20px' }}>
-                <div className="mapa" style={{width:'100vw'}}> 
+                <div className="mapa" style={{width:'50vw'}}> 
                 <MapView
                     latitud1={latitud1}
                     longitud1={longitud1}
@@ -77,19 +77,31 @@ const Detalles = (props) => {
                 </div>
                 <div style={{textAlign:'center', marginLeft:'10px',fontFamily: 'Roboto, sans-serif'}}>
                 <h2>Descripcion</h2>
-                <p>
+                <p style={{}}>
                    {descripcion}
                 </p>
                 <br/>
                 <h2>que llevar</h2>
                 <h4>Suficiente agua <br/> almuerzo <br/> ropa deportiva</h4>
+                <br/>
+                <h2>Transporte</h2>
+                <h4>se garantiza el transporte de ida y regreso</h4>
+                <br/>
+                <h2>seguridad</h2>
+                <h4>se exige el uso de mascarilla en todo momento
+                    <br/> el equipo se encargara de llevar un botiquin de primeros auxilios
+                    <br/>
+
+                </h4>
                 
                 </div>
+                
             </div>
-            <div style={{display:'flex', flex:'2', height:'30vh', width:'100vw', textAlign:'center', margin:'auto'}}>
+            
+            <div style={{display:'flex', flex:'2', height:'30vh', width:'100vw', textAlign:'center', marginTop:'20px'}}>
                 <div style={{width:'50vw'}}>
                 <h3>cupos restantes <br/></h3>
-                <h3>50</h3>
+                {<h3>{value}</h3>}
                 </div>
                 
                 <div >
@@ -98,9 +110,10 @@ const Detalles = (props) => {
                     Cancelar</button>
                     {getUser && getUser().map(item => <span><br/>{item.email}</span>)}   </>)
                :
-               (<button className="btn-participar"  id="dd" href="#!" role="button" onClick={Agregado}>
+               (<button className="btn-participar"  id="dd" href="#!" role="button" onClick={Limite}>
                 Participar</button>)}
                 </div>
+             
             </div>
             
         </section>

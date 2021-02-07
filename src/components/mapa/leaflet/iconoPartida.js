@@ -5,8 +5,8 @@ import icono from './../icono1.svg'
 
 
 export const IconLocation2=L.icon({
-    iconUrl: {icono},
-    iconRetinaUrl: {icono}, 
+    iconUrl: icono,
+    iconRetinaUrl: icono, 
     inconAnchor: null,
     shadowUrl: null,
     shadowSize: null,

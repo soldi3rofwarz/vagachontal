@@ -5,6 +5,11 @@ import 'firebase/auth'
 import Login from './../components/login/Cliente/loginCliente'
 import Header from './../elements/theme/components/header'
 
+export const signout = async () => {
+    await firebase.auth().signOut();
+    console.log('cerro sesion')
+};
+
 export const UserContext = createContext()
 
  const Userd=(props)=>{
@@ -67,10 +72,7 @@ export const UserContext = createContext()
         console.log(firebase)
     }
 
-    const signout = async () => {
-        await firebase.auth().signOut();
-        console.log('cerro sesion')
-    };
+    
 
     const Listener=()=>{
         //posible error cambiar el onAth.. por onAuthStateChanged

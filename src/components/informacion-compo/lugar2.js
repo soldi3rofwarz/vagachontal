@@ -3,8 +3,8 @@ import React from 'react';
 import './informacion.css'
 import Gallery from 'react-photo-gallery'
 import Lugares from './../gallery/lugares'
-import amerrique from './../../assets/elnancital.jpg'
-import amerrique2 from './../../assets/elnancital.jpg'
+import amerrique from './../../assets/amerrique.jpg'
+import amerrique2 from './../../assets/amerrique2.jpg'
 
 const PhotosSet= [
 

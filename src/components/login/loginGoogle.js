@@ -20,7 +20,7 @@ onSubmit = () => {
     firebase.auth().signInWithPopup(provider).then(function(result){
 
         var token = result.credential.accessToken;
-        var user = result.user;
+        var user = firebase.auth().currentUser;
 
     }).catch(function(error){
     

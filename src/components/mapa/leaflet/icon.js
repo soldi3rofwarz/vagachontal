@@ -1,11 +1,12 @@
 import React from 'react';
 import L from 'leaflet'
+import icon from './../icon.svg'
 
 
 
 export const IconLocation=L.icon({
-    iconUrl: require('./../icon.svg'),
-    iconRetinaUrl: require('./../icon.svg'), 
+    iconUrl: icon,
+    iconRetinaUrl: icon, 
     inconAnchor: null,
     shadowUrl: null,
     shadowSize: null,

@@ -43,6 +43,7 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Collapse from '@material-ui/core/Collapse';
 import { red } from '@material-ui/core/colors';
 import {Link} from 'react-router-dom'
+import {signout} from './../../../data/user-data'
 
 const drawerWidth = 240; 
 
@@ -211,7 +212,9 @@ const Header =()=>{
                   VagaChontal
                 </Typography>
                 <IconButton color="inherit">
-                    <AccountCircle/>
+                  <Link to ='/loginGoogle'>
+                    <AccountCircle onClick={signout}/> 
+                    </Link>
                 </IconButton>
               </Toolbar>
             </AppBar>

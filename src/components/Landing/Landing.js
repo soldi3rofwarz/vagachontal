@@ -278,6 +278,7 @@ const Home = () => {
                     bgImage={BackImg} 
                     bgImageAlt="the cat"
                     strength={500}
+                    style={{zIndex:11}}
                   >
                     <div style={{ height: 570 }}>
                       <div className={classes.insideStyles}>
@@ -348,6 +349,7 @@ const Home = () => {
                                   bgImage={Foto2Img}
                                   bgImageAlt="the cat"
                                   strength={500}
+                                  style={{zIndex:1}}
                                 >
                                   <div style={{ height: 200 }}>
                                   </div>
@@ -362,6 +364,7 @@ const Home = () => {
                                   bgImage={Foto1Img} 
                                   bgImageAlt="the cat"
                                   strength={500}
+                                  style={{zIndex:1}}
                                 >
                                   <div style={{ height: 200 }}>
                                   </div>
@@ -376,6 +379,7 @@ const Home = () => {
                                   bgImage={Foto3Img}
                                   bgImageAlt="the cat"
                                   strength={500}
+                                  style={{zIndex:11}}
                                 >
                                   <div style={{ height: 200 }}>
                                   </div>
@@ -390,6 +394,7 @@ const Home = () => {
                                   bgImage={Foto4Img}
                                   bgImageAlt="the cat"
                                   strength={500}
+                                  style={{zIndex:1}}
                                 >
                                   <div style={{ height: 200 }}>
                                   </div>
