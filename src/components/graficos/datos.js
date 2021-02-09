@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import {Bar} from 'react-chartjs-2'
-import {GetData} from './../../data/actividadess'
+import {GetData} from './../../data/actividades'
 
 const Datos=()=>{
   const [estadisticas, setEstadisticas]= useState([])
@@ -10,12 +10,9 @@ const Datos=()=>{
         .then(estadisticas => setEstadisticas(estadisticas) )
        
         .catch(error => console.log("Error:", error))
-}, []);
+  }, []);
 
-const org = estadisticas.map((dato)=>{
-    
 
-})
 
     const Data={
         labels:['2016','2017','2018','2019','2020'],
@@ -30,10 +27,10 @@ const org = estadisticas.map((dato)=>{
         }]
     }
 
-const 
+
 
     const Data1={
-        labels:['Hato Grande','Peñon del Casique','Piedra de Cuapa','Amerrique','Puerto Diaz'],
+      labels:['Hato Grande','Peñon del Casique','Piedra de Cuapa','Amerrique','Puerto Diaz'],
         datasets:[{
             label: 'Participantes',
             backgroundColor: 'rgba(0,255,0,1)',

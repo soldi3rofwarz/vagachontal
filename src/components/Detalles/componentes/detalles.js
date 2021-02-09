@@ -39,11 +39,13 @@ const Detalles = (props) => {
             <h2 style={{fontSize: '50px',background:'#3B36E0',color:'white',textAlign:'center',fontFamily: 'Roboto, sans-serif'}}>{actividad}</h2>
             <div className="h" style={{display:'flex', flex:'2', }} >
                
-                <div style={{width:'100vw', overflow:'hidden' }} className='pic'>
-                    <img src={fileUrl} style={{width:'100vh'}}/>
+                <div style={{width:'50vw', overflow:'hidden' }} >
+                    <img className='pic' src={fileUrl} style={{width:'48vw'}}/>
                 </div>
 
-                <div className="det" style={{margin: '0px', textAlign:'center', width:'100vw',fontFamily: 'Roboto, sans-serif'}}>
+                <div className="det" 
+                style={{textAlign:'center', width:'50vw',fontFamily: 'Roboto, sans-serif',
+                 background:'#0CF78B', color:'white',fontSize: '18px'}}>
                     
                     <br/>
 
@@ -64,8 +66,8 @@ const Detalles = (props) => {
                     <h4>{cupos}</h4>
                 </div>
             </div>
-            <div style={{display:'flex', flex:'2', marginTop:'20px',marginBottom:'20px' }}>
-                <div className="mapa" style={{width:'50vw'}}> 
+            <div style={{display:'flex', flex:'2' }}>
+                <div className="mapa" style={{width:'50vw', height:'100vh'}}> 
                 <MapView
                     latitud1={latitud1}
                     longitud1={longitud1}
@@ -75,7 +77,7 @@ const Detalles = (props) => {
                     longitud3={longitud3}
                 /> 
                 </div>
-                <div style={{textAlign:'center', marginLeft:'10px',fontFamily: 'Roboto, sans-serif'}}>
+                <div className='inf' style={{fontSize: '18px',textAlign:'center',width:'50vw',fontFamily: 'Roboto, sans-serif', background:'#0CF78B', color:'white'}}>
                 <h2>Descripcion</h2>
                 <p style={{}}>
                    {descripcion}
@@ -98,13 +100,13 @@ const Detalles = (props) => {
                 
             </div>
             
-            <div style={{display:'flex', flex:'2', height:'30vh', width:'100vw', textAlign:'center', marginTop:'20px'}}>
+            <div style={{boxSizing: 'borderBox',display:'flex', flex:'2', height:'30vh', width:'100vw', textAlign:'center', marginTop:'20px'}}>
                 <div style={{width:'50vw'}}>
                 <h3>cupos restantes <br/></h3>
                 {<h3>{value}</h3>}
                 </div>
                 
-                <div >
+                <div style={{alignItems:'center', placeItems:'center'}}>
                 {band===true?(<>
                 <button className="btn-cancelar " id="dd" href="#!" role="button" onClick={Cancelar}>
                     Cancelar</button>

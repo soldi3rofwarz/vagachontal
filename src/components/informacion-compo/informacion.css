@@ -12,7 +12,11 @@ body {
       content: "";
       display: table;
       clear: both;
-      background: rgb(250, 247, 247);
+      background: #0CF78B;
+      color: #ffffff;
+      font-size: 21;
+      text-align: center;
+      align-items: center;
     }
     .column {
         float: left;

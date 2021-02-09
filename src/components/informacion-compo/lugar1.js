@@ -1,23 +1,37 @@
 import React from 'react';
-
+import GoogleFontLoader from 'react-google-font-loader';
 import './informacion.css'
 import Gallery from 'react-photo-gallery'
 import Lugares from './../gallery/lugares'
 import Nancitalpic from './../../assets/elnancital.jpg'
 import Nancitalpic2 from './../../assets/elnancital2.jpg'
 
+<GoogleFontLoader
+    fonts={[
+      {
+        font: 'Roboto',
+        weights: [400, '400i'],
+      },
+      {
+        font: 'Roboto Mono',
+        weights: [400, 700],
+      },
+    ]}
+    subsets={['cyrillic-ext', 'greek']}
+  />
+
 const PhotosSet= [
 
 {
 	src: Nancitalpic,
-	width: 4,
-	height: 3
+	width: 5,
+	height: 4
 },
 
 {
 	src: Nancitalpic2,
-	width: 4,
-	height: 3
+	width: 5,
+	height: 4
 },
 
 
@@ -25,19 +39,19 @@ const PhotosSet= [
 const Lugar1 = () => {
     return (
 		<>
-		<div style={{height:'80px'}}></div >
-      	<div >
+		<div style={{height:'180px'}}></div>
+      	<section style={{height:'700px',width:'70vw',marginLeft:'100px', overflow:'hidden'}}>
 		  
-		  <Lugares/>
-		  <div style={{height:'40px'}}></div >
-		  <div className="row" style={{margin: 'auto', max: '100%', textAlign: 'center'}}>
-		  
+		  <div style={{width:'70vw', marginBottom:'20px'}}><Lugares/></div>
+		  <div style={{display: 'flex',background:'yellow'}}>
+		
+		  <div className="row" style={{margin: 'auto', textAlign: 'center',width:'35vw',fontFamily: 'Roboto, sans-serif',height:'80vh'}}>
                 <h2 >El Nancital</h2>
 				
                     <h4>
                     	El Nancital un paraíso natural frente a Acoyapa
                     </h4>
-                    <p>
+                   <p>
                     	La mayoría de sus islas son vírgenes y están deshabitadas. 
                     	Las familias que viven en las más grandes llegaron allí hace muchos años, procedentes de Chontales
                     </p>
@@ -50,13 +64,16 @@ const Lugar1 = () => {
                     <p>
                     	Durante el recorrido en las aguas frescas y cristalinas del Gran Lago de Nicaragua, se puede apreciar de una imponente vista de los volcanes Concepción y Maderas.
                     </p>
-                </div>
-
-		<div>
-			<Gallery photos = {PhotosSet}/>
-		</div>
+            </div>
+			<div style={{width:'60vw'}} >
+				{/* <Gallery photos = {PhotosSet}/> */}
+				<img src={Nancitalpic} style={{marginLeft:'10px',width:'23vw', marginBottom:'30px'}}/>
+				<img src={Nancitalpic2} style={{width:'25vw', marginLeft:'120px'}}/>
+			</div>
+			</div>
+		
 		               
-  	</div>
+  		</section>
 	  </>
     );
 };

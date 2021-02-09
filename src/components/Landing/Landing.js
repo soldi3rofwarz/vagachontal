@@ -9,6 +9,11 @@ import Foto4Img from './../../assets/foto4.jpg'
 import Foto5Img from './../../assets/foto5.jpg'
 import Foto6Img from './../../assets/foto6.jpg'
 import Foto7Img from './../../assets/foto7.jpg'
+import FotoVision from './../../assets/vision.png'
+import FotoMision from './../../assets/mision2.png'
+  
+
+
 
 import React from 'react';
 import clsx from 'clsx';
@@ -55,14 +60,11 @@ import Collapse from '@material-ui/core/Collapse';
 import { red } from '@material-ui/core/colors';
 import SimpleReactFooter from "simple-react-footer";
 
-import SwipeableTextMobileStepper from '../../steeper/stepper'
-
-const drawerWidth = 240; 
+const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
-    zIndex:'1'
   },
   title: {
     flexGrow: 1,
@@ -100,7 +102,6 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(0, 1),
     ...theme.mixins.toolbar,
     justifyContent: 'flex-end',
-    
   },
   content: {
     flexGrow: 1,
@@ -266,7 +267,79 @@ const Home = () => {
         <>
           <div className={classes.root}>
             <CssBaseline />
-            
+            <AppBar
+              position="fixed"
+              className={clsx(classes.appBar, {
+                [classes.appBarShift]: open,
+              })}
+            >
+              <Toolbar>
+                <IconButton
+                  color="inherit"
+                  aria-label="open drawer"
+                  onClick={handleDrawerOpen}
+                  edge="start"
+                  className={clsx(classes.menuButton, open && classes.hide)}
+                >
+                  <MenuIcon />
+                </IconButton>
+                <Typography variant="h6" className={classes.title} noWrap>
+                  VagaChontal
+                </Typography>
+                <IconButton color="inherit">
+                    <AccountCircle/>
+                </IconButton>
+              </Toolbar>
+            </AppBar>
+            <Drawer
+              className={classes.drawer}
+              variant="persistent"
+              anchor="left"
+              open={open}
+              classes={{
+                paper: classes.drawerPaper,
+              }}
+            >
+              <div className={classes.drawerHeader}>
+                <IconButton onClick={handleDrawerClose}>
+                  {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
+                </IconButton>
+              </div>
+              <Divider />
+              <List>
+                  <ListItem button>
+                    <ListItemIcon><HomeIcon/></ListItemIcon>
+                    <ListItemText primary={'Inicio'} />
+                  </ListItem>
+                  <Divider />
+                  <ListItem button>
+                    <ListItemIcon><PicturesIcon/></ListItemIcon>
+                    <ListItemText primary={'Galería'} />
+                  </ListItem>
+                  <Divider />
+                  <ListItem button>
+                    <ListItemIcon><EventAvailableIcon/></ListItemIcon>
+                    <ListItemText primary={'Actividades'} />
+                  </ListItem>
+                  <Divider />
+                  <ListItem button>
+                    <ListItemIcon><PollIcon/></ListItemIcon>
+                    <ListItemText primary={'Estadísticas'} />
+                  </ListItem>
+                  <Divider />
+                  <ListItem button>
+                    <ListItemIcon><ListIcon/></ListItemIcon>
+                    <ListItemText primary={'Formulario'} />
+                  </ListItem>
+                  <Divider />
+                  <ListItem button>
+                    <ListItemIcon><UserIcon/></ListItemIcon>
+                    <ListItemText primary={'Cliente'} />
+                  </ListItem>
+                  <Divider />
+              </List>
+
+            </Drawer>
             <main
               className={clsx(classes.content, {
                 [classes.contentShift]: open,
@@ -275,10 +348,9 @@ const Home = () => {
               <div className={classes.drawerHeader} />
                 <div>
                   <Parallax
-                    bgImage={BackImg} 
+                    bgImage={BackImg}
                     bgImageAlt="the cat"
                     strength={500}
-                    style={{zIndex:11}}
                   >
                     <div style={{ height: 570 }}>
                       <div className={classes.insideStyles}>
@@ -301,7 +373,7 @@ const Home = () => {
                             component="img"
                             alt="Misión"
                             height="250"
-                            image="https://concepto.de/wp-content/uploads/2013/05/mision.jpg"
+                            image={FotoMision}
                             title="Mision"
                           />
                           <CardContent>
@@ -322,7 +394,7 @@ const Home = () => {
                             component="img"
                             alt="Misión"
                             height="250"
-                            image="https://www.anticiparse.org/wp-content/uploads/2018/02/vision-300x155.jpg"
+                            image={FotoVision}
                             title="Mision"
                           />
                           <CardContent>
@@ -346,10 +418,9 @@ const Home = () => {
                             <Paper className={classes.paper}>
                               <div>
                                 <Parallax
-                                  bgImage={Foto2Img}
+                                  bgImage={require('../../assets/foto2.jpg')}
                                   bgImageAlt="the cat"
                                   strength={500}
-                                  style={{zIndex:1}}
                                 >
                                   <div style={{ height: 200 }}>
                                   </div>
@@ -361,10 +432,9 @@ const Home = () => {
                             <Paper className={classes.paper}>
                               <div>
                                 <Parallax
-                                  bgImage={Foto1Img} 
+                                  bgImage={require('../../assets/foto1.jpg')}
                                   bgImageAlt="the cat"
                                   strength={500}
-                                  style={{zIndex:1}}
                                 >
                                   <div style={{ height: 200 }}>
                                   </div>
@@ -376,25 +446,9 @@ const Home = () => {
                             <Paper className={classes.paper}>
                               <div>
                                 <Parallax
-                                  bgImage={Foto3Img}
+                                  bgImage={require('../../assets/foto3.jpg')}
                                   bgImageAlt="the cat"
                                   strength={500}
-                                  style={{zIndex:11}}
-                                >
-                                  <div style={{ height: 200 }}>
-                                  </div>
-                                </Parallax>
-                              </div>
-                            </Paper>
-                          </Grid>
-                          <Grid item xs={4}>
-                            <Paper className={classes.paper}>  
-                              <div>
-                                <Parallax
-                                  bgImage={Foto4Img}
-                                  bgImageAlt="the cat"
-                                  strength={500}
-                                  style={{zIndex:1}}
                                 >
                                   <div style={{ height: 200 }}>
                                   </div>
@@ -406,7 +460,21 @@ const Home = () => {
                             <Paper className={classes.paper}>
                               <div>
                                 <Parallax
-                                  bgImage={Foto5Img}
+                                  bgImage={require('../../assets/foto4.jpg')}
+                                  bgImageAlt="the cat"
+                                  strength={500}
+                                >
+                                  <div style={{ height: 200 }}>
+                                  </div>
+                                </Parallax>
+                              </div>
+                            </Paper>
+                          </Grid>
+                          <Grid item xs={4}>
+                            <Paper className={classes.paper}>
+                              <div>
+                                <Parallax
+                                  bgImage={require('../../assets/foto5.jpg')}
                                   bgImageAlt="the cat"
                                   strength={500}
                                 >
@@ -420,7 +488,7 @@ const Home = () => {
                             <Paper className={classes.paper}>
                               <div>
                                 <Parallax
-                                  bgImage={Foto6Img}
+                                  bgImage={require('../../assets/foto6.jpg')}
                                   bgImageAlt="the cat"
                                   strength={500}
                                 >
@@ -434,7 +502,7 @@ const Home = () => {
                             <Paper className={classes.paper}>
                               <div>
                                 <Parallax
-                                  bgImage={Foto7Img}
+                                  bgImage={require('../../assets/foto7.jpg')}
                                   bgImageAlt="the cat"
                                   strength={500}
                                 >
@@ -636,11 +704,12 @@ const Home = () => {
                   description={description} 
                   title={title}
                   columns={columns}
-                  
+                  linkedin="fluffy_cat_on_linkedin"
                   facebook="fluffy_cat_on_fb"
                   twitter="fluffy_cat_on_twitter"
                   instagram="fluffy_cat_live"
-                  
+                  youtube="UCFt6TSF464J8K82xeA?"
+                  pinterest="fluffy_cats_collections"
                   copyright="VagaChontal 2021"
                   iconColor="white"
                   backgroundColor="blue"
