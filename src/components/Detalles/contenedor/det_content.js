@@ -5,7 +5,7 @@ import Detalles from './../componentes/detalles'
 
 const Det_content = (props) => {
 
-    const{actividad,fecha,precio, salida,hora,cupos,latitud1,longitud1,latitud2,longitud2,latitud3,longitud3,descripcion,fileUrl}= props
+    const{actividad,fecha,precio,organizacion ,salida,hora,cupos,latitud1,longitud1,latitud2,longitud2,latitud3,longitud3,descripcion,fileUrl}= props
 
 
     const [band,setband]= useState(false)
@@ -40,9 +40,10 @@ const Det_content = (props) => {
         }
 
         const Agregado =()=>{ 
-            setValue(value+1)
+            setband(true)
+            setValue(value-1)
             if (value === 0){
-                setband(true)
+                
             }
 
             agregaruser('lunarbaulla@gmail.com');
@@ -66,6 +67,7 @@ const Det_content = (props) => {
        Cancelar={Cancelar}
        Agregado={Agregado}
         band={band}
+        organizacion={organizacion}
         actividad={actividad}
         fecha={fecha}
         precio={precio}

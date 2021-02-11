@@ -35,8 +35,7 @@ export const ClientsRoute = () => {
         
         <Router>
             <Switch>
-
-            <Route exact path="/" component={Home} />
+            <Route exact path="/" component={LandingPage} />
             {/* <Route exact path="/actividades" component={ListContainer}/> */}
             {/* <Route path ="/galeria" component ={Gallery} /> */}
             

@@ -65,6 +65,7 @@ const drawerWidth = 240;
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
+    marginLeft: '230px'
   },
   title: {
     flexGrow: 1,
@@ -267,79 +268,7 @@ const Home = () => {
         <>
           <div className={classes.root}>
             <CssBaseline />
-            <AppBar
-              position="fixed"
-              className={clsx(classes.appBar, {
-                [classes.appBarShift]: open,
-              })}
-            >
-              <Toolbar>
-                <IconButton
-                  color="inherit"
-                  aria-label="open drawer"
-                  onClick={handleDrawerOpen}
-                  edge="start"
-                  className={clsx(classes.menuButton, open && classes.hide)}
-                >
-                  <MenuIcon />
-                </IconButton>
-                <Typography variant="h6" className={classes.title} noWrap>
-                  VagaChontal
-                </Typography>
-                <IconButton color="inherit">
-                    <AccountCircle/>
-                </IconButton>
-              </Toolbar>
-            </AppBar>
-            <Drawer
-              className={classes.drawer}
-              variant="persistent"
-              anchor="left"
-              open={open}
-              classes={{
-                paper: classes.drawerPaper,
-              }}
-            >
-              <div className={classes.drawerHeader}>
-                <IconButton onClick={handleDrawerClose}>
-                  {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
-                </IconButton>
-              </div>
-              <Divider />
-              <List>
-                  <ListItem button>
-                    <ListItemIcon><HomeIcon/></ListItemIcon>
-                    <ListItemText primary={'Inicio'} />
-                  </ListItem>
-                  <Divider />
-                  <ListItem button>
-                    <ListItemIcon><PicturesIcon/></ListItemIcon>
-                    <ListItemText primary={'Galería'} />
-                  </ListItem>
-                  <Divider />
-                  <ListItem button>
-                    <ListItemIcon><EventAvailableIcon/></ListItemIcon>
-                    <ListItemText primary={'Actividades'} />
-                  </ListItem>
-                  <Divider />
-                  <ListItem button>
-                    <ListItemIcon><PollIcon/></ListItemIcon>
-                    <ListItemText primary={'Estadísticas'} />
-                  </ListItem>
-                  <Divider />
-                  <ListItem button>
-                    <ListItemIcon><ListIcon/></ListItemIcon>
-                    <ListItemText primary={'Formulario'} />
-                  </ListItem>
-                  <Divider />
-                  <ListItem button>
-                    <ListItemIcon><UserIcon/></ListItemIcon>
-                    <ListItemText primary={'Cliente'} />
-                  </ListItem>
-                  <Divider />
-              </List>
-
-            </Drawer>
+      
             <main
               className={clsx(classes.content, {
                 [classes.contentShift]: open,
@@ -348,18 +277,16 @@ const Home = () => {
               <div className={classes.drawerHeader} />
                 <div>
                   <Parallax
-                    bgImage={BackImg}
                     bgImageAlt="the cat"
-                    strength={500}
+                    strength={100}
                   >
-                    <div style={{ height: 570 }}>
+                    
+                    <div style={{ height: 570}}>
+                      <img src={BackImg} style={{width:'100vw'}}/>
                       <div className={classes.insideStyles}>
                         <Typography variant="h5" component="h2" className={classes.textoInicio}>
                           ¡Conoce tu tierra, conoce Chontales!
                         </Typography>
-                        <Button variant="contained" size="large" color="secondary">
-                          ¡Únete!
-                        </Button>
                       </div>
                     </div>
                   </Parallax>
@@ -372,7 +299,7 @@ const Home = () => {
                           <CardMedia
                             component="img"
                             alt="Misión"
-                            height="250"
+                            height="150"
                             image={FotoMision}
                             title="Mision"
                           />
@@ -393,7 +320,7 @@ const Home = () => {
                           <CardMedia
                             component="img"
                             alt="Misión"
-                            height="250"
+                            height="150"
                             image={FotoVision}
                             title="Mision"
                           />
@@ -418,11 +345,13 @@ const Home = () => {
                             <Paper className={classes.paper}>
                               <div>
                                 <Parallax
-                                  bgImage={require('../../assets/foto2.jpg')}
+                                 
                                   bgImageAlt="the cat"
                                   strength={500}
                                 >
-                                  <div style={{ height: 200 }}>
+                                  
+                                  <div style={{ height: 200,width:200,backgroundAttachment:'fixed' }}>
+                                  <img src={Foto3Img} style={{width:'350px', height:'200px'}}/>
                                   </div>
                                 </Parallax>
                               </div>
@@ -431,12 +360,12 @@ const Home = () => {
                           <Grid item xs={8}>
                             <Paper className={classes.paper}>
                               <div>
-                                <Parallax
-                                  bgImage={require('../../assets/foto1.jpg')}
+                                <Parallax 
                                   bgImageAlt="the cat"
                                   strength={500}
                                 >
-                                  <div style={{ height: 200 }}>
+                                  <div style={{ height: 200, width:'200px',alignItems:'center' }}>
+                                    <img src={Foto1Img} style={{width:'350px',height:'200px'}}/>
                                   </div>
                                 </Parallax>
                               </div>
@@ -446,11 +375,12 @@ const Home = () => {
                             <Paper className={classes.paper}>
                               <div>
                                 <Parallax
-                                  bgImage={require('../../assets/foto3.jpg')}
+                                  
                                   bgImageAlt="the cat"
                                   strength={500}
                                 >
                                   <div style={{ height: 200 }}>
+                                    <img src={Foto2Img} style={{width:'350px', height:'200px'}}/>
                                   </div>
                                 </Parallax>
                               </div>
@@ -460,11 +390,12 @@ const Home = () => {
                             <Paper className={classes.paper}>
                               <div>
                                 <Parallax
-                                  bgImage={require('../../assets/foto4.jpg')}
+                                  bgImage={Foto4Img}
                                   bgImageAlt="the cat"
                                   strength={500}
                                 >
                                   <div style={{ height: 200 }}>
+                                    <img src={Foto4Img} style={{width:'350px', height:'200px'}}/>
                                   </div>
                                 </Parallax>
                               </div>
@@ -474,11 +405,12 @@ const Home = () => {
                             <Paper className={classes.paper}>
                               <div>
                                 <Parallax
-                                  bgImage={require('../../assets/foto5.jpg')}
+                                  bgImage={Foto5Img}
                                   bgImageAlt="the cat"
                                   strength={500}
                                 >
                                   <div style={{ height: 200 }}>
+                                    <img src={Foto5Img} style={{width:'350px', height:'200px'}}/>
                                   </div>
                                 </Parallax>
                               </div>
@@ -488,11 +420,12 @@ const Home = () => {
                             <Paper className={classes.paper}>
                               <div>
                                 <Parallax
-                                  bgImage={require('../../assets/foto6.jpg')}
+                                  bgImage={Foto6Img}
                                   bgImageAlt="the cat"
                                   strength={500}
                                 >
                                   <div style={{ height: 200 }}>
+                                    <img src={Foto6Img} style={{width:'350px', height:'200px' }}/>
                                   </div>
                                 </Parallax>
                               </div>
@@ -502,11 +435,12 @@ const Home = () => {
                             <Paper className={classes.paper}>
                               <div>
                                 <Parallax
-                                  bgImage={require('../../assets/foto7.jpg')}
+                                  bgImage={Foto7Img}
                                   bgImageAlt="the cat"
                                   strength={500}
                                 >
                                   <div style={{ height: 200 }}>
+                                    <img src={Foto7Img} style={{width:'350px', height:'200px' }}/>
                                   </div>
                                 </Parallax>
                               </div>
@@ -524,11 +458,6 @@ const Home = () => {
                           <Grid item xs={4}>
                             <Card className={classes.rootC}>
                               <CardHeader
-                                avatar={
-                                  <Avatar aria-label="recipe" className={classes.avatar}>
-                                    P
-                                  </Avatar>
-                                }
                                 action={
                                   <IconButton aria-label="settings">
                                     <MoreVertIcon />
@@ -582,11 +511,7 @@ const Home = () => {
                           <Grid item xs={4}>
                             <Card className={classes.rootC}>
                               <CardHeader
-                                avatar={
-                                  <Avatar aria-label="recipe" className={classes.avatar}>
-                                    A
-                                  </Avatar>
-                                }
+                               
                                 action={
                                   <IconButton aria-label="settings">
                                     <MoreVertIcon />
@@ -640,11 +565,7 @@ const Home = () => {
                           <Grid item xs={4}>
                             <Card className={classes.rootC}>
                               <CardHeader
-                                avatar={
-                                  <Avatar aria-label="recipe" className={classes.avatar}>
-                                    N
-                                  </Avatar>
-                                }
+                                
                                 action={
                                   <IconButton aria-label="settings">
                                     <MoreVertIcon />

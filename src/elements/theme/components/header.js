@@ -1,3 +1,4 @@
+import Icon2 from './../../../assets/logo2.png'
 
 import React from 'react';
 import clsx from 'clsx';
@@ -208,9 +209,11 @@ const Header =()=>{
                 >
                   <MenuIcon />
                 </IconButton>
-                <Typography variant="h6" className={classes.title} noWrap>
-                  VagaChontal
-                </Typography>
+               
+               
+                <IconButton className={classes.title}>
+                  <img src={Icon2} style={{width:'65px'}}/>
+                </IconButton>
                 <IconButton color="inherit">
                   <Link to ='/loginGoogle'>
                     <AccountCircle onClick={signout}/> 

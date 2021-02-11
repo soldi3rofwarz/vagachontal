@@ -1,10 +1,25 @@
 import React from 'react';
-
+import GoogleFontLoader from 'react-google-font-loader';
 import './informacion.css'
 import Gallery from 'react-photo-gallery'
 import Lugares from './../gallery/lugares'
 import amerrique from './../../assets/amerrique.jpg'
 import amerrique2 from './../../assets/amerrique2.jpg'
+import Paper from '@material-ui/core/Paper';
+
+<GoogleFontLoader
+    fonts={[
+      {
+        font: 'Roboto',
+        weights: [400, '400i'],
+      },
+      {
+        font: 'Roboto Mono',
+        weights: [400, 700],
+      },
+    ]}
+    subsets={['cyrillic-ext', 'greek']}
+  />
 
 const PhotosSet= [
 
@@ -24,11 +39,12 @@ const PhotosSet= [
 const Lugar2 = () => {
     return (
 		<>
-		<div style={{height:'80px'}}></div >
-        <Lugares/>
-        <div style={{height:'40px'}}></div >
-      	<div>
-          <div className="row"style={{margin:'auto'}}>
+		<div style={{height:'180px'}}></div >
+        <section style={{height:'auto',width:'70vw',marginLeft:'100px', overflow:'hidden'}}>
+        <div style={{width:'70vw', marginBottom:'20px'}}><Lugares/></div>
+        
+      	<Paper variant="outlined" style={{display: 'flex'}}>
+          <div className="row"style={{margin: 'auto', textAlign: 'center',width:'35vw',fontFamily: 'Roboto, sans-serif',height:'80vh', fontSize:'18px'}}>
                 <h2 >Cordillera Amerrique</h2>
                     <h4>
                     "Lugar del viento" o "donde el viento sopla", llamaron los mayas a esta cordillera
@@ -45,11 +61,13 @@ const Lugar2 = () => {
                   
                 </div>
 
-		<div>
-			<Gallery photos = {PhotosSet}/>
+		<div style={{width:'60vw'}} className='imagenes'>
+        <img src={amerrique} className='img1' style={{marginLeft:'10px',width:'23vw', marginBottom:'130px'}}/>
+		<img src={amerrique2}  className='img2' style={{width:'23vw', marginLeft:'180px'}}/>
 		</div>
 		               
-  	</div>
+  	</Paper>
+      </section>
 	  </>
     );
 };

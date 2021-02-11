@@ -21,6 +21,7 @@ const DetallePage = (props) => {
     const [longitud3, setLongitud3] = useState('');
     const [descripcion, setDescripcion] = useState('');
     const [fileUrl, setfileUrl] = useState(null)
+    const [organizacion, setOrganizacion]= useState('')
 
     useEffect(()=>{
         (async()=>{
@@ -40,6 +41,7 @@ const DetallePage = (props) => {
             longitud2,
             latitud3,
             longitud3,
+            organizacion,
             descripcion,
             fileUrl
         }= producto;
@@ -59,6 +61,7 @@ const DetallePage = (props) => {
             setLongitud3(longitud3)
             setDescripcion(descripcion)
             setfileUrl(fileUrl)
+            setOrganizacion(organizacion)
         })()
     },[])
 
@@ -71,6 +74,7 @@ const DetallePage = (props) => {
                 salida={salida}
                 hora={hora}
                 cupos={cupos}
+                organizacion={organizacion}
                 latitud1={latitud1}
                 longitud1={longitud1}
                 latitud2={latitud2}

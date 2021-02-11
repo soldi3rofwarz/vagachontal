@@ -5,6 +5,7 @@ import Gallery from 'react-photo-gallery'
 import Lugares from './../gallery/lugares'
 import Nancitalpic from './../../assets/elnancital.jpg'
 import Nancitalpic2 from './../../assets/elnancital2.jpg'
+import Paper from '@material-ui/core/Paper';
 
 <GoogleFontLoader
     fonts={[
@@ -43,9 +44,9 @@ const Lugar1 = () => {
       	<section style={{height:'700px',width:'70vw',marginLeft:'100px', overflow:'hidden'}}>
 		  
 		  <div style={{width:'70vw', marginBottom:'20px'}}><Lugares/></div>
-		  <div style={{display: 'flex',background:'yellow'}}>
+		  <Paper variant="outlined" style={{display: 'flex'}}>
 		
-		  <div className="row" style={{margin: 'auto', textAlign: 'center',width:'35vw',fontFamily: 'Roboto, sans-serif',height:'80vh'}}>
+		  <div className="row" style={{margin: 'auto', textAlign: 'center',width:'35vw',fontFamily: 'Roboto, sans-serif',height:'80vh', fontSize:'18px'}}>
                 <h2 >El Nancital</h2>
 				
                     <h4>
@@ -65,12 +66,12 @@ const Lugar1 = () => {
                     	Durante el recorrido en las aguas frescas y cristalinas del Gran Lago de Nicaragua, se puede apreciar de una imponente vista de los volcanes Concepción y Maderas.
                     </p>
             </div>
-			<div style={{width:'60vw'}} >
+			<div style={{width:'60vw'}} className='imagenes' >
 				{/* <Gallery photos = {PhotosSet}/> */}
-				<img src={Nancitalpic} style={{marginLeft:'10px',width:'23vw', marginBottom:'30px'}}/>
-				<img src={Nancitalpic2} style={{width:'25vw', marginLeft:'120px'}}/>
+				<img className='img1' src={Nancitalpic} style={{marginLeft:'10px',width:'23vw', marginBottom:'30px'}}/>
+				<img className='img2' src={Nancitalpic2} style={{width:'25vw', marginLeft:'120px'}}/>
 			</div>
-			</div>
+			</Paper>
 		
 		               
   		</section>

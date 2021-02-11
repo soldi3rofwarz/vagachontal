@@ -9,7 +9,7 @@ import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
 import SwipeableViews from 'react-swipeable-views';
 import { autoPlay } from 'react-swipeable-views-utils';
 import AmerriqueImg from '../assets/amerrique.jpg'
-import NanciteImg from '../assets/elnancital.jpg'
+import Cuapa from '../assets/cuapa2.jpg'
 import BackImg from '../assets/back.jpg'
 import Foto2Img from '../assets/foto2.jpg'
 import Foto4Img from '../assets/foto4.jpg'
@@ -25,9 +25,9 @@ const tutorialSteps = [
     AmerriqueImg
   },
   {
-    label: 'El nanciatal',
+    label: 'Cuapa',
     imgPath:
-      NanciteImg,
+      Cuapa,
   },
   {
     label: 'Hato grande',

@@ -48,13 +48,16 @@ const Datos=()=>{
     }
 
     return(
-        <div className='datos' style={{width: '100%'}}>
-            <section style={{height:'50px'}}></section>
+        <>
+        <section style={{height:'150px'}}></section>
+        <div className='datos' style={{width: '100%', height:'100vh'}}>
+            
             <h1>Graficos</h1>
-           <section style={{boxShadow: '5px 5px 5px'}}> <Bar data={Data} options={Opciones}/></section>
+           <section style={{boxShadow: '5px 5px 5px'}}> <Bar data={Data} options={Opciones} style={{width:'50vw',height:'500px'}}/></section>
            <section style={{boxShadow: '5px 5px 5px'}}> <Bar data={Data1} options={Opciones}/></section>
 
         </div>
+        </>
     )
 }
 

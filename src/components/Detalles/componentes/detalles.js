@@ -22,7 +22,7 @@ const Detalles = (props) => {
   />
 
     
-    const{actividad,fecha,precio, salida,hora,latitud1,longitud1,latitud2,longitud2,latitud3,longitud3,descripcion,fileUrl,
+    const{actividad,fecha,precio, organizacion,salida,hora,latitud1,longitud1,latitud2,longitud2,latitud3,longitud3,descripcion,fileUrl,
         cupos,
         Cancelar,
         Agregado,
@@ -36,7 +36,7 @@ const Detalles = (props) => {
         <>
             <div style={{height: '140px'}}></div>
         <section style={{height:'auto'}}>
-            <h2 style={{fontSize: '50px',background:'#3B36E0',color:'white',textAlign:'center',fontFamily: 'Roboto, sans-serif'}}>{actividad}</h2>
+            <h2 style={{fontSize: '50px',background:'white',color:'#00a295',textAlign:'center',fontFamily: 'Roboto, sans-serif'}}>{actividad}</h2>
             <div className="h" style={{display:'flex', flex:'2', }} >
                
                 <div style={{width:'50vw', overflow:'hidden' }} >
@@ -45,7 +45,7 @@ const Detalles = (props) => {
 
                 <div className="det" 
                 style={{textAlign:'center', width:'50vw',fontFamily: 'Roboto, sans-serif',
-                 background:'#0CF78B', color:'white',fontSize: '18px'}}>
+                 background:'#00a295', color:'white',fontSize: '18px'}}>
                     
                     <br/>
 
@@ -53,6 +53,11 @@ const Detalles = (props) => {
                     <h4>{salida}</h4>
                     
                     <br/>
+                    <h3>Organizacion</h3>
+                    <h4>{organizacion}</h4>
+                    
+                    <br/>
+                    <h3>Fecha</h3>
                     <h3>Fecha</h3>
                     <h4>{fecha}</h4>
                     <br/>
@@ -77,7 +82,7 @@ const Detalles = (props) => {
                     longitud3={longitud3}
                 /> 
                 </div>
-                <div className='inf' style={{fontSize: '18px',textAlign:'center',width:'50vw',fontFamily: 'Roboto, sans-serif', background:'#0CF78B', color:'white'}}>
+                <div className='inf' style={{fontSize: '18px',textAlign:'center',width:'50vw',fontFamily: 'Roboto, sans-serif', background:'#00a295', color:'white'}}>
                 <h2>Descripcion</h2>
                 <p style={{}}>
                    {descripcion}
@@ -112,7 +117,7 @@ const Detalles = (props) => {
                     Cancelar</button>
                     {getUser && getUser().map(item => <span><br/>{item.email}</span>)}   </>)
                :
-               (<button className="btn-participar"  id="dd" href="#!" role="button" onClick={Limite}>
+               (<button className="btn-participar"  id="dd" href="#!" role="button" onClick={Agregado}>
                 Participar</button>)}
                 </div>
              
