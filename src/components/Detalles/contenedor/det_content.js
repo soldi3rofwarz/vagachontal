@@ -1,5 +1,7 @@
 import React ,{useState,useEffect}from 'react';
-
+import 
+    {db}
+ from '../../data/firebase-config';
 
 import Detalles from './../componentes/detalles'
 
@@ -7,7 +9,7 @@ const Det_content = (props) => {
 
     const{actividad,fecha,precio,organizacion ,salida,hora,cupos,latitud1,longitud1,latitud2,longitud2,latitud3,longitud3,descripcion,fileUrl}= props
 
-
+    const [users,setUaers]= useState('')
     const [band,setband]= useState(false)
     const[value, setValue]= useState(cupos)
 
@@ -38,6 +40,20 @@ const Det_content = (props) => {
                 setValue()
             }
         }
+        const handleAgregarClick = (e) => {
+            e.preventDefault();
+            //aquí irían las validaciones
+            if(!actividadId) {
+                db.collection('users').add({
+                    users,
+                    actividadId,
+                }).then(() => {
+                    console.log("Guardado!!!!", actividadId);
+                }).catch((error) => {
+                    console.log("Error: ", error);
+                });
+            }
+          }
 
         const Agregado =()=>{ 
             setband(true)

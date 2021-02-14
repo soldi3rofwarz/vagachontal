@@ -25,7 +25,7 @@ export const Select= async (actividadId) => {
     if(actividadId) {
         const querySnapshot = await db.collection(COLLECTION_ACTIVIDADES_NAME).doc(actividadId).get();
         console.log("apalasrtuka", querySnapshot)
-        let actividad = {};
+        let actividad ={};
         if(querySnapshot.exists) {
             actividad = {
                 ...querySnapshot.data()
