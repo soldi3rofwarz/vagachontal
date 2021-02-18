@@ -4,6 +4,7 @@ import Paper from '@material-ui/core/Paper';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import {Link}from 'react-router-dom'
+import './lugares.css'
 const useStyles = makeStyles({
   root: {
     flexGrow: 1,
@@ -33,12 +34,12 @@ const Lugares = () => {
                 centered
             >
             
-            <Link to="/lugar1"><Tab label="El Nancital"> </Tab></Link>
-            <Link to="/lugar2"><Tab label="Amerrique"> </Tab></Link>
-            <Link to="/lugar3"><Tab label="Piedras Pintadas"> </Tab></Link>
-            <Link to="/lugar4"><Tab label="Piedra de Cuapa"> </Tab></Link>
-            <Link to="/lugar5"><Tab label="El Corozo"> </Tab></Link>
-            <Link to="/lugar6"><Tab label="Garrobo Grande"> </Tab></Link>
+            <Link  className='buttons' to="/lugar1"><Tab label="El Nancital"> </Tab></Link>
+            <Link  className='buttons' to="/lugar2"><Tab label="Amerrique"> </Tab></Link>
+            <Link  className='buttons' to="/lugar3"><Tab label="Piedras Pintadas"> </Tab></Link>
+            <Link  className='buttons' to="/lugar4"><Tab label="Piedra de Cuapa"> </Tab></Link>
+            <Link  className='buttons' to="/lugar5"><Tab label="El Corozo"> </Tab></Link>
+            <Link  className='buttons' to="/lugar6"><Tab label="Garrobo Grande"> </Tab></Link>
             </Tabs>
         </Paper>
     {/* <div style={{height:'30px'}}></div>

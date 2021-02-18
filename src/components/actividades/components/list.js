@@ -73,16 +73,17 @@ export const List = (props) => {
 
              
             <div className={classes.rootGrid}>
-                <Paper className={classes.paper}>
-                    <Typography variant="h3" color="textSecondary" component="h3">
-                        Actividades
-                    </Typography>
-                    <Grid  container spacing={3} className={classes.rootC}>
+               <Typography variant="h3" color="textSecondary" component="h3" style={{textAlign:'center'}}>
+                  Actividades
+                </Typography>
+                <Paper className={classes.paper} style={{display:'flex', width:'70vw'}}>
+                   
+                    <Grid  container spacing={2} className={classes.rootC} style={{}} >
                         {listActividades.map ((item) =>
                             <p key={item.id}>
                                 
-                            <Grid item xs={12} style={{marginLeft: '60px'}}>
-                        <Card className={classes.rootC}>
+                            <Grid item xs={12} style={{marginLeft: '0px', display:'flex  ' }}>
+                        <Card className={classes.rootC} style={{width: '45vw'}}>
                             <CardHeader
                            
                             title={item.actividad}

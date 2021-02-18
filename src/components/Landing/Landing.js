@@ -204,66 +204,7 @@ const Home = () => {
       setExpanded2(!expanded2);
     };
 
-    const description = "¡Aventura y emoción! Nuestra plataforma está empeñada en informar a los amantes de los viajes, sobre los diversos destinos naturales, turísticos, históricos y culturales del departamento de Chontales.";
-    const title = "Acerca de nosotros";
-    const columns = [
-        {
-            title: "Recursos",
-            resources: [
-                {
-                    name: "Acerca",
-                    link: "/"
-                },
-                {
-                    name: "Administración",
-                    link: "/"
-                },
-                {
-                    name: "Contactos",
-                    link: "/"
-                },
-                {
-                    name: "Correos",
-                    link: "/"
-                }
-            ]
-        },
-        {
-            title: "Legal",
-            resources: [
-                {
-                    name: "Privacidad",
-                    link: "/privacy"
-                },
-                {
-                    name: "Términos y Condiciones",
-                    link: "/terms"
-                }
-            ]
-        },
-        {
-            title: "Consulte",
-            resources: [
-                {
-                    name: "Destinos",
-                    link: "/"
-                },
-                {
-                    name: "Restaurantes",
-                    link: "/"
-                },
-                {
-                  name: "Alojamientos",
-                  link: "/"
-                },
-                {
-                  name: "Ofertas",
-                  link: "/"
-                },
-            ]
-        }
-    ];
-
+  
     return ( 
         <>
           <div className={classes.root}>
@@ -277,12 +218,12 @@ const Home = () => {
               <div className={classes.drawerHeader} />
                 <div>
                   <Parallax
+                    bgImage={BackImg}
                     bgImageAlt="the cat"
                     strength={100}
                   >
                     
                     <div style={{ height: 570}}>
-                      <img src={BackImg} style={{width:'100vw'}}/>
                       <div className={classes.insideStyles}>
                         <Typography variant="h5" component="h2" className={classes.textoInicio}>
                           ¡Conoce tu tierra, conoce Chontales!
@@ -345,13 +286,11 @@ const Home = () => {
                             <Paper className={classes.paper}>
                               <div>
                                 <Parallax
-                                 
+                                 bgImage={Foto1Img}
                                   bgImageAlt="the cat"
                                   strength={500}
                                 >
-                                  
-                                  <div style={{ height: 200,width:200,backgroundAttachment:'fixed' }}>
-                                  <img src={Foto3Img} style={{width:'350px', height:'200px'}}/>
+                                  <div style={{ height: 200 }}>
                                   </div>
                                 </Parallax>
                               </div>
@@ -361,11 +300,11 @@ const Home = () => {
                             <Paper className={classes.paper}>
                               <div>
                                 <Parallax 
+                                  bgImage={Foto2Img}
                                   bgImageAlt="the cat"
                                   strength={500}
                                 >
-                                  <div style={{ height: 200, width:'200px',alignItems:'center' }}>
-                                    <img src={Foto1Img} style={{width:'350px',height:'200px'}}/>
+                                   <div style={{ height: 200 }}>
                                   </div>
                                 </Parallax>
                               </div>
@@ -375,12 +314,11 @@ const Home = () => {
                             <Paper className={classes.paper}>
                               <div>
                                 <Parallax
-                                  
+                                  bgImage={Foto3Img}
                                   bgImageAlt="the cat"
                                   strength={500}
                                 >
                                   <div style={{ height: 200 }}>
-                                    <img src={Foto2Img} style={{width:'350px', height:'200px'}}/>
                                   </div>
                                 </Parallax>
                               </div>
@@ -394,8 +332,7 @@ const Home = () => {
                                   bgImageAlt="the cat"
                                   strength={500}
                                 >
-                                  <div style={{ height: 200 }}>
-                                    <img src={Foto4Img} style={{width:'350px', height:'200px'}}/>
+                                   <div style={{ height: 200 }}>
                                   </div>
                                 </Parallax>
                               </div>
@@ -409,8 +346,7 @@ const Home = () => {
                                   bgImageAlt="the cat"
                                   strength={500}
                                 >
-                                  <div style={{ height: 200 }}>
-                                    <img src={Foto5Img} style={{width:'350px', height:'200px'}}/>
+                                   <div style={{ height: 200 }}>
                                   </div>
                                 </Parallax>
                               </div>
@@ -425,7 +361,6 @@ const Home = () => {
                                   strength={500}
                                 >
                                   <div style={{ height: 200 }}>
-                                    <img src={Foto6Img} style={{width:'350px', height:'200px' }}/>
                                   </div>
                                 </Parallax>
                               </div>
@@ -440,7 +375,6 @@ const Home = () => {
                                   strength={500}
                                 >
                                   <div style={{ height: 200 }}>
-                                    <img src={Foto7Img} style={{width:'350px', height:'200px' }}/>
                                   </div>
                                 </Parallax>
                               </div>
@@ -621,22 +555,6 @@ const Home = () => {
                     </Grid>
                   </Grid>
                 </div>
-                <SimpleReactFooter 
-                  description={description} 
-                  title={title}
-                  columns={columns}
-                  linkedin="fluffy_cat_on_linkedin"
-                  facebook="fluffy_cat_on_fb"
-                  twitter="fluffy_cat_on_twitter"
-                  instagram="fluffy_cat_live"
-                  youtube="UCFt6TSF464J8K82xeA?"
-                  pinterest="fluffy_cats_collections"
-                  copyright="VagaChontal 2021"
-                  iconColor="white"
-                  backgroundColor="blue"
-                  fontColor="white"
-                  copyrightColor="white"
-                />
             </main>
           </div>
       </>

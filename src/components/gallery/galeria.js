@@ -11,6 +11,7 @@ const Galeria =()=>{
     const [selectedImg, setSelectedImg] = useState(null);
     return(
       <>
+      <div style={{height:'15px'}}></div>
       <SwipeableTextMobileStepper/>
         <div className="App">
           

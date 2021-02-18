@@ -39,7 +39,7 @@ const PhotosSet= [
 const Lugar2 = () => {
     return (
 		<>
-		<div style={{height:'180px'}}></div >
+		<div style={{height:'150px'}}></div >
         <section style={{height:'auto',width:'70vw',marginLeft:'100px', overflow:'hidden'}}>
         <div style={{width:'70vw', marginBottom:'20px'}}><Lugares/></div>
         

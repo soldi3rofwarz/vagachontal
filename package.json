@@ -16,6 +16,7 @@
     "leaflet-routing-machine": "^3.2.12",
     "lrm-google": "^1.0.1",
     "material-ui": "^0.20.2",
+    "moment": "^2.29.1",
     "particles-bg": "^2.5.0",
     "react": "^17.0.1",
     "react-chartjs-2": "^2.11.1",

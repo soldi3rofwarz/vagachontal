@@ -57,12 +57,14 @@ const useStyles = makeStyles((theme) => ({
     color:'green'
   },
   appBar: {
+    position:'rellative',
     transition: theme.transitions.create(['margin', 'width'], {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,
     }),
   },
   appBarShift: {
+    
     width: `calc(100% - ${drawerWidth}px)`,
     marginLeft: drawerWidth,
     transition: theme.transitions.create(['margin', 'width'], {
@@ -192,14 +194,12 @@ const Header =()=>{
         <>
         <div className={classes.root}>
             <CssBaseline />
-            <AppBar
-              position="fixed"
-              className={clsx(classes.appBar, {
-                [classes.appBarShift]: open,
-              })}
-            >
-
-                <Toolbar>
+                <AppBar  style={{maxHeight:'66px',background: 'linear-gradient(rgba(30, 125, 235, 0.993),rgba(30, 126, 235, 0.15))'}}
+                position="fixed"
+                className={clsx(classes.appBar, {
+                  [classes.appBarShift]: open,
+                })}>
+               <Toolbar >
                 <IconButton
                   color="inherit"
                   aria-label="open drawer"
@@ -207,21 +207,20 @@ const Header =()=>{
                   edge="start"
                   className={clsx(classes.menuButton, open && classes.hide)}
                 >
-                  <MenuIcon />
+                  <MenuIcon style={{color:'white'}}/>
                 </IconButton>
                
                
                 <IconButton className={classes.title}>
-                  <img src={Icon2} style={{width:'65px'}}/>
+                  <img src={Icon2} style={{width:'95px',color:'white'}}/>
                 </IconButton>
                 <IconButton color="inherit">
                   <Link to ='/loginGoogle'>
                     <AccountCircle onClick={signout}/> 
                     </Link>
                 </IconButton>
-              </Toolbar>
-            </AppBar>
-            
+                </Toolbar>
+              </AppBar>
             <Drawer
               className={classes.drawer}
               variant="persistent"

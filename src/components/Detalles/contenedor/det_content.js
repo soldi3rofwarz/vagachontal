@@ -1,12 +1,14 @@
 import React ,{useState,useEffect}from 'react';
 import 
     {db}
- from '../../data/firebase-config';
+ from '../../../data/firebase-config';
 
 import Detalles from './../componentes/detalles'
 
 const Det_content = (props) => {
+    let actividadId = '';
 
+    if(props.match) actividadId = props.match.params.actividadId;
     const{actividad,fecha,precio,organizacion ,salida,hora,cupos,latitud1,longitud1,latitud2,longitud2,latitud3,longitud3,descripcion,fileUrl}= props
 
     const [users,setUaers]= useState('')
