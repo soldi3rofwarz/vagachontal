@@ -1,6 +1,8 @@
 import Icon2 from './../../../assets/logo2.png'
+import {onSubmit, logOut,listener} from './../../../components/login/google/container'
+import firebase,{googleAuthProvider} from '../../../data/firebase-config'
 
-import React from 'react';
+import React,{useState,useEffect} from 'react';
 import clsx from 'clsx';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
@@ -44,7 +46,6 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Collapse from '@material-ui/core/Collapse';
 import { red } from '@material-ui/core/colors';
 import {Link} from 'react-router-dom'
-import {signout} from './../../../data/user-data'
 
 const drawerWidth = 240; 
 
@@ -163,8 +164,25 @@ const Header =()=>{
     const classes = useStyles();
 
     const theme = useTheme();
-    const [open, setOpen] = React.useState(false);
-  
+    const [open, setOpen] =useState(false);
+    const [foto,setFoto]=useState(null)
+    const [nick, setNick]= useState('')
+    const [isLogin, setIslogin]=useState(false)
+
+    useEffect(()=>{
+        firebase.auth().onAuthStateChanged(function(user) {
+            if (user) {
+              console.log('iniciado', user)
+              console.log(user.displayName + '\n' + user.email+ '\n' + user.photoURL)
+              setFoto(user.photoURL)
+              setNick(user.displayName)
+              setIslogin(true)
+                
+            } else {
+                console.log('no iniciado')
+            }
+          })
+    },[])
     const handleDrawerOpen = () => {
       setOpen(true);
     };
@@ -187,9 +205,9 @@ const Header =()=>{
 
     const [expanded2, setExpanded2] = React.useState(false);
 
-    const handleExpandClick2 = () => {
-      setExpanded2(!expanded2);
-    };
+  
+
+    
     return(
         <>
         <div className={classes.root}>
@@ -209,15 +227,18 @@ const Header =()=>{
                 >
                   <MenuIcon style={{color:'white'}}/>
                 </IconButton>
-               
-               
+              
                 <IconButton className={classes.title}>
                   <img src={Icon2} style={{width:'95px',color:'white'}}/>
                 </IconButton>
                 <IconButton color="inherit">
-                  <Link to ='/loginGoogle'>
-                    <AccountCircle onClick={signout}/> 
-                    </Link>
+                  {isLogin===true?<>
+                  <h6>{nick} </h6>
+                  <img src={foto} style={{borderRadius:'50%', width:'50px'}}/></>
+                  :
+                   <Link to ='/loginGoogle' style={{textDecoration:'none', color:'white'}}>
+                   Inicia sesion
+                  </Link>}
                 </IconButton>
                 </Toolbar>
               </AppBar>
