@@ -255,7 +255,7 @@ const Foot=()=>{
                   instagram="fluffy_cat_live"
                   copyright="VagaChontal 2021"
                   iconColor="white"
-                  backgroundColor="blue"
+                  backgroundColor={'rgb(43, 128, 255)'}
                   fontColor="white"
                   copyrightColor="white"
                 />

@@ -82,17 +82,14 @@ export const List = (props) => {
                         {listActividades.map ((item) =>
                             <p key={item.id}>
                                 
-                            <Grid item xs={12} style={{marginLeft: '0px', display:'flex  ' }}>
-                        <Card className={classes.rootC} style={{width: '45vw'}}>
-                            <CardHeader
-                           
-                            title={item.actividad}
-                            
+                            <Grid item xs={12} style={{marginLeft: '-20px',display:'flex'}}>
+                        <Card className={classes.rootC} style={{maxWidth:'30vw'}}>
+                            <CardHeader                           
+                            title={item.actividad}                           
                             />
                             <CardMedia
                             className={classes.mediaC}
-                            image={item.fileUrl}
-                           
+                            image={item.fileUrl}                          
                             />
                             <CardContent>
                             <Typography variant="body2" color="textSecondary" component="p">
@@ -129,8 +126,7 @@ export const List = (props) => {
                 </Paper>
             </div>               
                 :
-                'No hay datos'
-                
+                'No hay datos'                
             }
             <div style={{marginLeft: '85%', border:'1px solid black'}}>
             <h6>Publicidad</h6>

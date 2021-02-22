@@ -411,12 +411,7 @@ const Home = () => {
                                 </Typography>
                               </CardContent>
                               <CardActions disableSpacing>
-                                <IconButton aria-label="add to favorites">
-                                  <FavoriteIcon />
-                                </IconButton>
-                                <IconButton aria-label="share">
-                                  <ShareIcon />
-                                </IconButton>
+                                
                                 <IconButton
                                   className={clsx(classes.expand, {
                                     [classes.expandOpen]: expanded,
@@ -465,12 +460,7 @@ const Home = () => {
                                 </Typography>
                               </CardContent>
                               <CardActions disableSpacing>
-                                <IconButton aria-label="add to favorites">
-                                  <FavoriteIcon />
-                                </IconButton>
-                                <IconButton aria-label="share">
-                                  <ShareIcon />
-                                </IconButton>
+                               
                                 <IconButton
                                   className={clsx(classes.expand, {
                                     [classes.expandOpen]: expanded1,
@@ -519,12 +509,7 @@ const Home = () => {
                                 </Typography>
                               </CardContent>
                               <CardActions disableSpacing>
-                                <IconButton aria-label="add to favorites">
-                                  <FavoriteIcon />
-                                </IconButton>
-                                <IconButton aria-label="share">
-                                  <ShareIcon />
-                                </IconButton>
+                                
                                 <IconButton
                                   className={clsx(classes.expand, {
                                     [classes.expandOpen]: setExpanded2,

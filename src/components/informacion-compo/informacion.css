@@ -18,7 +18,7 @@ body {
       transition: background 1.5s ;
     }
     .row:hover{
-      background: rgba(34, 32, 32, 0.698);
+      background: rgba(43, 128, 255, 0.698);
     }
 
     
