@@ -14,6 +14,7 @@ import Grid from '@material-ui/core/Grid';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
+import hato from './../../../assets/hato.jpg'
 
 function Copyright() {
   return (
@@ -32,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
       height: '100vh',
     },
     image: {
-      backgroundImage: 'url(https://source.unsplash.com/random)',
+      backgroundImage: `url(${hato})`,
       backgroundRepeat: 'no-repeat',
       backgroundColor:
         theme.palette.type === 'light' ? theme.palette.grey[50] : theme.palette.grey[900],
@@ -91,29 +92,14 @@ const Googled =()=>{
         <div style={{height:'75px'}}></div>
         <Grid container component="main" className={classes.root}>
       <CssBaseline />
-      <Grid item xs={false} sm={4} md={7} className={classes.image} />
+      <Grid item xs={false} sm={4} md={7} className={classes.image} >
+        <Typography id='texto'>
+            Hato Grande
+        </Typography>
+      </Grid>
       <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
-          {isLogin=== true?
-          <>
-           <div style={{}}>
-                <img src={foto} style={{width:'150px', borderRadius:'30%', marginLeft:'40%', marginTop:'200px'}}/>
-          
-                <Typography component="h1" variant="h5" style={{marginLeft:'20%'}}>
-                    {nick}
-                </Typography>
-                <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              color="primary"
-              className={classes.submit}
-              onClick={logOut}
-            >
-              Cerrar sesion
-            </Button>
-           </div>
-           
-          </>:<div className={classes.paper}>
+          {isLogin=== false?
+          <div className={classes.paper}>
           <Avatar className={classes.avatar}>
             <LockOutlinedIcon />
           </Avatar>
@@ -122,7 +108,7 @@ const Googled =()=>{
           </Typography>
           <form className={classes.form} noValidate>
             <Button
-              type="submit"
+              type="button"
               fullWidth
               variant="contained"
               color="primary"
@@ -133,8 +119,8 @@ const Googled =()=>{
             </Button>
             <Grid container>
               <Grid item>
-                <Link to='/login' variant="body2">
-                  {"eres promotor, entra aqui"}
+                <Link href="/login" variant="body2">
+                  {'eres promotor, entra aqui'}
                 </Link>
               </Grid>
             </Grid>
@@ -142,7 +128,27 @@ const Googled =()=>{
               <Copyright />
             </Box>
           </form>
-        </div>}
+        </div>
+          :<>
+          <div style={{}}>
+               <img src={foto} style={{width:'150px', borderRadius:'30%', marginLeft:'40%', marginTop:'200px'}}/>
+         
+               <Typography component="h1" variant="h5" style={{marginLeft:'20%'}}>
+                   {nick}
+               </Typography>
+               <Button
+             type="submit"
+             fullWidth
+             variant="contained"
+             color="primary"
+             className={classes.submit}
+             onClick={logOut}
+           >
+             Cerrar sesion
+           </Button>
+          </div>
+          
+         </>}
         
       </Grid>
     </Grid>

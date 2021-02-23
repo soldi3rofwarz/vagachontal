@@ -1,5 +1,4 @@
 import Icon2 from './../../../assets/logo2.png'
-import {onSubmit, logOut,listener} from './../../../components/login/google/container'
 import firebase,{googleAuthProvider} from '../../../data/firebase-config'
 
 import React,{useState,useEffect} from 'react';
@@ -19,33 +18,17 @@ import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import AccountCircle from '@material-ui/icons/AccountCircle';
-import Badge from '@material-ui/core/Badge';
-import NotificationsIcon from '@material-ui/icons/Notifications';
-import { Parallax } from 'react-parallax';
-import Button from '@material-ui/core/Button';
-import Paper from '@material-ui/core/Paper';
-import Grid from '@material-ui/core/Grid';
-import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
+
 import HomeIcon from '@material-ui/icons/Home';
 import PollIcon from '@material-ui/icons/Poll';
 import PicturesIcon from '@material-ui/icons/Collections';
 import EventAvailableIcon from '@material-ui/icons/EventAvailable';
 import UserIcon from '@material-ui/icons/AccountCircle';
 import ListIcon from '@material-ui/icons/ListAlt';
-import CardHeader from '@material-ui/core/CardHeader';
-import Avatar from '@material-ui/core/Avatar';
-import MoreVertIcon from '@material-ui/icons/MoreVert';
-import CardActions from '@material-ui/core/CardActions';
-import FavoriteIcon from '@material-ui/icons/Favorite';
-import ShareIcon from '@material-ui/icons/Share';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import Collapse from '@material-ui/core/Collapse';
+
 import { red } from '@material-ui/core/colors';
 import {Link} from 'react-router-dom'
+import Popper from '@material-ui/core/Popper';
 
 const drawerWidth = 240; 
 
@@ -128,6 +111,11 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'center',
     color: theme.palette.text.secondary,
   },
+  paper2: {
+    border: '1px solid',
+    padding: theme.spacing(1),
+    backgroundColor: theme.palette.background.paper,
+  },
   rootCard: {
     width: '100%',
   },
@@ -165,9 +153,26 @@ const Header =()=>{
 
     const theme = useTheme();
     const [open, setOpen] =useState(false);
+    const [anchorEl, setAnchorEl] = React.useState(null)
     const [foto,setFoto]=useState(null)
     const [nick, setNick]= useState('')
     const [isLogin, setIslogin]=useState(false)
+
+    const handlelogout = (event) => {
+      setAnchorEl(anchorEl ? null : event.currentTarget);
+    };
+    const abierto = Boolean(anchorEl);
+    const id = abierto ? 'simple-popper' : undefined;
+
+    const logOut =()=>{
+      firebase.auth().signOut().then(() => {
+          console.log('salio')
+           setIslogin(false)
+         
+        }).catch((error) => {
+          console.log(error)
+        });
+  }
 
     useEffect(()=>{
         firebase.auth().onAuthStateChanged(function(user) {
@@ -231,15 +236,21 @@ const Header =()=>{
                 <IconButton className={classes.title}>
                   <img src={Icon2} style={{width:'95px',color:'white'}}/>
                 </IconButton>
-                <IconButton color="inherit">
+                <div style={{display:'flex'}}>
                   {isLogin===true?<>
-                  <h6>{nick} </h6>
-                  <img src={foto} style={{borderRadius:'50%', width:'50px'}}/></>
+                  <h4>{nick}</h4>
+                  <img src={foto} aria-describedby={id} type="button" onClick={handlelogout} style={{borderRadius:'50%', width:'50px'}}/>
+                  <Popper id={id} open={abierto} anchorEl={anchorEl}>
+                    <Link to='/loginGoogle'>
+                    <button className={classes.paper2} onClick={logOut}>Cerrar sesion</button>
+                  </Link>
+                  </Popper>
+                  </>
                   :
                    <Link to ='/loginGoogle' style={{textDecoration:'none', color:'white'}}>
                    Inicia sesion
                   </Link>}
-                </IconButton>
+                </div>
                 </Toolbar>
               </AppBar>
             <Drawer

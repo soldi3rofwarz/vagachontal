@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import firebase from './../../data/firebase-config'
 import { Link } from 'react-router-dom';
-import Header from './../../elements/theme/components/header'
 import Loginpic from './../../assets/login.png'
 
 class GoogleLogin extends Component{
@@ -81,11 +80,6 @@ componentDidMount = () =>{
                         </Link>
                     </button>
                         <h4>¿Eres Promotor? entra <Link to='/login' style={{textDecoration:'none'}}>Aqui</Link></h4>
-                    
-                        
-
-                     
-                     
                     </div>
                     : 
                 <>

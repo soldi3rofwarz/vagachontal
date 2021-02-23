@@ -28,7 +28,7 @@ const LoginCliente =(props)=>{
      emailerror={emailerror}
      passerror={passerror}
     />
-    <ParticlesBg type="random" bg={true}/>
+    
     </>
 
     )
