@@ -58,7 +58,6 @@ const Detalles = (props) => {
                     
                     <br/>
                     <h3>Fecha</h3>
-                    <h3>Fecha</h3>
                     <h4>{fecha}</h4>
                     <br/>
                     <h3>Hora de salida</h3>
@@ -83,20 +82,20 @@ const Detalles = (props) => {
                 /> 
                 </div>
                 <div className='inf' style={{fontSize: '18px',textAlign:'center',width:'50vw',fontFamily: 'Roboto, sans-serif', background:'#00a295', color:'white'}}>
-                <h2>Descripcion</h2>
+                <h2>Descripción</h2>
                 <p style={{}}>
                    {descripcion}
                 </p>
                 <br/>
-                <h2>que llevar</h2>
-                <h4>Suficiente agua <br/> almuerzo <br/> ropa deportiva</h4>
+                <h2>Qué llevar</h2>
+                <h4>Suficiente agua <br/> Almuerzo <br/> Ropa deportiva</h4>
                 <br/>
                 <h2>Transporte</h2>
-                <h4>se garantiza el transporte de ida y regreso</h4>
+                <h4>Se garantiza el transporte de ida y regreso</h4>
                 <br/>
-                <h2>seguridad</h2>
-                <h4>se exige el uso de mascarilla en todo momento
-                    <br/> el equipo se encargara de llevar un botiquin de primeros auxilios
+                <h2>Seguridad</h2>
+                <h4>Se exige el uso de mascarilla en todo momento
+                    <br/> El equipo se encargara de llevar un botiquin de primeros auxilios
                     <br/>
 
                 </h4>
@@ -107,7 +106,7 @@ const Detalles = (props) => {
             
             <div style={{boxSizing: 'borderBox',display:'flex', flex:'2', height:'30vh', width:'100vw', textAlign:'center', marginTop:'20px'}}>
                 <div style={{width:'50vw'}}>
-                <h3>cupos restantes <br/></h3>
+                <h3>Cupos restantes <br/></h3>
                 {<h3>{value}</h3>}
                 </div>
                 
