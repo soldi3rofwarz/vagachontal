@@ -120,7 +120,7 @@ const Googled =()=>{
             <Grid container>
               <Grid item>
                 <Link href="/login" variant="body2">
-                  {'eres promotor, entra aqui'}
+                  {'Eres promotor, entra aqui'}
                 </Link>
               </Grid>
             </Grid>

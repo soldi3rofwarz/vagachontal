@@ -18,17 +18,16 @@ import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-
 import HomeIcon from '@material-ui/icons/Home';
 import PollIcon from '@material-ui/icons/Poll';
 import PicturesIcon from '@material-ui/icons/Collections';
 import EventAvailableIcon from '@material-ui/icons/EventAvailable';
 import UserIcon from '@material-ui/icons/AccountCircle';
 import ListIcon from '@material-ui/icons/ListAlt';
-
 import { red } from '@material-ui/core/colors';
 import {Link} from 'react-router-dom'
 import Popper from '@material-ui/core/Popper';
+import './head.styles.css'
 
 const drawerWidth = 240; 
 
@@ -231,6 +230,7 @@ const Header =()=>{
                   className={clsx(classes.menuButton, open && classes.hide)}
                 >
                   <MenuIcon style={{color:'white'}}/>
+                  <Typography> Menu</Typography>
                 </IconButton>
               
                 <IconButton className={classes.title}>
@@ -239,7 +239,7 @@ const Header =()=>{
                 <div style={{display:'flex'}}>
                   {isLogin===true?<>
                   <h4>{nick}</h4>
-                  <img src={foto} aria-describedby={id} type="button" onClick={handlelogout} style={{borderRadius:'50%', width:'50px'}}/>
+                  <img src={foto} id='foto' aria-describedby={id} type="button" onClick={handlelogout} style={{borderRadius:'50%', width:'50px', border: '3px solid white'}}/>
                   <Popper id={id} open={abierto} anchorEl={anchorEl}>
                     <Link to='/loginGoogle'>
                     <button className={classes.paper2} onClick={logOut}>Cerrar sesion</button>
@@ -247,7 +247,7 @@ const Header =()=>{
                   </Popper>
                   </>
                   :
-                   <Link to ='/loginGoogle' style={{textDecoration:'none', color:'white'}}>
+                   <Link to ='/loginGoogle' style={{textDecoration:'none', color:'white',fontSize: '20px'}}>
                    Inicia sesion
                   </Link>}
                 </div>
