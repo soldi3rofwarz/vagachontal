@@ -73,7 +73,7 @@ section .sec1
     height: 100vh;
 }
 .buttons{
-    background:linear-gradient(to left ,rgba(136, 200, 97),rgba(136, 200, 97),rgba(136, 200, 97));
+    background:linear-gradient(to left ,rgba(0, 160, 148),rgba(0, 160, 148),rgba(0, 160, 148));
     margin: 2px;
     border-radius: 2px;
     text-decoration: none;
