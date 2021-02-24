@@ -65,7 +65,7 @@
 .nav ul li a:hover
 {
     color:rgba(255, 255, 255, 0.863);
-    background: #216441;
+    background: #88c861;
 }
 section .sec1
 {
@@ -73,7 +73,7 @@ section .sec1
     height: 100vh;
 }
 .buttons{
-    background:linear-gradient(to left ,rgba(111, 200, 135, 0.87),rgba(48, 189, 83, 0.87),rgba(22, 107, 43, 0.87));
+    background:linear-gradient(to left ,rgba(136, 200, 97),rgba(136, 200, 97),rgba(136, 200, 97));
     margin: 2px;
     border-radius: 2px;
     text-decoration: none;
@@ -82,7 +82,7 @@ section .sec1
     transition: background 1.5s ;
 }
 .buttons:hover{
-    background: linear-gradient(to left, rgb(16, 51, 116),rgb(40, 102, 218),rgb(124, 153, 207));
+    background: linear-gradient(to left, rgb(124, 153, 207),rgb(124, 153, 207),rgb(124, 153, 207));
 }
 .buttons:active{
     transform: scale(0.9);

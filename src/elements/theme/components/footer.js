@@ -192,58 +192,22 @@ const Foot=()=>{
         {
             title: "Recursos",
             resources: [
-                {
-                    name: "Acerca",
-                    link: "/"
-                },
+                
                 {
                     name: "Administración",
-                    link: "/"
+                   
                 },
                 {
                     name: "Contactos",
-                    link: "/"
+                    name: "85411756",
                 },
                 {
                     name: "Correos",
-                    link: "/"
+                    name: "vagachontal@gmail.com"
                 }
             ]
         },
-        {
-            title: "Legal",
-            resources: [
-                {
-                    name: "Privacidad",
-                    link: "/privacy"
-                },
-                {
-                    name: "Términos y Condiciones",
-                    link: "/terms"
-                }
-            ]
-        },
-        {
-            title: "Consulte",
-            resources: [
-                {
-                    name: "Destinos",
-                    link: "/"
-                },
-                {
-                    name: "Restaurantes",
-                    link: "/"
-                },
-                {
-                  name: "Alojamientos",
-                  link: "/"
-                },
-                {
-                  name: "Ofertas",
-                  link: "/"
-                },
-            ]
-        }
+        
     ];
 	return(
 		<SimpleReactFooter 

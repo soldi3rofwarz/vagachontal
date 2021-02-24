@@ -14,8 +14,6 @@ import BackImg from '../assets/back.jpg'
 import Foto2Img from '../assets/foto2.jpg'
 import Foto4Img from '../assets/foto4.jpg'
 
-
-
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 const tutorialSteps = [
