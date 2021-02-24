@@ -1,6 +1,6 @@
 import React,{useState, useEffect} from 'react'
 import firebase,{googleAuthProvider} from '../../../data/firebase-config'
-import {onSubmit, logOut,listener} from './container'
+import {onSubmit, logOut} from './container'
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';

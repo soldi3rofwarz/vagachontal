@@ -152,16 +152,20 @@ const Header =()=>{
 
     const theme = useTheme();
     const [open, setOpen] =useState(false);
-    const [anchorEl, setAnchorEl] = React.useState(null)
+    const [anchorEl, setAnchorEl] = useState(null)
     const [foto,setFoto]=useState(null)
     const [nick, setNick]= useState('')
     const [isLogin, setIslogin]=useState(false)
+    const [email, setEmail]= useState('')
 
     const handlelogout = (event) => {
       setAnchorEl(anchorEl ? null : event.currentTarget);
     };
     const abierto = Boolean(anchorEl);
     const id = abierto ? 'simple-popper' : undefined;
+
+    const abierto2 = Boolean(anchorEl);
+    const id2 = abierto ? 'simple-popper' : undefined;
 
     const logOut =()=>{
       firebase.auth().signOut().then(() => {
@@ -181,6 +185,7 @@ const Header =()=>{
               setFoto(user.photoURL)
               setNick(user.displayName)
               setIslogin(true)
+              setEmail(user.email)
                 
             } else {
                 console.log('no iniciado')
@@ -238,18 +243,30 @@ const Header =()=>{
                 </IconButton>
                 <div style={{display:'flex'}}>
                   {isLogin===true?<>
-                  <h4>{nick}</h4>
-                  <img src={foto} id='foto' aria-describedby={id} type="button" onClick={handlelogout} style={{borderRadius:'50%', width:'50px', border: '3px solid white'}}/>
-                  <Popper id={id} open={abierto} anchorEl={anchorEl}>
-                    <Link to='/loginGoogle'>
-                    <button className={classes.paper2} onClick={logOut}>Cerrar sesion</button>
-                  </Link>
-                  </Popper>
+                    {email=='hola@gmail.com'?<>
+                      <button id='foto' aria-describedby={id2} type="button" onClick={handlelogout}>{email}</button>
+                      <Popper id={id} open={abierto2} anchorEl={anchorEl}>
+                        <Link to='/loginGoogle'>
+                          <button className={classes.paper2} onClick={logOut}>Cerrar sesion</button>
+                        </Link>
+                      </Popper>
+                      </>
+                    :
+                    <>
+                      <h4>{nick}</h4>
+                      <img src={foto} id='foto' aria-describedby={id} type="button" onClick={handlelogout} style={{borderRadius:'50%', width:'50px', border: '3px solid white'}}/>
+                      <Popper id={id} open={abierto} anchorEl={anchorEl}>
+                        <Link to='/loginGoogle'>
+                          <button className={classes.paper2} onClick={logOut}>Cerrar sesion</button>
+                        </Link>
+                      </Popper>
+                    </>
+                    }
                   </>
                   :
                    <Link to ='/loginGoogle' style={{textDecoration:'none', color:'white',fontSize: '20px'}}>
-                   Inicia sesion
-                  </Link>}
+                    Inicia sesion
+                   </Link>}
                 </div>
                 </Toolbar>
               </AppBar>
@@ -300,12 +317,18 @@ const Header =()=>{
                     </Link>
                   </ListItem>
                   <Divider />
-                  <ListItem button>
-                    <ListItemIcon><ListIcon/></ListItemIcon>
-                    <Link to='/form' style={{textDecoration: 'none'}}>
-                      <ListItemText primary={'Formulario'} />
-                    </Link>
-                  </ListItem>
+                  {isLogin===true?<>
+                    {email=='admin@gmail.com'?<>
+                       <ListItem button>
+                       <ListItemIcon><ListIcon/></ListItemIcon>
+                       <Link to='/form' style={{textDecoration: 'none'}}>
+                         <ListItemText primary={'Formulario'} />
+                       </Link>
+                     </ListItem></>
+                    :null}</>
+                  :null}
+                 
+
                   <Divider />
                   <ListItem button>
                     <ListItemIcon><UserIcon/></ListItemIcon>

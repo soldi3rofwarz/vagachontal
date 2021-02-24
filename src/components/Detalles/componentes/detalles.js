@@ -1,5 +1,8 @@
-import React, {useState} from 'react';
+import React, {useState,useEffect} from 'react';
 import MapView from '../../mapa/leaflet/mapview'
+import firebase from '../../../data/firebase-config'
+import {Link} from 'react-router-dom'
+import {onSubmit} from '../../login/google/container'
 import GoogleFontLoader from 'react-google-font-loader';
 import './Detalle.css'
    
@@ -7,6 +10,8 @@ import './Detalle.css'
 
 
 const Detalles = (props) => {
+  
+    
     <GoogleFontLoader
     fonts={[
       {
@@ -22,7 +27,7 @@ const Detalles = (props) => {
   />
 
     
-    const{actividad,fecha,precio, organizacion,salida,hora,latitud1,longitud1,latitud2,longitud2,latitud3,longitud3,descripcion,fileUrl,
+    const {actividad,fecha,precio, organizacion,salida,hora,latitud1,longitud1,latitud2,longitud2,latitud3,longitud3,descripcion,fileUrl,
         cupos,
         Cancelar,
         Agregado,
@@ -31,6 +36,22 @@ const Detalles = (props) => {
         getUser,
         Limite
        }= props
+       const [isLogin, setIslogin]=useState(false)
+        const [email, setEmail]= useState('')
+
+    useEffect(()=>{
+        firebase.auth().onAuthStateChanged(function(user) {
+            if (user) {
+              console.log('iniciado', user)
+              console.log(user.displayName + '\n' + user.email+ '\n' + user.photoURL)
+              setIslogin(true)
+              setEmail(user.email)
+                
+            } else {
+                console.log('no iniciado')
+            }
+          })
+    },[])
 
     return ( 
         <>
@@ -110,16 +131,31 @@ const Detalles = (props) => {
                 <h3>cupos restantes <br/></h3>
                 {<h3>{value}</h3>}
                 </div>
-                
-                <div style={{alignItems:'center', placeItems:'center'}}>
-                {band===true?(<>
-                <button className="btn-cancelar " id="dd" href="#!" role="button" onClick={Cancelar}>
-                    Cancelar</button>
-                    {getUser && getUser().map(item => <span><br/>{item.email}</span>)}   </>)
-               :
-               (<button className="btn-participar"  id="dd" href="#!" role="button" onClick={Agregado}>
-                Participar</button>)}
-                </div>
+                {isLogin===true?
+                    <>
+                        {email=='hola@gmail.com'?
+                            <>
+                                <button>ver participantes</button>
+                            </>
+                        :
+                        <div style={{alignItems:'center', placeItems:'center'}}>
+                        {band===true?(<>
+                        <button className="btn-cancelar " id="dd" href="#!" role="button" onClick={Cancelar}>
+                            Cancelar</button>
+                        {getUser && getUser().map(item => <span><br/>{item.email}</span>)}   </>)
+                        :
+                        (<button className="btn-participar"  id="dd" href="#!" role="button" onClick={Agregado}>
+                            Participar</button>)}
+                        </div>
+                        }
+                        
+                    </>
+                :
+                    <button onClick={onSubmit}>
+                        Inicia sesion para participae
+                    </button>
+                }
+               
              
             </div>
             
