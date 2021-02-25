@@ -5,7 +5,9 @@ import {Link} from 'react-router-dom'
 import {onSubmit} from '../../login/google/container'
 import GoogleFontLoader from 'react-google-font-loader';
 import './Detalle.css'
-   
+import 
+    {db}
+ from '../../../data/firebase-config';
 
 
 
@@ -27,7 +29,7 @@ const Detalles = (props) => {
   />
 
     
-    const {actividad,fecha,precio, organizacion,salida,hora,latitud1,longitud1,latitud2,longitud2,latitud3,longitud3,descripcion,fileUrl,
+    const {id,actividad,fecha,precio, organizacion,salida,hora,latitud1,longitud1,latitud2,longitud2,latitud3,longitud3,descripcion,fileUrl,
         cupos,
         Cancelar,
         Agregado,
@@ -38,6 +40,9 @@ const Detalles = (props) => {
        }= props
        const [isLogin, setIslogin]=useState(false)
         const [email, setEmail]= useState('')
+        const[stid,setstid] =useState('')
+        const [nick, setNick]= useState('')
+                    
 
     useEffect(()=>{
         firebase.auth().onAuthStateChanged(function(user) {
@@ -46,12 +51,30 @@ const Detalles = (props) => {
               console.log(user.displayName + '\n' + user.email+ '\n' + user.photoURL)
               setIslogin(true)
               setEmail(user.email)
+              setstid(user.uid)
+              setNick(user.displayName)
                 
             } else {
                 console.log('no iniciado')
             }
           })
     },[])
+
+    const handleAgregarClick = (e) => {
+        e.preventDefault();
+        //aquí irían las validaciones
+        if(stid) {
+            db.collection('users').add({
+                nick,
+                id,
+            }).then(() => {
+                Agregado()
+            }).catch((error) => {
+                console.log("Error: ", error);
+            });
+        }
+      }
+
 
     return ( 
         <>
@@ -143,7 +166,7 @@ const Detalles = (props) => {
                             Cancelar</button>
                         {getUser && getUser().map(item => <span><br/>{item.email}</span>)}   </>)
                         :
-                        (<button className="btn-participar"  id="dd" href="#!" role="button" onClick={Agregado}>
+                        (<button className="btn-participar"  id="dd" href="#!" role="button" onClick={handleAgregarClick}>
                             Participar</button>)}
                         </div>
                         }

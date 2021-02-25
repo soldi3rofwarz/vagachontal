@@ -2,3 +2,19 @@
 #foto:active{
     transform: scale(0.9);
 }
+
+.user_header{
+    background: transparent;
+    border:none;
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+}
+.user_header:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+.user_header:focus{
+    border:none;
+    background: radial-gradient(rgba(0, 0, 0, 0.568), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.01));
+}

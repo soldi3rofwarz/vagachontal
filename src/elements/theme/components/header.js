@@ -37,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     flexGrow: 1,
-    color:'green'
+    color:'green',
   },
   appBar: {
     position:'rellative',
@@ -239,12 +239,14 @@ const Header =()=>{
                 </IconButton>
               
                 <IconButton className={classes.title}>
-                  <img src={Icon2} style={{width:'95px',color:'white'}}/>
+                  <Link to='/'>
+                    <img src={Icon2} style={{width:'95px',color:'white'}}/>
+                  </Link>
                 </IconButton>
                 <div style={{display:'flex'}}>
                   {isLogin===true?<>
                     {email=='hola@gmail.com'?<>
-                      <button id='foto' aria-describedby={id2} type="button" onClick={handlelogout}>{email}</button>
+                      <Typography id='foto' className="user_header" aria-describedby={id2} onClick={handlelogout}>{email}</Typography>
                       <Popper id={id} open={abierto2} anchorEl={anchorEl}>
                         <Link to='/loginGoogle'>
                           <button className={classes.paper2} onClick={logOut}>Cerrar sesion</button>

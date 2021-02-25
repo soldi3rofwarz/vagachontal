@@ -26,7 +26,7 @@ const DetallePage = (props) => {
     useEffect(()=>{
         (async()=>{
         
-        console.log(`Producto Id: ${actividadId}`);
+        console.log(`actividad Id: ${actividadId}`);
         const producto =await Select(actividadId)
     
         const {actividad,
@@ -68,6 +68,7 @@ const DetallePage = (props) => {
     return (  
         <Layout>
             <Detcontent
+                id={actividadId}
                 actividad={actividad}
                 fecha ={fecha}
                 precio={precio}

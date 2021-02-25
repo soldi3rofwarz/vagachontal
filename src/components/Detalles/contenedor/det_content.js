@@ -9,7 +9,7 @@ const Det_content = (props) => {
     let actividadId = '';
 
     if(props.match) actividadId = props.match.params.actividadId;
-    const{actividad,fecha,precio,organizacion ,salida,hora,cupos,latitud1,longitud1,latitud2,longitud2,latitud3,longitud3,descripcion,fileUrl}= props
+    const{id,actividad,fecha,precio,organizacion ,salida,hora,cupos,latitud1,longitud1,latitud2,longitud2,latitud3,longitud3,descripcion,fileUrl}= props
 
     const [users,setUaers]= useState('')
     const [band,setband]= useState(false)
@@ -42,21 +42,7 @@ const Det_content = (props) => {
                 setValue()
             }
         }
-        const handleAgregarClick = (e) => {
-            e.preventDefault();
-            //aquí irían las validaciones
-            if(!actividadId) {
-                db.collection('users').add({
-                    users,
-                    actividadId,
-                }).then(() => {
-                    console.log("Guardado!!!!", actividadId);
-                }).catch((error) => {
-                    console.log("Error: ", error);
-                });
-            }
-          }
-
+        
         const Agregado =()=>{ 
             setband(true)
             setValue(value-1)
@@ -82,6 +68,7 @@ const Det_content = (props) => {
         <Detalles 
         Limite ={Limite}
         value={value}
+        id={id}
        Cancelar={Cancelar}
        Agregado={Agregado}
         band={band}

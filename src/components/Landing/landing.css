@@ -1,0 +1,16 @@
+.textoi{
+ animation: animate 1s ease-in-out;
+}
+@keyframes animate{
+    0%{
+    fontSize:35px;
+    fontWeight:bold;
+    textShadow: 5px 5px 5px black;
+    }
+    50%{
+        fontSize:55px;
+    }
+    100%{
+        fontSize:15px;
+    }
+}

@@ -60,6 +60,8 @@ import Collapse from '@material-ui/core/Collapse';
 import { red } from '@material-ui/core/colors';
 import SimpleReactFooter from "simple-react-footer";
 
+import './landing.css'
+
 const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => ({
@@ -120,8 +122,9 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: 0,
   },
   insideStyles: {
+    width:'1600px',
     color: 'white',
-    backgroundColor: "rgba(0,0,0,.3)",
+    background: 'radial-gradient(rgba(0, 0, 0, 0.568), rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.00))',
     borderRadius: 8,
     padding: 40,
     position: "absolute",
@@ -168,7 +171,11 @@ const useStyles = makeStyles((theme) => ({
   textoInicio: {
     textAlign: 'center',
     marginBottom: 20,
+    fontSize:'35px',
+    fontWeight:'bold',
+    textShadow: '5px 5px 5px black'
   },
+
 }));
 
 const Home = () => {
@@ -181,6 +188,7 @@ const Home = () => {
     const handleDrawerOpen = () => {
       setOpen(true);
     };
+    
   
     const handleDrawerClose = () => {
       setOpen(false);
@@ -224,8 +232,8 @@ const Home = () => {
                   >
                     
                     <div style={{ height: 570}}>
-                      <div className={classes.insideStyles}>
-                        <Typography variant="h5" component="h2" className={classes.textoInicio}>
+                      <div className={classes.insideStyles} >
+                        <Typography variant="h5" component="h1" className={classes.textoInicio} >
                           ¡Conoce tu tierra, conoce Chontales!
                         </Typography>
                       </div>
