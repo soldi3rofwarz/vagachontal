@@ -157,7 +157,7 @@ const Detalles = (props) => {
                     <>
                         {email=='hola@gmail.com'?
                             <>
-                                <button>ver participantes</button>
+                                <button>Ver participantes</button>
                             </>
                         :
                         <div style={{alignItems:'center', placeItems:'center'}}>
@@ -174,7 +174,7 @@ const Detalles = (props) => {
                     </>
                 :
                     <button onClick={onSubmit}>
-                        Inicia sesion para participae
+                        Inicia sesion para participar
                     </button>
                 }
                
