@@ -10,9 +10,9 @@ body {
       content: "";
       display: table;
       clear: both;
-      background: #88c861;
+      background: #00a094;
       color: #ffffff;
-      text-shadow: 4px 2px 7px black;
+      /* text-shadow: 4px 2px 7px black; */
       text-align: center;
       align-items: center;
       transition: background 1.5s ;

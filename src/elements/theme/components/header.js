@@ -329,8 +329,6 @@ const Header =()=>{
                      </ListItem></>
                     :null}</>
                   :null}
-                 
-
                   <Divider />
                   <ListItem button>
                     <ListItemIcon><UserIcon/></ListItemIcon>
@@ -340,9 +338,7 @@ const Header =()=>{
                   </ListItem>
                   <Divider />
               </List>
-
             </Drawer>
-
         </div>
         </>
     )
