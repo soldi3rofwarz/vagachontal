@@ -210,12 +210,16 @@ const Detalles = (props) => {
                     <>
                         {email=='hola@gmail.com'?
                             <>
+<<<<<<< HEAD
                              <button aria-describedby={idKey} type="button" onClick={handlepop}>ver participantes</button>
                              <Popper id={idKey} open={open} anchorEl={anchorEl} style={{width:'auto'}}>
                                                    
                              <DataGrid rows={row} columns={column} />
                              </Popper>
                             
+=======
+                                <button>Ver participantes</button>
+>>>>>>> 4ae4106a2ad380a3e2a70ca5359e2f3dfe4f6a62
                             </>
                         :
                         <div style={{alignItems:'center', placeItems:'center'}}>
@@ -235,7 +239,7 @@ const Detalles = (props) => {
                     </>
                 :
                     <button onClick={onSubmit}>
-                        Inicia sesion para participae
+                        Inicia sesion para participar
                     </button>
                 }
                
