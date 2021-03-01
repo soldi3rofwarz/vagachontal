@@ -2,17 +2,27 @@ import React, {useState,useEffect} from 'react';
 import MapView from '../../mapa/leaflet/mapview'
 import firebase from '../../../data/firebase-config'
 import {Link} from 'react-router-dom'
+import { DataGrid } from '@material-ui/data-grid';
 import {onSubmit} from '../../login/google/container'
 import GoogleFontLoader from 'react-google-font-loader';
 import './Detalle.css'
 import 
     {db}
  from '../../../data/firebase-config';
+ import { makeStyles } from '@material-ui/core/styles';
+import Popper from '@material-ui/core/Popper';
 
-
+const useStyles = makeStyles((theme) => ({
+    paper: {
+      border: '1px solid',
+      padding: theme.spacing(1),
+      backgroundColor: theme.palette.background.paper,
+      
+    },
+  }));
 
 const Detalles = (props) => {
-  
+   
     
     <GoogleFontLoader
     fonts={[
@@ -29,7 +39,7 @@ const Detalles = (props) => {
   />
 
     
-    const {id,actividad,fecha,precio, organizacion,salida,hora,latitud1,longitud1,latitud2,longitud2,latitud3,longitud3,descripcion,fileUrl,
+    const {idActividad,users,actividad,fecha,precio, organizacion,salida,hora,latitud1,longitud1,latitud2,longitud2,latitud3,longitud3,descripcion,fileUrl,
         cupos,
         Cancelar,
         Agregado,
@@ -38,11 +48,52 @@ const Detalles = (props) => {
         getUser,
         Limite
        }= props
+
+       const classes = useStyles();
+        const [anchorEl, setAnchorEl] = useState(null);
+
        const [isLogin, setIslogin]=useState(false)
         const [email, setEmail]= useState('')
         const[stid,setstid] =useState('')
         const [nick, setNick]= useState('')
+        const [foto,setFoto]=useState(null)
+        
+        {users?<>
+                                
+            {users.map((dat)=><>
+                
+                {idActividad=== dat.idActividad? <>
+                        {dat.id}
+                       
+                     {dat? <>
+                    {[dat].map(item =>{
+                        const column=[
+                            { field: 'Nombre', headerName: 'Nombre', width: 70 },
+                            { field: 'Foto', headerName: 'Foto', width: 130 },
+                        ]
+                        const row=[
+                            { Nombre: item.nick, Foto: item.photoURL},
+                        ]
+                    }
+           
+                    )}</>:null}
                     
+                
+                </>
+                :null}
+            </>
+            )}
+            </>: <div>no hay usuarios</div>}
+
+
+
+        const handlepop = (event) => {
+            setAnchorEl(anchorEl ? null : event.currentTarget);
+          };
+        
+          const open = Boolean(anchorEl);
+          const idKey = open ? 'simple-popper' : undefined;
+        
 
     useEffect(()=>{
         firebase.auth().onAuthStateChanged(function(user) {
@@ -53,6 +104,7 @@ const Detalles = (props) => {
               setEmail(user.email)
               setstid(user.uid)
               setNick(user.displayName)
+              setFoto(user.photoURL)
                 
             } else {
                 console.log('no iniciado')
@@ -66,7 +118,8 @@ const Detalles = (props) => {
         if(stid) {
             db.collection('users').add({
                 nick,
-                id,
+                idActividad,
+                foto
             }).then(() => {
                 Agregado()
             }).catch((error) => {
@@ -157,14 +210,22 @@ const Detalles = (props) => {
                     <>
                         {email=='hola@gmail.com'?
                             <>
-                                <button>ver participantes</button>
+                             <button aria-describedby={idKey} type="button" onClick={handlepop}>ver participantes</button>
+                             <Popper id={idKey} open={open} anchorEl={anchorEl} style={{width:'auto'}}>
+                                                   
+                             <DataGrid rows={row} columns={column} />
+                             </Popper>
+                            
                             </>
                         :
                         <div style={{alignItems:'center', placeItems:'center'}}>
                         {band===true?(<>
-                        <button className="btn-cancelar " id="dd" href="#!" role="button" onClick={Cancelar}>
+                        {users.map((dat)=>
+                            <button className="btn-cancelar " id="dd" href="#!" role="button" onClick = {()=>{Cancelar(dat.id)}}>
                             Cancelar</button>
-                        {getUser && getUser().map(item => <span><br/>{item.email}</span>)}   </>)
+                        )}
+                        
+                           </>)
                         :
                         (<button className="btn-participar"  id="dd" href="#!" role="button" onClick={handleAgregarClick}>
                             Participar</button>)}
