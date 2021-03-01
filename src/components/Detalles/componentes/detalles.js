@@ -58,7 +58,7 @@ const Detalles = (props) => {
         const [nick, setNick]= useState('')
         const [foto,setFoto]=useState(null)
         
-        {users?<>
+        users?<>
                                 
             {users.map((dat)=><>
                 
@@ -83,7 +83,7 @@ const Detalles = (props) => {
                 :null}
             </>
             )}
-            </>: <div>no hay usuarios</div>}
+            </>: <div>no hay usuarios</div>
 
 
 
@@ -209,17 +209,13 @@ const Detalles = (props) => {
                 {isLogin===true?
                     <>
                         {email=='hola@gmail.com'?
-                            <>
-<<<<<<< HEAD
+                            <> 
                              <button aria-describedby={idKey} type="button" onClick={handlepop}>ver participantes</button>
                              <Popper id={idKey} open={open} anchorEl={anchorEl} style={{width:'auto'}}>
                                                    
                              <DataGrid rows={row} columns={column} />
                              </Popper>
                             
-=======
-                                <button>Ver participantes</button>
->>>>>>> 4ae4106a2ad380a3e2a70ca5359e2f3dfe4f6a62
                             </>
                         :
                         <div style={{alignItems:'center', placeItems:'center'}}>

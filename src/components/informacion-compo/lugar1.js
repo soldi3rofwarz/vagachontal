@@ -6,6 +6,7 @@ import Lugares from './../gallery/lugares'
 import Nancitalpic from './../../assets/elnancital.jpg'
 import Nancitalpic2 from './../../assets/elnancital2.jpg'
 import Paper from '@material-ui/core/Paper';
+import Anuncios from './../../anuncios/anuncios'
 
 <GoogleFontLoader
     fonts={[
@@ -75,6 +76,7 @@ const Lugar1 = () => {
 		
 		               
   		</section>
+      <Anuncios/>
 	  </>
     );
 };
