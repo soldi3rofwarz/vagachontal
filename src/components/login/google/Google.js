@@ -104,7 +104,7 @@ const Googled =()=>{
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
-            Inicia Sesion
+            Inicia Sesión
           </Typography>
           <form className={classes.form} noValidate>
             <Button
@@ -115,12 +115,12 @@ const Googled =()=>{
               className={classes.submit}
               onClick={onSubmit}
             >
-              inicia sesion con Google
+              Inicia sesión con Google
             </Button>
             <Grid container>
               <Grid item>
                 <Link href="/login" variant="body2">
-                  {'Eres promotor, entra aqui'}
+                  {'Sos promotor, entra aquí'}
                 </Link>
               </Grid>
             </Grid>
@@ -144,7 +144,7 @@ const Googled =()=>{
              className={classes.submit}
              onClick={logOut}
            >
-             Cerrar sesion
+             Cerrar sesión
            </Button>
           </div>
           

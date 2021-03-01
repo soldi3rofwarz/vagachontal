@@ -92,7 +92,7 @@ const Login=(props)=> {
       <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
         <div className="content">
  
-          <div className="text">Inicia Sesion</div>
+          <div className="text">Inicia Sesión</div>
             <form action="#">
               <div className="field">
                 <span className="fas fa-user"></span>
@@ -109,7 +109,7 @@ const Login=(props)=> {
               </div>
               
               <button className='ss' onClick={handleLogin}>Sign in</button>
-              <div className="signup">No eres un miembro todavia?
+              <div className="signup">No sos miembro todavia?
                 <a href="#">Contactanos</a>
               </div>
             </form>
