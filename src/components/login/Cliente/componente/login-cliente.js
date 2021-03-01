@@ -92,8 +92,8 @@ const Login=(props)=> {
       <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
         <div className="content">
  
-          <div className="text">Inicia Sesión</div>
-            <form action="#">
+          <div className="text">Inicia Sesion</div>
+            <form action='#'>
               <div className="field">
                 <span className="fas fa-user"></span>
                 <input type="text" placeholder="Correo" required value ={email}

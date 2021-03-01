@@ -1,8 +1,5 @@
 import React ,{useState,useEffect}from 'react';
-import 
-    {db}
- from '../../../data/firebase-config';
-
+import {GetDataDet,DeleteU} from './detalle-data'
 import Detalles from './../componentes/detalles'
 
 const Det_content = (props) => {
@@ -11,30 +8,19 @@ const Det_content = (props) => {
     if(props.match) actividadId = props.match.params.actividadId;
     const{id,actividad,fecha,precio,organizacion ,salida,hora,cupos,latitud1,longitud1,latitud2,longitud2,latitud3,longitud3,descripcion,fileUrl}= props
 
-    const [users,setUaers]= useState('')
+    const [users,setUsers]= useState('')
     const [band,setband]= useState(false)
     const[value, setValue]= useState(cupos)
 
+    useEffect(() => {
+        GetDataDet()
+            .then(users => setUsers(users) )
+           
+            .catch(error => console.log("Error:", error))
+    }, []);
     
 
-    var user=[]
     
-    function agregaruser(email){
-        let newuser={
-            email:'lunarbaulla@gmail.com'
-        }
-        user.push(newuser)
-        localstorageuser(user)
-    }
-    function getuser(){
-        var storageuser= localStorage.getItem('localuser')
-        if (storageuser==null){user=[]}else{user=JSON.parse(storageuser)}
-        return user
-    }
-
-    function localstorageuser(puser){
-        localStorage.setItem('localuser',JSON.stringify(puser))
-    }
         const Limite=()=>{
             setValue(cupos -1)
 
@@ -50,25 +36,25 @@ const Det_content = (props) => {
                 
             }
 
-            agregaruser('lunarbaulla@gmail.com');
-
             Limite()
         }
-        const Cancelar =()=>{
+        const Cancelar =(usersId)=>{
             setband(true)
             if (value > 0){
             setValue(value-1)
             setband(false)
             }
+            DeleteU(usersId)
         }
 
        
-        console.log('dddsa',fecha)
+        console.log('dddsa',users)
     return ( 
         <Detalles 
+        users={users}
         Limite ={Limite}
         value={value}
-        id={id}
+        idActividad={id}
        Cancelar={Cancelar}
        Agregado={Agregado}
         band={band}
@@ -86,7 +72,6 @@ const Det_content = (props) => {
         latitud3={latitud3}
         longitud3={longitud3}
         descripcion={descripcion}
-        getUser={getuser}
         fileUrl={fileUrl}
         />
     );
