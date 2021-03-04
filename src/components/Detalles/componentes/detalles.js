@@ -58,7 +58,7 @@ const Detalles = (props) => {
         const [nick, setNick]= useState('')
         const [foto,setFoto]=useState(null)
         
-        users?<>
+        {users?<>
                                 
             {users.map((dat)=><>
                 
@@ -83,7 +83,7 @@ const Detalles = (props) => {
                 :null}
             </>
             )}
-            </>: <div>no hay usuarios</div>
+            </>: <div>no hay usuarios</div>}
 
 
 
@@ -208,13 +208,35 @@ const Detalles = (props) => {
                 </div>
                 {isLogin===true?
                     <>
-                        {email=='hola@gmail.com'?
+                        {email=='intur.org@gmail.com'?
                             <> 
-                             <button aria-describedby={idKey} type="button" onClick={handlepop}>ver participantes</button>
-                             <Popper id={idKey} open={open} anchorEl={anchorEl} style={{width:'auto'}}>
+                             <button aria-describedby={idKey} type="button" onClick={handlepop}>Ver participantes</button>
+                             
+                             {users?<>
+                                
+                                {users.map((dat)=><>
+                                   
+                                    {idActividad=== dat.idActividad? <>
+                                            {dat.id}
+                                            
+                                         {dat? <>
+                                            
+                                        {[dat].map((item) =>    
+                                             <Popper id={idKey} open={open} anchorEl={anchorEl} style={{width:'auto'}}>
                                                    
-                             <DataGrid rows={row} columns={column} />
-                             </Popper>
+                                                <h4 className={classes.paper}>{item.nick}</h4>
+                                             </Popper>
+                                        
+                               
+                                        )}</>:null}
+                                        
+                                    
+                                    </>
+                                    :null}
+                                </>
+                                )}
+                                </>: <div>no hay usuarios</div>}
+                            
                             
                             </>
                         :

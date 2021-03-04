@@ -245,7 +245,7 @@ const Header =()=>{
                 </IconButton>
                 <div style={{display:'flex'}}>
                   {isLogin===true?<>
-                    {email=='hola@gmail.com'?<>
+                    {email=='intur.org@gmail.com'||'admin@gmail.com'?<>
                       <Typography id='foto' className="user_header" aria-describedby={id2} onClick={handlelogout}>{email}</Typography>
                       <Popper id={id} open={abierto2} anchorEl={anchorEl}>
                         <Link to='/loginGoogle'>
