@@ -21,23 +21,10 @@ const useStyles = makeStyles((theme) => ({
     },
   }));
 
-const Detalles = (props) => {
-   
-    
-    <GoogleFontLoader
-    fonts={[
-      {
-        font: 'Roboto',
-        weights: [400, '400i'],
-      },
-      {
-        font: 'Roboto Mono',
-        weights: [400, 700],
-      },
-    ]}
-    subsets={['cyrillic-ext', 'greek']}
-  />
+  
 
+
+const Detalles = (props) => {
     
     const {idActividad,users,actividad,fecha,precio, organizacion,salida,hora,latitud1,longitud1,latitud2,longitud2,latitud3,longitud3,descripcion,fileUrl,
         cupos,
@@ -58,35 +45,7 @@ const Detalles = (props) => {
         const [nick, setNick]= useState('')
         const [foto,setFoto]=useState(null)
         
-        {users?<>
-                                
-            {users.map((dat)=><>
-                
-                {idActividad=== dat.idActividad? <>
-                        {dat.id}
-                       
-                     {dat? <>
-                    {[dat].map(item =>{
-                        const column=[
-                            { field: 'Nombre', headerName: 'Nombre', width: 70 },
-                            { field: 'Foto', headerName: 'Foto', width: 130 },
-                        ]
-                        const row=[
-                            { Nombre: item.nick, Foto: item.photoURL},
-                        ]
-                    }
-           
-                    )}</>:null}
-                    
-                
-                </>
-                :null}
-            </>
-            )}
-            </>: <div>no hay usuarios</div>}
-
-
-
+        
         const handlepop = (event) => {
             setAnchorEl(anchorEl ? null : event.currentTarget);
           };
@@ -131,6 +90,20 @@ const Detalles = (props) => {
 
     return ( 
         <>
+        <GoogleFontLoader
+            fonts={[
+      {
+        font: 'Roboto',
+        weights: [400, '400i'],
+      },
+      {
+        font: 'Roboto Mono',
+        weights: [400, 700],
+      },
+    ]}
+    subsets={['cyrillic-ext', 'greek']}
+  />
+
             <div style={{height: '140px'}}></div>
         <section style={{height:'auto'}}>
             <h2 style={{fontSize: '50px',background:'white',color:'#00a295',textAlign:'center',fontFamily: 'Roboto, sans-serif'}}>{actividad}</h2>
@@ -210,23 +183,22 @@ const Detalles = (props) => {
                     <>
                         {email=='intur.org@gmail.com'?
                             <> 
-                             <button aria-describedby={idKey} type="button" onClick={handlepop}>Ver participantes</button>
-                             
+                             <button aria-describedby={idKey} type="button" onClick={handlepop}>ver participantes</button>
                              {users?<>
                                 
                                 {users.map((dat)=><>
-                                   
+                                    
                                     {idActividad=== dat.idActividad? <>
                                             {dat.id}
-                                            
+                                           
                                          {dat? <>
+                                        {[dat].map(item =>{
                                             
-                                        {[dat].map((item) =>    
-                                             <Popper id={idKey} open={open} anchorEl={anchorEl} style={{width:'auto'}}>
-                                                   
-                                                <h4 className={classes.paper}>{item.nick}</h4>
-                                             </Popper>
-                                        
+                                            <Popper id={idKey} open={open} anchorEl={anchorEl} style={{width:'auto'}}>
+                                                  <h4>{item.nick}</h4>
+                                            </Popper>
+
+                                        }
                                
                                         )}</>:null}
                                         
@@ -236,6 +208,7 @@ const Detalles = (props) => {
                                 </>
                                 )}
                                 </>: <div>no hay usuarios</div>}
+                    
                             
                             
                             </>
