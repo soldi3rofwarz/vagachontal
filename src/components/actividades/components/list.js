@@ -1,4 +1,6 @@
-import React from 'react';
+import firebase,{googleAuthProvider} from '../../../data/firebase-config'
+import React,{useState,useEffect} from 'react';
+
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
@@ -17,6 +19,7 @@ import './list.styles.css';
 import {Link}from 'react-router-dom';
 import SwipeableTextMobileStepper from '../../../steeper/stepper'
 //import Detalle from './../../Detalles/componentes/detalles'
+import Anuncios from './../../../anuncios/anuncios'
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -26,6 +29,8 @@ const useStyles = makeStyles((theme) => ({
       flexGrow: 1,
     },
     rootGrid: {
+      minWidth:'70vw',
+      display:'flex',
       flexGrow: 1,
       margin: theme.spacing(12),
     },
@@ -58,6 +63,22 @@ const useStyles = makeStyles((theme) => ({
 
 export const List = (props) => {
 
+  const [isLogin, setIslogin]=useState(false)
+  const [email, setEmail]= useState('')
+
+  useEffect(()=>{
+    firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+          console.log('iniciado', user)
+          console.log(user.email)
+          setIslogin(true)
+          setEmail(user.email)
+            
+        } else {
+            console.log('no iniciado')
+        }
+      })
+},[])
     const {
         listActividades,
         onDelete,
@@ -68,17 +89,19 @@ export const List = (props) => {
 
     return (
         <>
+          <div style={{height:'17px'}}></div>
             <SwipeableTextMobileStepper/>
+            <Typography variant="h3" color="textSecondary" component="h3" style={{textAlign:'center'}}>
+                  Actividades
+                </Typography>
             {listActividades ?
 
              
             <div className={classes.rootGrid}>
-               <Typography variant="h3" color="textSecondary" component="h3" style={{textAlign:'center'}}>
-                  Actividades
-                </Typography>
-                <Paper className={classes.paper} style={{display:'flex', width:'70vw'}}>
+              
+                <Paper className={classes.paper} style={{ width:'70vw'}}>
                    
-                    <Grid  container spacing={2} className={classes.rootC} style={{}} >
+                    <Grid   spacing={4} className={classes.rootC} style={{display:'flex'}} >
                         {listActividades.map ((item) =>
                             <p key={item.id}>
                                 
@@ -102,37 +125,46 @@ export const List = (props) => {
                                 Organización: {item.organizacion}
                             </Typography>
                             </CardContent>
-                            <CardActions disableSpacing>
-                            <Link to={`/form/${item.id}`}>
-                            <IconButton aria-label="editar">
-                                <EditIcon  />
-                            </IconButton>
-                            </Link>
-                            <IconButton aria-label="eliminar">
+                           
+                              
+                                <CardActions disableSpacing>
+                                {isLogin===true?
+                                    <>
+                                  {email=='admin@gmail.com'?<>
+                                <Link to={`/form/${item.id}`}>
+                                <IconButton aria-label="editar">
+                                    <EditIcon  />
+                                </IconButton>
+                                </Link>
+                                <IconButton aria-label="eliminar">
 
-                                <DeleteIcon onClick = {()=> {onDelete(item.id)}}/>
-                            </IconButton>
-                            <Link to={`/detalle/${item.id}`}>
-                            <IconButton aria-label="ver">
-                                <EyeIcon />
-                            </IconButton>
-                            </Link>
-                            </CardActions>
+                                    <DeleteIcon onClick = {()=> {onDelete(item.id)}}/>
+                                </IconButton></>
+                                :null}
+                                  </>
+                                :null}
+                                <Link to={`/detalle/${item.id}`} style={{textDecoration:'none'}}>
+                                <IconButton aria-label="ver" >
+                                    <EyeIcon />
+                                    <Typography >Ver mas</Typography>
+                                </IconButton>
+                                </Link>
+                                </CardActions>
+                              
+                            
                             </Card>
                         </Grid>
                             </p>
                         )}
                     </Grid>
                 </Paper>
+
+                <Anuncios/>
             </div>               
                 :
                 'No hay datos'                
             }
-            <div style={{marginLeft: '85%', border:'1px solid black'}}>
-            <h6>Publicidad</h6>
-            <img src={`${process.env.PUBLIC_URL}/res/pub4.jpg`} width='200px'/>
-            <img src={`${process.env.PUBLIC_URL}/res/pub3.jpg`} width='200px'/>
-          </div>
+           
         </>
     );
 };
