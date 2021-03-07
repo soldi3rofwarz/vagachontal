@@ -119,8 +119,8 @@ const Googled =()=>{
             </Button>
             <Grid container>
               <Grid item>
-                <Link href="/login" variant="body2">
-                  {'Eres promotor, entra aqui'}
+                <Link href="/login" variant="h6">
+                  {'¿Eres promotor?, entra aqui'}
                 </Link>
               </Grid>
             </Grid>

@@ -181,7 +181,7 @@ const Detalles = (props) => {
                 </div>
                 {isLogin===true?
                     <>
-                        {email=='hola@gmail.com'?
+                        {email=='intur.org@gmail.com'?
                             <> 
                              <button aria-describedby={idKey} type="button" onClick={handlepop}>ver participantes</button>
                              {users?<>
@@ -192,13 +192,14 @@ const Detalles = (props) => {
                                             {dat.id}
                                            
                                          {dat? <>
-                                        {[dat].map(item =>{
                                             
-                                            <Popper id={idKey} open={open} anchorEl={anchorEl} style={{width:'auto'}}>
-                                                  <h4>{item.nick}</h4>
-                                            </Popper>
+                                        {[dat].map(item =>
+                                            <Popper className={classes.paper} id={idKey} open={open} anchorEl={anchorEl} style={{width:'auto', display:'flex'}}>
+                                            <h4>{item.nick}</h4>
+                                             </Popper>
+                                           
 
-                                        }
+                                        
                                
                                         )}</>:null}
                                         
