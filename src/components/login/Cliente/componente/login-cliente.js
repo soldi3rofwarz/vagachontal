@@ -109,7 +109,7 @@ const Login=(props)=> {
               </div>
               
               <button className='ss' onClick={handleLogin}>Sign in</button>
-              <div className="signup">No eres un miembro todavia?
+              <div className="signup">No sos miembro todavia?
                 <a href="#">Contactanos</a>
               </div>
             </form>

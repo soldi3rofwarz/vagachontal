@@ -79,7 +79,7 @@ componentDidMount = () =>{
                             Login Google
                         </Link>
                     </button>
-                        <h4>¿Eres Promotor? entra <Link to='/login' style={{textDecoration:'none'}}>Aqui</Link></h4>
+                        <h4>¿Sos Promotor? entrá <Link to='/login' style={{textDecoration:'none'}}>Aqui</Link></h4>
                     </div>
                     : 
                 <>

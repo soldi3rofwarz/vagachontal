@@ -394,19 +394,15 @@ const Home = () => {
                     <Grid item xs={12}>
                       <Paper className={classes.paper}>
                         <Typography variant="h3" color="textSecondary" component="h3">
-                          Actividades
+                          Información
                         </Typography>
                         <Grid  container spacing={3}>
                           <Grid item xs={4}>
                             <Card className={classes.rootC}>
                               <CardHeader
-                                action={
-                                  <IconButton aria-label="settings">
-                                    <MoreVertIcon />
-                                  </IconButton>
-                                }
+                               
                                 title="Puerto Díaz"
-                                subheader="Viernes 22 de enero"
+                              
                               />
                               <CardMedia
                                 className={classes.mediaC}
@@ -414,9 +410,7 @@ const Home = () => {
                                 title="Paella dish"
                               />
                               <CardContent>
-                                <Typography variant="body2" color="textSecondary" component="p">
-                                  Recorrido por las costas de la comunidad de puerto díaz.
-                                </Typography>
+                              <Typography paragraph>Detalles</Typography>
                               </CardContent>
                               <CardActions disableSpacing>
                                 
@@ -433,13 +427,13 @@ const Home = () => {
                               </CardActions>
                               <Collapse in={expanded} timeout="auto" unmountOnExit>
                                 <CardContent>
-                                  <Typography paragraph>Detalles:</Typography>
+                                  <Typography paragraph></Typography>
                                   <Typography>
-                                    Fecha: 22/01/2020
-                                    Hora: 7:00 a. m.
-                                    Punto de reunión: Gasolinera Puma
-                                    Precio: C$ 200.00
-                                    Organizador: INTUR
+                                  <p>
+                                  La inmensidad de las aguas del lago Cocibolca o de Nicaragua, contienen muchos tesoros naturales que solo necesitan ser visitados para ser conocidos, uno de estos es Puerto Díaz, ubicado a tan solo 28 kilómetros del municipio de Juigalpa.
+                                  </p>
+                                  Desde este lugar se puede acceder desde la conocida gasolinera Puma en Juigalpa hacia el sur, hasta llegar a sus cristalinas aguas, que sirven de sustento comercial a las familias lugareñas, que ven en la pesca, su principal actividad económica y ahora apuntan al turismo
+
                                   </Typography>
                                 </CardContent>
                               </Collapse>
@@ -449,13 +443,8 @@ const Home = () => {
                             <Card className={classes.rootC}>
                               <CardHeader
                                
-                                action={
-                                  <IconButton aria-label="settings">
-                                    <MoreVertIcon />
-                                  </IconButton>
-                                }
                                 title="Amerrique"
-                                subheader="Lunes 15 de febrero"
+                               
                               />
                               <CardMedia
                                 className={classes.mediaC}
@@ -463,9 +452,7 @@ const Home = () => {
                                 title="Paella dish"
                               />
                               <CardContent>
-                                <Typography variant="body2" color="textSecondary" component="p">
-                                  Recorrido por los escarpados senderos de las montañas de la Serranía de Amerrique.
-                                </Typography>
+                              <Typography paragraph>Detalles</Typography>
                               </CardContent>
                               <CardActions disableSpacing>
                                
@@ -482,13 +469,14 @@ const Home = () => {
                               </CardActions>
                               <Collapse in={expanded1} timeout="auto" unmountOnExit>
                                 <CardContent>
-                                  <Typography paragraph>Detalles:</Typography>
+                           
                                   <Typography>
-                                    Fecha: 22/01/2020
-                                    Hora: 7:00 a. m.
-                                    Punto de reunión: Gasolinera Puma
-                                    Precio: C$ 200.00
-                                    Organizador: INTUR
+                                  <p>
+                                  "Lugar del viento" o "donde el viento sopla", llamaron los mayas a esta cordillera
+                                  </p>
+                                  <p>
+                                  La Reserva Natural de Amerrique es una extensa sierra que determina las condiciones climáticas del departamento de Chontales. Su formación está relacionada a una milenaria actividad volcánica. Antiguamente fue habitada por un aguerrido pueblo, cuyos vestigios están dispersos todo el quebradizo paisaje. Algunas fuentes históricas han relacionado su nombre con el bautizo del continente americano.
+                                  </p>
                                   </Typography>
                                 </CardContent>
                               </Collapse>
@@ -497,14 +485,7 @@ const Home = () => {
                           <Grid item xs={4}>
                             <Card className={classes.rootC}>
                               <CardHeader
-                                
-                                action={
-                                  <IconButton aria-label="settings">
-                                    <MoreVertIcon />
-                                  </IconButton>
-                                }
                                 title="El Nancital"
-                                subheader="Sabado 13 de marzo"
                               />
                               <CardMedia
                                 className={classes.mediaC}
@@ -512,9 +493,7 @@ const Home = () => {
                                 title="Paella dish"
                               />
                               <CardContent>
-                                <Typography variant="body2" color="textSecondary" component="p">
-                                  Recorrido por las costas del municipio de Acoyapa y visita las islas del archipielago.
-                                </Typography>
+                              <Typography paragraph>Detalles</Typography>
                               </CardContent>
                               <CardActions disableSpacing>
                                 
@@ -531,13 +510,19 @@ const Home = () => {
                               </CardActions>
                               <Collapse in={expanded2} timeout="auto" unmountOnExit>
                                 <CardContent>
-                                  <Typography paragraph>Detalles:</Typography>
                                   <Typography>
-                                    Fecha: 22/01/2020
-                                    Hora: 7:00 a. m.
-                                    Punto de reunión: Gasolinera Puma
-                                    Precio: C$ 200.00
-                                    Organizador: INTUR
+                                  <p>
+                                  El Nancital un paraíso natural frente a Acoyapa
+                                  </p>
+                                  <p>
+                                  La mayoría de sus islas son vírgenes y están deshabitadas. Las familias que viven en las más grandes llegaron allí hace muchos años, procedentes de Chontales
+                                  </p>
+                                  <p>
+                                  El Archipiélago el Nancital, es un bello paraíso conformado por 27 islas con una gran diversidad de flora y fauna, que el visitante nacional y extranjero disfruta al recorrer el Lago Cocibolca en lancha.
+                                  </p>
+                                  <p>
+                                  32 kilómetros hay que recorrer en vehículo desde el municipio de Acoyapa Chontales, para disfrutar de esta belleza localizada en el centro de Nicaragua.
+                                  </p>
                                   </Typography>
                                 </CardContent>
                               </Collapse>
