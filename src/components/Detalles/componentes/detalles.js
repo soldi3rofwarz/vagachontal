@@ -1,8 +1,6 @@
 import React, {useState,useEffect} from 'react';
 import MapView from '../../mapa/leaflet/mapview'
 import firebase from '../../../data/firebase-config'
-import {Link} from 'react-router-dom'
-import { DataGrid } from '@material-ui/data-grid';
 import {onSubmit} from '../../login/google/container'
 import GoogleFontLoader from 'react-google-font-loader';
 import './Detalle.css'
@@ -11,6 +9,21 @@ import
  from '../../../data/firebase-config';
  import { makeStyles } from '@material-ui/core/styles';
 import Popper from '@material-ui/core/Popper';
+import Button from '@material-ui/core/Button';
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogContentText from '@material-ui/core/DialogContentText';
+import DialogTitle from '@material-ui/core/DialogTitle';
+import Avatar from '@material-ui/core/Avatar';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemAvatar from '@material-ui/core/ListItemAvatar';
+import ListItemText from '@material-ui/core/ListItemText';
+import PersonIcon from '@material-ui/icons/Person';
+import AddIcon from '@material-ui/icons/Add';
+import Typography from '@material-ui/core/Typography';
+import { blue } from '@material-ui/core/colors';
 
 const useStyles = makeStyles((theme) => ({
     paper: {
@@ -19,6 +32,10 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: theme.palette.background.paper,
       
     },
+    avatar: {
+        backgroundColor: blue[100],
+        color: blue[600],
+      },
   }));
 
   
@@ -44,6 +61,15 @@ const Detalles = (props) => {
         const[stid,setstid] =useState('')
         const [nick, setNick]= useState('')
         const [foto,setFoto]=useState(null)
+        const [isopen, setisOpen] = useState(false);
+
+  const handleClickOpen = () => {
+    setisOpen(true);
+  };
+
+  const handleClose = () => {
+    setisOpen(false);
+  };
         
         
         const handlepop = (event) => {
@@ -80,6 +106,7 @@ const Detalles = (props) => {
                 idActividad,
                 foto
             }).then(() => {
+                
                 Agregado()
             }).catch((error) => {
                 console.log("Error: ", error);
@@ -216,15 +243,38 @@ const Detalles = (props) => {
                         :
                         <div style={{alignItems:'center', placeItems:'center'}}>
                         {band===true?(<>
-                        {users.map((dat)=>
-                            <button className="btn-cancelar " id="dd" href="#!" role="button" onClick = {()=>{Cancelar(dat.id)}}>
-                            Cancelar</button>
+                        {users.map((dat)=><>
+                            {dat.id}
+                            <button className="btn-cancelar " id="dd" onClick = {()=>{Cancelar(dat.id)}}>
+                            Cancelar</button></>
                         )}
                         
                            </>)
                         :
-                        (<button className="btn-participar"  id="dd" href="#!" role="button" onClick={handleAgregarClick}>
-                            Participar</button>)}
+                        (<><button className="btn-participar"  id="dd"  onClick={handleClickOpen}>
+                            Participar</button>
+                            <Dialog
+                            open={isopen}
+                            onClose={handleClose}   
+                            aria-labelledby="alert-dialog-title"
+                            aria-describedby="alert-dialog-description"
+                            >
+                                <DialogTitle id="alert-dialog-title">{"Alerta de confirmacion"}</DialogTitle>
+                                <DialogContent>
+                                <DialogContentText id="alert-dialog-description">
+                                Would you like to go on an casual date? not only as friends but  either so serious
+                                </DialogContentText>
+                                </DialogContent>
+                                <DialogActions>
+                                <Button onClick={handleClose} color="primary">
+                                    Desacuerdo
+                                </Button>
+                                <Button onClick={handleAgregarClick} color="primary" autoFocus>
+                                    De acuerdo
+                                </Button>
+                                </DialogActions>
+                            </Dialog>
+                            </>)}
                         </div>
                         }
                         

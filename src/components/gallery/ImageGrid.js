@@ -1,6 +1,7 @@
 import React from 'react';
 import useFirestore from './useFirestore';
 import { motion } from 'framer-motion';
+import './galeria.css'
 
 const ImageGrid = ({ setSelectedImg }) => {
   const { docs } = useFirestore('images');
@@ -21,8 +22,8 @@ const ImageGrid = ({ setSelectedImg }) => {
             animate={{ opacity: 1 }}  
             transition={{ delay: 1 }}
           />
-          <motion.h1
-            style={{zIndex:1000, position:'relative',marginTop:'36%', color: 'white', background:'rgba(0,0,0,0.7)'}}
+          <motion.h1 id='motion'
+            style={{zIndex:1000, position:'relative',marginTop:'36%', color: 'white', background:'rgba(0,0,0,0.5)'}}
           >
             {doc.descripcion 
             

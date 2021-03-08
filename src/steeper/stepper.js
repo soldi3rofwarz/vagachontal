@@ -8,8 +8,8 @@ import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft';
 import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
 import SwipeableViews from 'react-swipeable-views';
 import { autoPlay } from 'react-swipeable-views-utils';
-import AmerriqueImg from '../assets/amerrique.jpg'
-import Cuapa from '../assets/cuapa2.jpg'
+import FotoHAto1 from '../assets/foto6.jpg'
+import Fotohato2 from '../assets/foto5.jpg'
 import BackImg from '../assets/back.jpg'
 import Foto2Img from '../assets/foto2.jpg'
 import Foto4Img from '../assets/foto4.jpg'
@@ -18,14 +18,14 @@ const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 const tutorialSteps = [
   {
-    label: 'Amerrique',
+    label: 'Hato grande',
     imgPath:
-    AmerriqueImg
+    FotoHAto1
   },
   {
-    label: 'Cuapa',
+    label: 'Amerrique',
     imgPath:
-      Cuapa,
+      Fotohato2,
   },
   {
     label: 'Hato grande',
@@ -54,7 +54,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     height: 50,
     paddingLeft: theme.spacing(4),
-    backgroundColor: theme.palette.success.light,
+    backgroundColor: 'rgba(30, 125, 235, 0.993)',
     color: 'white',
     fontZise: '60px'
     
@@ -92,7 +92,7 @@ function SwipeableTextMobileStepper() {
       <div style={{height: '50px'}}></div>
     <div className={classes.root}>
       <Paper square elevation={0} className={classes.header}>
-        <Typography>{tutorialSteps[activeStep].label}</Typography>
+        <Typography style={{fontSize:'29px'}}>{tutorialSteps[activeStep].label}</Typography>
       </Paper>
       <AutoPlaySwipeableViews
         axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}

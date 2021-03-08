@@ -299,6 +299,7 @@ const Home = () => {
                                   strength={500}
                                 >
                                   <div style={{ height: 200 }}>
+                                    <h2 style={{width:'100%',fontSize:'25px',color:'white', textShadow:'5px 5px 5px black'}}>Amerrique</h2>
                                   </div>
                                 </Parallax>
                               </div>
@@ -313,6 +314,7 @@ const Home = () => {
                                   strength={500}
                                 >
                                    <div style={{ height: 200 }}>
+                                     <h2 style={{width:'100%',fontSize:'25px',color:'white',fontWeight:'bold', textShadow:'5px 5px 5px black'}}>Amerrique</h2>
                                   </div>
                                 </Parallax>
                               </div>
@@ -327,6 +329,7 @@ const Home = () => {
                                   strength={500}
                                 >
                                   <div style={{ height: 200 }}>
+                                  <h2 style={{width:'100%',fontSize:'25px',color:'white', textShadow:'5px 5px 5px black'}}>Hato grande</h2>
                                   </div>
                                 </Parallax>
                               </div>
@@ -341,6 +344,7 @@ const Home = () => {
                                   strength={500}
                                 >
                                    <div style={{ height: 200 }}>
+                                   <h2 style={{width:'100%',fontSize:'25px',color:'white', textShadow:'5px 5px 5px black'}}>Puerto Diaz</h2>
                                   </div>
                                 </Parallax>
                               </div>
@@ -355,6 +359,7 @@ const Home = () => {
                                   strength={500}
                                 >
                                    <div style={{ height: 200 }}>
+                                   <h2 style={{width:'100%',fontSize:'25px',color:'white', textShadow:'5px 5px 5px black'}}>Amerrique</h2>
                                   </div>
                                 </Parallax>
                               </div>
@@ -369,6 +374,7 @@ const Home = () => {
                                   strength={500}
                                 >
                                   <div style={{ height: 200 }}>
+                                  <h2 style={{width:'100%',fontSize:'25px',color:'white', textShadow:'5px 5px 5px black'}}>Amerrique</h2>
                                   </div>
                                 </Parallax>
                               </div>
@@ -383,6 +389,7 @@ const Home = () => {
                                   strength={500}
                                 >
                                   <div style={{ height: 200 }}>
+                                  <h2 style={{width:'100%',fontSize:'25px',color:'white', textShadow:'5px 5px 5px black'}}>Puerto Diaz</h2>
                                   </div>
                                 </Parallax>
                               </div>
@@ -409,11 +416,11 @@ const Home = () => {
                                 image="https://assets.cdnelnuevodiario.com/cache/85/41/85415047407c57fdef92a54f9ee9d987.jpg"
                                 title="Paella dish"
                               />
-                              <CardContent>
-                              <Typography paragraph>Detalles</Typography>
-                              </CardContent>
+                              
+                             
+                              
                               <CardActions disableSpacing>
-                                
+                              <Typography >Detalles</Typography>
                                 <IconButton
                                   className={clsx(classes.expand, {
                                     [classes.expandOpen]: expanded,
@@ -451,11 +458,11 @@ const Home = () => {
                                 image="https://www.visitanicaragua.com/wp-content/uploads/2020/09/Pe%C3%B1%C3%B3n-del-Cacique-Amerrique-Juigalpa.jpg"
                                 title="Paella dish"
                               />
-                              <CardContent>
-                              <Typography paragraph>Detalles</Typography>
-                              </CardContent>
+                              
+                              
+                              
                               <CardActions disableSpacing>
-                               
+                              <Typography>Detalles</Typography>
                                 <IconButton
                                   className={clsx(classes.expand, {
                                     [classes.expandOpen]: expanded1,
@@ -491,15 +498,12 @@ const Home = () => {
                                 className={classes.mediaC}
                                 image="https://nuevaya.com.ni/wp-content/webp-express/webp-images/doc-root/wp-content/uploads/2019/01/Archipielago-El-Nancital-Nicaragua.jpg.webp"
                                 title="Paella dish"
-                              />
-                              <CardContent>
-                              <Typography paragraph>Detalles</Typography>
-                              </CardContent>
+                              /> 
                               <CardActions disableSpacing>
-                                
+                              <Typography>Detalles</Typography>
                                 <IconButton
                                   className={clsx(classes.expand, {
-                                    [classes.expandOpen]: setExpanded2,
+                                    [classes.expandOpen]: expanded2,
                                   })}
                                   onClick={handleExpandClick2}
                                   aria-expanded={expanded2}
