@@ -27,6 +27,7 @@ import Home from '../components/Landing/Landing'
 import MapView from '../components/mapa/leaflet/mapview'
 //import AgregarActividades from './../components/Formulario/form-actividades'
 import LoginCliente from './../components/login/Cliente/loginCliente'
+import Contacto from './../components/contacto/contacto'
 
 
 export const ClientsRoute = () => {
@@ -66,6 +67,8 @@ export const ClientsRoute = () => {
                 <Route path="/galeria" component={GalleryPage}/>
                 <Route path="/actividades" component={ActividadesPage}/>
                 <Route exact path ="/form" component ={Form} />
+                <Route exact path ="/contacto" component ={Contacto} />
+
                 {/*<Route exact path ="/register" component ={Registro} /> 
                 
                 {/* 

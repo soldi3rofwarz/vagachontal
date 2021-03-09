@@ -435,7 +435,7 @@ const Home = () => {
                               <Collapse in={expanded} timeout="auto" unmountOnExit>
                                 <CardContent>
                                   <Typography paragraph></Typography>
-                                  <Typography>
+                                  <Typography className='textoinf'>
                                   <p>
                                   La inmensidad de las aguas del lago Cocibolca o de Nicaragua, contienen muchos tesoros naturales que solo necesitan ser visitados para ser conocidos, uno de estos es Puerto Díaz, ubicado a tan solo 28 kilómetros del municipio de Juigalpa.
                                   </p>
@@ -477,7 +477,7 @@ const Home = () => {
                               <Collapse in={expanded1} timeout="auto" unmountOnExit>
                                 <CardContent>
                            
-                                  <Typography>
+                                  <Typography className='textoinf'>
                                   <p>
                                   "Lugar del viento" o "donde el viento sopla", llamaron los mayas a esta cordillera
                                   </p>
@@ -514,7 +514,7 @@ const Home = () => {
                               </CardActions>
                               <Collapse in={expanded2} timeout="auto" unmountOnExit>
                                 <CardContent>
-                                  <Typography>
+                                  <Typography className='textoinf'>
                                   <p>
                                   El Nancital un paraíso natural frente a Acoyapa
                                   </p>

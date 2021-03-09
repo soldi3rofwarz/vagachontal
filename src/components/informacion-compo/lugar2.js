@@ -6,6 +6,7 @@ import Lugares from './../gallery/lugares'
 import amerrique from './../../assets/amerrique.jpg'
 import amerrique2 from './../../assets/amerrique2.jpg'
 import Paper from '@material-ui/core/Paper';
+import Anuncio from './../../anuncios/anuncios'
 
 <GoogleFontLoader
     fonts={[
@@ -40,10 +41,11 @@ const Lugar2 = () => {
     return (
 		<>
 		<div style={{height:'150px'}}></div >
-        <section style={{height:'auto',width:'70vw',marginLeft:'100px', overflow:'hidden'}}>
-        <div style={{width:'70vw', marginBottom:'20px'}}><Lugares/></div>
+    <div style={{width:'70vw', marginBottom:'20px',marginLeft:'15%'}}><Lugares/></div>
+        <section style={{height:'auto',width:'q00vw',marginLeft:'50px', overflow:'hidden',display:'flex'}}>
         
-      	<Paper variant="outlined" style={{display: 'flex'}}>
+        
+      	<Paper variant="outlined" style={{display: 'flex',width:'70vw'}}>
           <div className="row"style={{margin: 'auto', textAlign: 'center',width:'35vw',fontFamily: 'Roboto, sans-serif',height:'80vh', fontSize:'18px'}}>
                 <h2 >Cordillera Amerrique</h2>
                     <h4>
@@ -63,10 +65,11 @@ const Lugar2 = () => {
 
 		<div style={{width:'60vw'}} className='imagenes'>
         <img src={amerrique} className='img1' style={{marginLeft:'10px',width:'23vw', marginBottom:'130px'}}/>
-		<img src={amerrique2}  className='img2' style={{width:'23vw', marginLeft:'180px'}}/>
+		<img src={amerrique2}  className='img2' style={{width:'23vw', marginLeft:'150px'}}/>
 		</div>
 		               
   	</Paper>
+    <Anuncio/>
       </section>
 	  </>
     );

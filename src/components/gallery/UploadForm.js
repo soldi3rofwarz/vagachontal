@@ -3,6 +3,7 @@ import ProgressBar from './ProgressBar';
 import 
     {db}
  from '../../data/firebase-config';
+ import './galeria.css'
 
 const UploadForm = (props) => {
   let imgID
@@ -46,19 +47,21 @@ const UploadForm = (props) => {
   }
 
   return (
-    <form>
-      <input type='text' value={descripcion} placeholder="datos de la imagen" onChange={handledescripcion} />
-      
-        <input type="file" onChange={handleChange} accept="image/*" />
-        
-      
-      
+    <form style={{width:'100%',alignItems:'center',boxShadow:'5px 5px 5px black', height:'200px'}}>
+      <div className="form__group field">
+        <input type="input" className="form__field" value={descripcion} 
+        placeholder="datos de la imagen" onChange={handledescripcion} name="Descripcion" id='name' required />
+        <label for="name" className="form__label">Descripción</label>
+      </div>
+
+        <input type="file"  onChange={handleChange} accept="image/*" />
+
         { error && <div className="error">{ error }</div>}
         { file && <div>{ file.name }</div> }
         { file && <ProgressBar file={file} setFile={setFile} setUrl={setFileUrl} /> }
       
       <label>
-        <button onClick={handleAgregarClick}>agregar</button>
+        <button className="btnSelect" onClick={handleAgregarClick}>agregar</button>
       </label>
     </form>
   );

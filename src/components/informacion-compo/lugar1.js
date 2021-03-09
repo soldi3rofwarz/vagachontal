@@ -6,6 +6,7 @@ import Lugares from './../gallery/lugares'
 import Nancitalpic from './../../assets/elnancital.jpg'
 import Nancitalpic2 from './../../assets/elnancital2.jpg'
 import Paper from '@material-ui/core/Paper';
+import Anuncio from './../../anuncios/anuncios'
 
 
 <GoogleFontLoader
@@ -42,10 +43,11 @@ const Lugar1 = () => {
     return (
 		<>
 		<div style={{height:'150px'}}></div>
-      	<section style={{height:'700px',width:'70vw',marginLeft:'100px', overflow:'hidden'}}>
+    <div style={{width:'70vw', marginBottom:'20px', marginLeft:'15%'}}><Lugares/></div>
+      	<section style={{height:'700px',width:'100vw',marginLeft:'50px', overflow:'hidden',display:'flex'}}>
 		  
-		  <div style={{width:'70vw', marginBottom:'20px'}}><Lugares/></div>
-		  <Paper variant="outlined" style={{display: 'flex'}}>
+		  
+		  <Paper variant="outlined" style={{display: 'flex',width:'70vw'}}>
 		
 		  <div className="row" style={{margin: 'auto', textAlign: 'center',width:'35vw',fontFamily: 'Roboto, sans-serif',height:'80vh', fontSize:'18px'}}>
                 <h2 >El Nancital</h2>
@@ -74,7 +76,7 @@ const Lugar1 = () => {
 			</div>
 			</Paper>
 		
-		               
+		               <Anuncio/>
   		</section>
       
 	  </>

@@ -210,7 +210,7 @@ const Detalles = (props) => {
                     <>
                         {email=='intur.org@gmail.com'?
                             <> 
-                             <button aria-describedby={idKey} type="button" onClick={handlepop}>ver participantes</button>
+                             <button className="btn-participar" aria-describedby={idKey} type="button" onClick={handlepop}>ver participantes</button>
                              {users?<>
                                 
                                 {users.map((dat)=><>
@@ -262,7 +262,7 @@ const Detalles = (props) => {
                                 <DialogTitle id="alert-dialog-title">{"Alerta de confirmacion"}</DialogTitle>
                                 <DialogContent>
                                 <DialogContentText id="alert-dialog-description">
-                                Would you like to go on an casual date? not only as friends but  either so serious
+                                    Estas apunto de participar en esta actividad
                                 </DialogContentText>
                                 </DialogContent>
                                 <DialogActions>
@@ -280,7 +280,7 @@ const Detalles = (props) => {
                         
                     </>
                 :
-                    <button onClick={onSubmit}>
+                    <button className="btn-cancelar " onClick={onSubmit}>
                         Inicia sesion para participar
                     </button>
                 }
