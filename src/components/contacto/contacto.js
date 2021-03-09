@@ -27,7 +27,7 @@ const Contacto =()=>{
                 <div className='content1'>
                     <h4 className='h4'>Jose Castro</h4>
                     <h4 className='h4'>Administrador</h4>
-                    <h4 className='h4'>Jose jehovani Castro Perez</h4>
+                    <h4 className='h4'>Josejehovanicastroperez@gmail.com</h4>
                     <h4 className='h4'>82213400</h4>
                 </div>
             </div>

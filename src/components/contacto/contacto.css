@@ -10,10 +10,11 @@
 .container1{
     position: relative;
     width: 1050px;
+    margin-top: -100px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    transform: skewY(-10deg);
+    transform: skewY(-1deg);
 }
 
 .container1 .card1{
@@ -30,7 +31,7 @@
     left: 0;
     width: 100%;
     height: 15px;
-    background: #00c0f6;
+    background: #02b8eb;
     transform-origin: bottom;
     transform:skewX(45deg);
     transition: 0.5s;
@@ -42,12 +43,12 @@
     top: -15px;
     left: -15px;
     width: 15px;
-    height: 50%;
-    background: #00c0f6;
+    height: 200%;
+    background: #075c74;
     transform-origin: left;
     transform:skewY(45deg);
     transition: 0.5s;
-    border-bottom: 200px solid #d9d9d9;
+    border-bottom: 0px solid #d9d9d9;
 }
 
 .container1 .card1:hover{
@@ -61,14 +62,18 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
+    overflow: hidden;
 }
 .container1 .card1 .imgBx1 .img1{
-    max-width: 100px;
+    max-height: 100%;
+    position:absolute;
 }
 .container1 .card1 .imgBx1 .h3{
     position: relative;
     color: #fff;
     margin-top: 10px;
+    font-size: 25px;
+    text-shadow: 6px 6px 6px rgb(51, 51, 51);
 }
 .container1 .card1 .content1{
     position: relative;
