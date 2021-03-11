@@ -99,14 +99,14 @@ export const List = (props) => {
              
             <div className={classes.rootGrid}>
               
-                <Paper className={classes.paper} style={{ width:'73vw',display: 'flex'}}>
+                <Paper className={classes.paper} style={{ width:'70vw',display: 'flex'}}>
                    
                     <Grid   spacing={2} className={classes.rootC} display={{display:'flex'}}  >
                         {listActividades.map ((item) =>
                             <p key={item.id}>
                                 
-                            <Grid item xs={12} style={{marginLeft: '-20px',display:'flex', maxWidth:'23vw'}}>
-                        <Card className={classes.rootC} style={{maxWidth:'23vw', minWidth:'23vw'}}>
+                            <Grid item xs={2} style={{marginLeft: '40px', maxWidth:'40vw'}}>
+                        <Card className={classes.rootC} style={{maxWidth:'40vw', minWidth:'40vw'}}>
                             <CardHeader                           
                             title={item.actividad}                           
                             />
