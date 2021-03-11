@@ -1,6 +1,5 @@
 import React from 'react'
 import CssBaseline from '@material-ui/core/CssBaseline';
-import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
@@ -25,10 +24,11 @@ const Anuncios =()=>{
 
     return (
         <>
-            <div style={{maxWidth:'29vw',minWidth:'20vw', border: '2px solid #ABD6E1', marginLeft:'20px', boxShadow:'5px 5px 5px #161F1E'}}>
+            <div style={{maxWidth:'29vw',minWidth:'20vw', border: '2px solid #ABD6E1',
+                          marginLeft:'20px', boxShadow:'5px 5px 5px #161F1E',maxHeight:'800px'}}>
                 <CssBaseline />
                 <Container maxWidth="sm" >
-                <div className={classes.root} >
+                <div className={classes.root} style={{}}>
                     <Paper elevation={0} >
                       <img src={anuncio1} style={{width:'200px'}}/>
                       <hr/>

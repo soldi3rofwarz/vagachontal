@@ -101,7 +101,7 @@ export const List = (props) => {
               
                 <Paper className={classes.paper} style={{ width:'73vw',display: 'flex'}}>
                    
-                    <Grid   spacing={4} className={classes.rootC} display={{display:'flex'}}  >
+                    <Grid   spacing={2} className={classes.rootC} display={{display:'flex'}}  >
                         {listActividades.map ((item) =>
                             <p key={item.id}>
                                 

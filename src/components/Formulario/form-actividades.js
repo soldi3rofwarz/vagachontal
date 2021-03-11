@@ -23,13 +23,7 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(1),
     minWidth: 120,
   },
-  paper: {
-   width:'100%',
-   height:'100%',
-    color: theme.palette.text.secondary,
-    
-    
-  },
+
   selectEmpty: {
     marginTop: theme.spacing(2),
   },
@@ -175,7 +169,7 @@ const AgregarActividades=(props) =>{
       <div style={{height: '70px'}}></div>
     <form className={classes.root} noValidate autoComplete="off" 
         onSubmit={Validar} 
-        style={{width: '600px', border:'1px black', borderRadius:'15px',height:'auto',background: 'white', }}
+        style={{width: '800px', borderRadius:'15px',height:'auto',background: 'white',  }}
     >
         
         {error? alert("debe ser numero"): null}
@@ -282,7 +276,7 @@ const AgregarActividades=(props) =>{
             <FormControl>
                 
                 <TextareaAutosize aria-label="minimum height" rowsMin={5} placeholder="Descripcion" 
-                value = {descripcion} onChange={handleDescripcionChange} style={{width:'400px', marginLeft:'80px'}}
+                value = {descripcion} onChange={handleDescripcionChange} style={{width:'400px', marginLeft:'180px'}}
                 />
             </FormControl>
          </div>
