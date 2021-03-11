@@ -138,9 +138,9 @@ const Detalles = (props) => {
 
                 <div className="det" 
                 style={{textAlign:'center', width:'50vw',fontFamily: 'Roboto, sans-serif',
-                 background:'#00a295', color:'white',fontSize: '15px', height:'50vh'}}>
+                 background:'#00a295', color:'white',fontSize: '15px' , lineHeight:'5px'}}>
                     
-                    <hr/>
+                 
                     <h3>Lugar de salida</h3>
                     <h4>{salida}</h4>
                     <hr/>
@@ -172,19 +172,20 @@ const Detalles = (props) => {
                     longitud3={longitud3}
                 /> 
                 </div>
-                <div className='inf' style={{fontSize: '18px',textAlign:'center',width:'50vw',fontFamily: 'Roboto, sans-serif', background:'#00a295', color:'white'}}>
+                <div className='inf' style={{fontSize: '16px',textAlign:'center',width:'50vw',
+                fontFamily: 'Roboto, sans-serif', background:'#00a295', color:'white', lineHeight:'20px'}}>
                 <h2>Descripción</h2>
                 <p style={{}}>
                    {descripcion}
                 </p>
-                <br/>
-                <h2>Qué llevar</h2>
+                <hr/>
+                <h3>Qué llevar</h3>
                 <h4>Suficiente agua <br/> Almuerzo <br/> Ropa deportiva</h4>
-                <br/>
-                <h2>Transporte</h2>
+                <hr/>
+                <h3>Transporte</h3>
                 <h4>Se garantiza el transporte de ida y regreso</h4>
-                <br/>
-                <h2>Seguridad</h2>
+                <hr/>
+                <h3>Seguridad</h3>
                 <h4>Se exige el uso de mascarilla en todo momento
                     <br/> El equipo se encargara de llevar un botiquin de primeros auxilios
                     <br/>
