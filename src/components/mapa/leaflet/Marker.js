@@ -43,9 +43,21 @@ const Marcador = ({latitud1, longitud1,latitud2, longitud2,latitud3, longitud3})
    
     return ( 
         <>
-         <Marker position={center} icon= {IconLocation}/>
-         <Marker position={center2} icon= {IconLocation2}/>
-         <Marker position={center3} icon= {IconLocation3}/>
+         <Marker position={center} icon= {IconLocation}>
+            <Popup>
+                Punto de  <br /> salida
+            </Popup>
+         </Marker>
+         <Marker position={center2} icon= {IconLocation2}>
+            <Popup>
+                    Punto de <br /> llegada
+            </Popup>
+         </Marker>
+         <Marker position={center3} icon= {IconLocation3}>
+            <Popup>
+                    Objetivo a <br /> alcanzar
+            </Popup>
+         </Marker>
          
         </>
     );
