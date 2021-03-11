@@ -14,12 +14,12 @@ import CardActions from '@material-ui/core/CardActions';
 import EditIcon from '@material-ui/icons/Edit';
 import DeleteIcon from '@material-ui/icons/Delete';
 import EyeIcon from '@material-ui/icons/Visibility';
-import { red } from '@material-ui/core/colors';
 import './list.styles.css';
 import {Link}from 'react-router-dom';
 import SwipeableTextMobileStepper from '../../../steeper/stepper'
 //import Detalle from './../../Detalles/componentes/detalles'
 import Anuncios from './../../../anuncios/anuncios'
+
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -99,14 +99,14 @@ export const List = (props) => {
              
             <div className={classes.rootGrid}>
               
-                <Paper className={classes.paper} style={{ width:'70vw'}}>
+                <Paper className={classes.paper} style={{ width:'73vw',display: 'flex'}}>
                    
-                    <Grid   spacing={4} className={classes.rootC} style={{display:'flex'}} >
+                    <Grid   spacing={4} className={classes.rootC} display={{display:'flex'}}  >
                         {listActividades.map ((item) =>
                             <p key={item.id}>
                                 
-                            <Grid item xs={12} style={{marginLeft: '-20px',display:'flex'}}>
-                        <Card className={classes.rootC} style={{maxWidth:'30vw'}}>
+                            <Grid item xs={12} style={{marginLeft: '-20px',display:'flex', maxWidth:'23vw'}}>
+                        <Card className={classes.rootC} style={{maxWidth:'23vw', minWidth:'23vw'}}>
                             <CardHeader                           
                             title={item.actividad}                           
                             />
@@ -115,7 +115,7 @@ export const List = (props) => {
                             image={item.fileUrl}                          
                             />
                             <CardContent>
-                            <Typography variant="body2" color="textSecondary" component="p">
+                            <Typography variant="body2" color="textPrimary" component="p">
                                 Actividad: {item.actividad}
                                 <Typography/>
                                 Fecha: {item.fecha}

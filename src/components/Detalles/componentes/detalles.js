@@ -8,22 +8,15 @@ import
     {db}
  from '../../../data/firebase-config';
  import { makeStyles } from '@material-ui/core/styles';
-import Popper from '@material-ui/core/Popper';
 import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
-import Avatar from '@material-ui/core/Avatar';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemAvatar from '@material-ui/core/ListItemAvatar';
-import ListItemText from '@material-ui/core/ListItemText';
-import PersonIcon from '@material-ui/icons/Person';
-import AddIcon from '@material-ui/icons/Add';
-import Typography from '@material-ui/core/Typography';
+
 import { blue } from '@material-ui/core/colors';
+import SimpleDialog from './popup'
 
 const useStyles = makeStyles((theme) => ({
     paper: {
@@ -54,8 +47,7 @@ const Detalles = (props) => {
        }= props
 
        const classes = useStyles();
-        const [anchorEl, setAnchorEl] = useState(null);
-
+        
        const [isLogin, setIslogin]=useState(false)
         const [email, setEmail]= useState('')
         const[stid,setstid] =useState('')
@@ -71,13 +63,16 @@ const Detalles = (props) => {
     setisOpen(false);
   };
         
+  const handleClickAbrir = () => {
+    setisOpen(true);
+  };
+
+  const handleCerrar = () => {
+    setisOpen(false);
+    
+  };
         
-        const handlepop = (event) => {
-            setAnchorEl(anchorEl ? null : event.currentTarget);
-          };
-        
-          const open = Boolean(anchorEl);
-          const idKey = open ? 'simple-popper' : undefined;
+      
         
 
     useEffect(()=>{
@@ -104,7 +99,8 @@ const Detalles = (props) => {
             db.collection('users').add({
                 nick,
                 idActividad,
-                foto
+                foto,
+                email
             }).then(() => {
                 
                 Agregado()
@@ -142,27 +138,25 @@ const Detalles = (props) => {
 
                 <div className="det" 
                 style={{textAlign:'center', width:'50vw',fontFamily: 'Roboto, sans-serif',
-                 background:'#00a295', color:'white',fontSize: '18px'}}>
+                 background:'#00a295', color:'white',fontSize: '15px', height:'50vh'}}>
                     
-                    <br/>
-
+                    <hr/>
                     <h3>Lugar de salida</h3>
                     <h4>{salida}</h4>
-                    
-                    <br/>
+                    <hr/>
                     <h3>Organizacion</h3>
                     <h4>{organizacion}</h4>
                     
-                    <br/>
+                    <hr/>
                     <h3>Fecha</h3>
                     <h4>{fecha}</h4>
-                    <br/>
+                    <hr/>
                     <h3>Hora de salida</h3>
                     <h4>{hora}</h4>
-                    <br/>
+                    <hr/>
                     <h3>Precio</h3>
                     <h4>C${precio}</h4>
-                    <br/>
+                    <hr/>
                     <h3>Cupos</h3>
                     <h4>{cupos}</h4>
                 </div>
@@ -210,34 +204,13 @@ const Detalles = (props) => {
                     <>
                         {email=='intur.org@gmail.com'?
                             <> 
-                             <button className="btn-participar" aria-describedby={idKey} type="button" onClick={handlepop}>ver participantes</button>
-                             {users?<>
-                                
-                                {users.map((dat)=><>
-                                    
-                                    {idActividad=== dat.idActividad? <>
-                                            {dat.id}
-                                           
-                                         {dat? <>
-                                            
-                                        {[dat].map(item =>
-                                            <Popper className={classes.paper} id={idKey} open={open} anchorEl={anchorEl} style={{width:'auto', display:'flex'}}>
-                                            <h4>{item.nick}</h4>
-                                             </Popper>
-                                           
-
-                                        
-                               
-                                        )}</>:null}
-                                        
-                                    
-                                    </>
-                                    :null}
-                                </>
-                                )}
-                                </>: <div>no hay usuarios</div>}
-                    
-                            
+                             
+                             <div>
+                                 <button className='btnver'  onClick={handleClickAbrir}>
+                                     Ver lista de participantes
+                                 </button>
+                                 <SimpleDialog  open={isopen} onClose={handleCerrar} />
+                                 </div>
                             
                             </>
                         :

@@ -1,6 +1,7 @@
 import React ,{useState,useEffect}from 'react';
 import {GetDataDet,DeleteU} from './detalle-data'
 import Detalles from './../componentes/detalles'
+import SimpleDialog from './../componentes/popup'
 
 const Det_content = (props) => {
     let actividadId = '';
@@ -50,6 +51,7 @@ const Det_content = (props) => {
        
         console.log('dddsa',users)
     return ( 
+        <>
         <Detalles 
         users={users}
         Limite ={Limite}
@@ -74,6 +76,8 @@ const Det_content = (props) => {
         descripcion={descripcion}
         fileUrl={fileUrl}
         />
+        <SimpleDialog user={users}  idActividad={id}/>
+        </>
     );
 }
  

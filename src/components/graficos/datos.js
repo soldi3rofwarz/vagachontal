@@ -4,7 +4,7 @@ import {GetData} from './../../data/actividades'
 
 const Datos=()=>{
   const [estadisticas, setEstadisticas]= useState([])
-  
+   
 
   useEffect(() => {
     GetData()

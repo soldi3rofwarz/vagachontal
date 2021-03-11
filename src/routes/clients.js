@@ -68,7 +68,6 @@ export const ClientsRoute = () => {
                 <Route path="/actividades" component={ActividadesPage}/>
                 <Route exact path ="/form" component ={Form} />
                 <Route exact path ="/contacto" component ={ContactoPage} />
-
                 {/*<Route exact path ="/register" component ={Registro} /> 
                 
                 {/* 

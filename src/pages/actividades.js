@@ -5,7 +5,7 @@ import {ListContainer} from './../components/actividades/container/list-containe
 export  const ActividadesPage = () => {
     return (
         <Layout>
-            <ListContainer />
+            <ListContainer /> 
         </Layout>
     );
 };

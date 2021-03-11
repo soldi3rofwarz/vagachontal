@@ -1,6 +1,7 @@
 import React,{useState} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import ProgressBar from './../gallery/ProgressBar'
+import Paper from '@material-ui/core/Paper';
 import './card.css';
 import 
     {db}
@@ -15,11 +16,19 @@ const useStyles = makeStyles((theme) => ({
     '& > *': {
       margin: theme.spacing(1),
       width: '25ch',
+      
     },
   },
   formControl: {
     margin: theme.spacing(1),
     minWidth: 120,
+  },
+  paper: {
+   width:'100%',
+   height:'100%',
+    color: theme.palette.text.secondary,
+    
+    
   },
   selectEmpty: {
     marginTop: theme.spacing(2),
@@ -166,8 +175,9 @@ const AgregarActividades=(props) =>{
       <div style={{height: '70px'}}></div>
     <form className={classes.root} noValidate autoComplete="off" 
         onSubmit={Validar} 
-        style={{width: '600px', border:'1px solid black', borderRadius:'15px',height:'75vh' }}
+        style={{width: '600px', border:'1px black', borderRadius:'15px',height:'auto',background: 'white', }}
     >
+        
         {error? alert("debe ser numero"): null}
         <FormControl>
             <Input id="my-input" aria-describedby="my-helper-text" 
@@ -267,14 +277,15 @@ const AgregarActividades=(props) =>{
             />
          </FormControl>
 
-         
+         <div>
 
-         <FormControl>
-            
-            <TextareaAutosize aria-label="minimum height" rowsMin={3} placeholder="Descripcion" 
-            value = {descripcion} onChange={handleDescripcionChange}
-            />
-         </FormControl>
+            <FormControl>
+                
+                <TextareaAutosize aria-label="minimum height" rowsMin={5} placeholder="Descripcion" 
+                value = {descripcion} onChange={handleDescripcionChange} style={{width:'400px'}}
+                />
+            </FormControl>
+         </div>
 
          <FormControl>
             <input
@@ -297,7 +308,7 @@ const AgregarActividades=(props) =>{
                 </Button>
             </label>
          </FormControl>
-
+       
     </form>
     </>
   );
