@@ -282,7 +282,7 @@ const AgregarActividades=(props) =>{
             <FormControl>
                 
                 <TextareaAutosize aria-label="minimum height" rowsMin={5} placeholder="Descripcion" 
-                value = {descripcion} onChange={handleDescripcionChange} style={{width:'400px'}}
+                value = {descripcion} onChange={handleDescripcionChange} style={{width:'400px', marginLeft:'80px'}}
                 />
             </FormControl>
          </div>
