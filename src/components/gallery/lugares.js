@@ -41,6 +41,28 @@ const Lugares = () => {
             <Link  className='buttons' to="/lugar5"><Tab label="El Corozo"> </Tab></Link>
             <Link  className='buttons' to="/lugar6"><Tab label="Garrobo Grande"> </Tab></Link>
             </Tabs>
+
+            <Tabs 
+              value={value}
+              onChange={handleChange}
+              indicatorColor="primary"
+              textColor="primary"
+              centered
+            >
+              <Link  className='buttons' to="/lugar1"><Tab label="Hato Grande"> </Tab></Link>
+              <Link  className='buttons' to="/lugar2"><Tab label="Puerto Diaz"> </Tab></Link>
+              <Link  className='buttons' to="/lugar3"><Tab label="Punta Tumbé"> </Tab></Link>
+              <Link  className='buttons' to="/lugar4"><Tab label="Punta mayales"> </Tab></Link>
+            </Tabs>
+            <Tabs 
+              value={value}
+              onChange={handleChange}
+              indicatorColor="primary"
+              textColor="primary"
+              centered
+            >
+              <Link  className='buttons' to="/lugar5"><Tab label="Las Ventanas"> </Tab></Link>
+            </Tabs>
         </Paper>
     {/* <div style={{height:'30px'}}></div>
             <ul className="nav">

@@ -20,6 +20,11 @@ import Lugar3 from './../pages/page3'
 import Lugar4 from './../pages/page4'
 import Lugar5 from './../pages/page5'
 import Lugar6 from './../pages/page6'
+import Lugar7 from './../pages/page7'
+import Lugar8 from './../pages/page8'
+import Lugar9 from './../pages/page9'
+import Lugar10 from './../pages/page10'
+import Lugar11 from './../pages/page11'
  import LandingPage from './../pages/landing'
 import {ListContainer} from './../components/actividades/container/list-container'
 import Home from '../components/Landing/Landing'
@@ -64,6 +69,12 @@ export const ClientsRoute = () => {
                 <Route exact path ="/lugar4" component ={Lugar4} />
                 <Route exact path ="/lugar5" component ={Lugar5} />
                 <Route exact path ="/lugar6" component ={Lugar6} />
+                <Route exact path ="/lugar7" component ={Lugar7} />
+                <Route exact path ="/lugar8" component ={Lugar8} />
+                <Route exact path ="/lugar9" component ={Lugar9} />
+                <Route exact path ="/lugar10" component ={Lugar10} />
+                <Route exact path ="/lugar11" component ={Lugar11} />
+                <Route exact path ="/login" component ={LoginPage} /> 
                 <Route path="/galeria" component={GalleryPage}/>
                 <Route path="/actividades" component={ActividadesPage}/>
                 <Route exact path ="/form" component ={Form} />

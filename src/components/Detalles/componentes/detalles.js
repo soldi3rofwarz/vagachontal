@@ -17,6 +17,7 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 
 import { blue } from '@material-ui/core/colors';
 import SimpleDialog from './popup'
+import { StayCurrentLandscape } from '@material-ui/icons';
 
 const useStyles = makeStyles((theme) => ({
     paper: {
@@ -54,6 +55,7 @@ const Detalles = (props) => {
         const [nick, setNick]= useState('')
         const [foto,setFoto]=useState(null)
         const [isopen, setisOpen] = useState(false);
+        const [abierto, setAbierto]= useState(false)
 
   const handleClickOpen = () => {
     setisOpen(true);
@@ -64,11 +66,11 @@ const Detalles = (props) => {
   };
         
   const handleClickAbrir = () => {
-    setisOpen(true);
+    setAbierto(true);
   };
 
   const handleCerrar = () => {
-    setisOpen(false);
+    setAbierto(false);
     
   };
         
@@ -189,8 +191,12 @@ const Detalles = (props) => {
                 <h4>Se exige el uso de mascarilla en todo momento
                     <br/> El equipo se encargara de llevar un botiquin de primeros auxilios
                     <br/>
-
                 </h4>
+                <h3>Contacto</ h3>
+                <h4>25122050
+                    
+                </h4>
+
                 
                 </div>
                 
@@ -210,7 +216,7 @@ const Detalles = (props) => {
                                  <button className='btnver'  onClick={handleClickAbrir}>
                                      Ver lista de participantes
                                  </button>
-                                 <SimpleDialog  open={isopen} onClose={handleCerrar} />
+                                 <SimpleDialog  open={abierto} onClose={handleCerrar} />
                                  </div>
                             
                             </>
@@ -218,8 +224,8 @@ const Detalles = (props) => {
                         <div style={{alignItems:'center', placeItems:'center'}}>
                         {band===true?(<>
                         {users.map((dat)=><>
-                            {dat.id}
-                            <button className="btn-cancelar " id="dd" onClick = {()=>{Cancelar(dat.id)}}>
+                            
+                            <button className="btn-cancelar " id="dda" onClick = {()=>{Cancelar(dat.id)}}>
                             Cancelar</button></>
                         )}
                         

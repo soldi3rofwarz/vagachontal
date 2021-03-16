@@ -21,7 +21,7 @@ const useStyles = makeStyles({
       color: blue[600],
     },
   });
-  
+  const emails = ['JoseCastro@gmail.com', 'sestherduarte@gmail.com'];
   function SimpleDialog(props) {
 
     const [isLogin, setIslogin]=useState(false)
@@ -31,7 +31,7 @@ const useStyles = makeStyles({
     const [foto,setFoto]=useState(null)
     
     const classes = useStyles();
-    const { onClose, selectedValue, open, user, idActividad} = props;
+    const { onClose, open, user, idActividad} = props;
   
     const handleClose = () => {
       onClose();
@@ -62,12 +62,23 @@ const useStyles = makeStyles({
       <Dialog onClose={handleClose} aria-labelledby="simple-dialog-title" open={open}>
         <DialogTitle id="simple-dialog-title">Participantes</DialogTitle>
         <List>
-            {isLogin ===true?<>
+        {emails.map((email) => (
+          <ListItem  key={email}>
+            <ListItemAvatar>
+              <Avatar className={classes.avatar}>
+                <PersonIcon />
+              </Avatar>
+            </ListItemAvatar>
+            <ListItemText primary={email} />
+           
+          </ListItem>
+        ))}
+            {/* {isLogin ==true?<>
 
             {user?<>
-                {console.log(user,'zdgsdzxcxc')}                
+                             
                                 {user.map((dat)=><>
-                                   
+                                  {console.log(user,'zdgsdzxcxc')}   
                                     {idActividad=== dat.idActividad? <>
                                             {dat.id}
                                             
@@ -76,15 +87,7 @@ const useStyles = makeStyles({
                                         {[dat].map(item =>
                                             <>
                                              
-                                                <ListItem button key={item}>
-                                                <ListItemAvatar>
-                                                    <Avatar className={classes.avatar}>
-                                                    {item.photoURL}
-                                                    </Avatar>
-                                                </ListItemAvatar>
-                                                <ListItemText primary={item.email} />
-                                                <ListItemText primary={item.nick} />
-                                                </ListItem>
+                                                
                                             </>
                                            
                                         )}</>:null}
@@ -94,7 +97,7 @@ const useStyles = makeStyles({
                                     :null}
                                 </>
                                 )}
-                                </>:<div>no hay usuarios</div>}</>: null}
+                                </>:<div>no hay usuarios</div>}</>: null} */}
           
         </List>
       </Dialog>
