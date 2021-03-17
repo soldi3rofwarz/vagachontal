@@ -46,7 +46,7 @@ const Lugar8 = () => {
         
       	<Paper variant="outlined" style={{display: 'flex'}}>
           <div className="row"style={{margin: 'auto', textAlign: 'center',width:'35vw',fontFamily: 'Roboto, sans-serif',height:'80vh', fontSize:'18px'}}>
-          <h2 >Pirámides de Garrobo Grande</h2>
+          <h2 >Hato grande</h2>
                     <h4>
                     Pirámides de Garrobo Grande: Atractivo Natural e Histórico de Chontales
                     </h4>

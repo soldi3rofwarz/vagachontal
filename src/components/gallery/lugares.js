@@ -49,8 +49,8 @@ const Lugares = () => {
               textColor="primary"
               centered
             >
-              <Link  className='buttons' to="/lugar1"><Tab label="Hato Grande"> </Tab></Link>
-              <Link  className='buttons' to="/lugar2"><Tab label="Puerto Diaz"> </Tab></Link>
+              <Link  className='buttons' to="/lugar7"><Tab label="Puerto Diaz"> </Tab></Link>
+              <Link  className='buttons' to="/lugar2"><Tab label="Hato Grande"> </Tab></Link>
               <Link  className='buttons' to="/lugar3"><Tab label="Punta Tumbé"> </Tab></Link>
               <Link  className='buttons' to="/lugar4"><Tab label="Punta mayales"> </Tab></Link>
             </Tabs>
