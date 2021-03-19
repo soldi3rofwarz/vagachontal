@@ -312,12 +312,17 @@ const Header =()=>{
                     </Link>
                   </ListItem>
                   <Divider />
-                  <ListItem button>
+                  {isLogin===true?<>
+                    {email=='admin@gmail.com'|| 'intur.org@gmail.com'?<>
+                    <ListItem button>
                     <ListItemIcon><PollIcon/></ListItemIcon>
                     <Link to='/datos' style={{textDecoration: 'none'}}>
                       <ListItemText primary={'Estadísticas'} />
                     </Link>
-                  </ListItem>
+                  </ListItem></>
+                    :null}</>
+                  :null}
+                 
                   <Divider />
                   {isLogin===true?<>
                     {email=='admin@gmail.com'?<>
