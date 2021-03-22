@@ -192,10 +192,9 @@ const Detalles = (props) => {
                     <br/> El equipo se encargara de llevar un botiquin de primeros auxilios
                     <br/>
                 </h4>
-                <h3>Contacto</ h3>
-                <h4>25122050
-                    
-                </h4>
+                <hr/>
+                   
+               
 
                 
                 </div>

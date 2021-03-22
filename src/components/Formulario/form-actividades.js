@@ -57,6 +57,9 @@ const AgregarActividades=(props) =>{
     const [cupos, setCupos] = useState('');
     const handleCuposChange = (e) => setCupos(parseInt(e.target.value));
 
+    const [contacto, setContacto] = useState('');
+    const handleContactoChange = (e) => setContacto(parseInt(e.target.value));
+
     const [latitud1, setLatitud1] = useState('');
     const handlelatitudChange = (e) => setLatitud1(e.target.value);
 
@@ -123,6 +126,7 @@ const AgregarActividades=(props) =>{
                 organizacion,
                 precio,
                 salida,
+                contacto,
                 hora,
                 cupos,
                 latitud1,
@@ -149,6 +153,7 @@ const AgregarActividades=(props) =>{
                 salida,
                 hora,
                 cupos,
+                contacto,
                 latitud1,
                 longitud1,
                 longitud2,
@@ -229,6 +234,13 @@ const AgregarActividades=(props) =>{
            
             <Input id="my-input" aria-describedby="my-helper-text" 
             type="number" value = {cupos} placeholder="Cupos" onChange={handleCuposChange}
+            />
+         </FormControl>
+
+         <FormControl>
+           
+            <Input id="my-input" aria-describedby="my-helper-text" 
+            type="number" value = {contacto} placeholder="numero de telefono" onChange={handleContactoChange}
             />
          </FormControl>
          {/**---------------------------- */}
