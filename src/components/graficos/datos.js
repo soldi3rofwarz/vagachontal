@@ -98,11 +98,12 @@ const Datos=()=>{
         
         <div className='datos' style={{width: '100%', height:'auto'}}>
             
-            <h1>Graficos</h1>
+            <h1>Gráficos</h1>
             
             <section style={{boxShadow: '5px 5px 5px'}}> 
             {repetidos.map((suma)=>
-           <>{suma}
+           <>
+           {suma}
            
             <Bar data={
                 

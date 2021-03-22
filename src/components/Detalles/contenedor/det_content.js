@@ -7,7 +7,7 @@ const Det_content = (props) => {
     let actividadId = '';
 
     if(props.match) actividadId = props.match.params.actividadId;
-    const{id,actividad,fecha,precio,organizacion ,salida,hora,cupos,latitud1,longitud1,latitud2,longitud2,latitud3,longitud3,descripcion,fileUrl}= props
+    const{id,actividad,fecha,precio,organizacion ,salida,hora,cupos,latitud1,longitud1,latitud2,longitud2,latitud3,longitud3,contacto,descripcion,fileUrl}= props
 
     const [users,setUsers]= useState('')
     const [band,setband]= useState(false)
@@ -60,6 +60,7 @@ const Det_content = (props) => {
        Cancelar={Cancelar}
        Agregado={Agregado}
         band={band}
+        contacto={contacto}
         organizacion={organizacion}
         actividad={actividad}
         fecha={fecha}

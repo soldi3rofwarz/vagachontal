@@ -17,7 +17,7 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 
 import { blue } from '@material-ui/core/colors';
 import SimpleDialog from './popup'
-import { StayCurrentLandscape } from '@material-ui/icons';
+import { ContactPhoneRounded, StayCurrentLandscape } from '@material-ui/icons';
 
 const useStyles = makeStyles((theme) => ({
     paper: {
@@ -39,6 +39,7 @@ const Detalles = (props) => {
     
     const {idActividad,users,actividad,fecha,precio, organizacion,salida,hora,latitud1,longitud1,latitud2,longitud2,latitud3,longitud3,descripcion,fileUrl,
         cupos,
+        contacto,
         Cancelar,
         Agregado,
         value,  
@@ -194,8 +195,8 @@ const Detalles = (props) => {
                 </h4>
                 <hr/>
                    
-               
-
+               <h2>Contacto</h2>
+               <p style={{marginLeft:'43%'}}>{contacto}</p> 
                 
                 </div>
                 
