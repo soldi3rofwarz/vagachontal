@@ -1,6 +1,10 @@
 import React from 'react'
 import './contacto.css'
 import ft from './../../assets/dos.jpg'
+import selena from './../../assets/selena.jpg'
+import yo from './../../assets/yo.jpg'
+import esther from './../../assets/esther.jpg'
+import fb from './../../assets/fb.png'
 
 const Contacto =()=>{
     return(
@@ -8,40 +12,41 @@ const Contacto =()=>{
         <div className='container1'>
             <div className='card1'>
                 <div className='imgBx1'>
-                    <img src={ft} className='img1'/>
-                    <h3 className='h3'>Esther</h3>
+                    <img src={esther} className='img1' style={{marginLeft:'42px'}}/>
                 </div>
                 <div className='content1'>
                     <h4 className='h4'>Esther Duarte</h4>
-                    <h4 className='h4'>Administradora</h4>
-                    <h4 className='h4'>Esther.Guapisima@gmail.com</h4>
-                    <h4 className='h4'>83234344</h4>
+                    <h4 className='h4'>Administrador</h4>
+                    <h4 className='h4'>sestherduarte@gmail.com</h4>
+                    
                 </div>
             </div>
 
             <div className='card1'>
                 <div className='imgBx1'>
-                    <img src={ft} className='img1'/>
-                    <h3 className='h3' >Jose</h3>
+                    <img src={yo} className='img1' style={{marginLeft:'42px'}}/>
+                    
                 </div>
                 <div className='content1'>
                     <h4 className='h4'>Jose Castro</h4>
                     <h4 className='h4'>Administrador</h4>
                     <h4 className='h4'>Josejehovanicastroperez@gmail.com</h4>
-                    <h4 className='h4'>82213400</h4>
+                    
+                    <img src={fb} style={{width:'40px'}}/>
+
                 </div>
             </div>
 
             <div className='card1'>
                 <div className='imgBx1'>
-                    <img src={ft} className='img1'/>
-                    <h3 className='h3'>Selena</h3>
+                    <img src={selena} className='img1' style={{marginLeft:'42px'}}/>
+                    
                 </div>
                 <div className='content1'>
                     <h4 className='h4'>Selena Obando</h4>
-                    <h4 className='h4'>Administradora</h4>
-                    <h4 className='h4'>Selenaobando@gmail.com</h4>
-                    <h4 className='h4'>83234344</h4>
+                    <h4 className='h4'>Administrador</h4>
+                    <h4 className='h4'>26Selenaobando@gmail.com</h4>
+                    
                 </div>
             </div>
         </div>

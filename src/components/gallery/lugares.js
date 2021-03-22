@@ -49,19 +49,19 @@ const Lugares = () => {
               textColor="primary"
               centered
             >
-              <Link  className='buttons' to="/lugar1"><Tab label="Hato Grande"> </Tab></Link>
-              <Link  className='buttons' to="/lugar2"><Tab label="Puerto Diaz"> </Tab></Link>
-              <Link  className='buttons' to="/lugar3"><Tab label="Punta Tumbé"> </Tab></Link>
-              <Link  className='buttons' to="/lugar4"><Tab label="Punta mayales"> </Tab></Link>
+              <Link  className='buttons' to="/lugar7"><Tab label="Puerto Diaz"> </Tab></Link>
+              <Link  className='buttons' to="/lugar8"><Tab label="Hato Grande"> </Tab></Link>
+              <Link  className='buttons' to="/lugar9"><Tab label="Punta Tumbé"> </Tab></Link>
+              <Link  className='buttons' to="/lugar10"><Tab label="Punta mayales"> </Tab></Link>
             </Tabs>
             <Tabs 
               value={value}
               onChange={handleChange}
               indicatorColor="primary"
               textColor="primary"
-              centered
+              centered 
             >
-              <Link  className='buttons' to="/lugar5"><Tab label="Las Ventanas"> </Tab></Link>
+              <Link  className='buttons' to="/lugar11"><Tab label="Las Ventanas"> </Tab></Link>
             </Tabs>
         </Paper>
     {/* <div style={{height:'30px'}}></div>

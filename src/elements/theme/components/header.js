@@ -292,7 +292,7 @@ const Header =()=>{
                   
                       <ListItemIcon><HomeIcon/></ListItemIcon>
                       <Link to='/' style={{textDecoration: 'none'}}>
-                      <ListItemText primary={'Inicio'} />
+                      <ListItemText primary={'Inicio'} style={{fontSize:'40px',color:'rgb(30, 125, 235)'}}/>
                       </Link>
                   </ListItem>
                   <Divider />
@@ -300,7 +300,7 @@ const Header =()=>{
                     
                     <ListItemIcon><PicturesIcon/></ListItemIcon>
                     <Link to='/galeria' style={{textDecoration: 'none'}}>
-                    <ListItemText primary={'Galería'} />
+                    <ListItemText primary={'Galería'} style={{fontSize:'40px',color:'rgb(30, 125, 235)'}} />
                     </Link>
                   </ListItem>
                   <Divider />
@@ -308,7 +308,7 @@ const Header =()=>{
                     
                     <ListItemIcon><EventAvailableIcon/></ListItemIcon>
                     <Link to='/actividades' style={{textDecoration: 'none'}}>
-                    <ListItemText primary={'Actividades'} />
+                    <ListItemText primary={'Actividades'} style={{fontSize:'40px',color:'rgb(30, 125, 235)'}}/>
                     </Link>
                   </ListItem>
                   <Divider />
@@ -317,7 +317,7 @@ const Header =()=>{
                     <ListItem button>
                     <ListItemIcon><PollIcon/></ListItemIcon>
                     <Link to='/datos' style={{textDecoration: 'none'}}>
-                      <ListItemText primary={'Estadísticas'} />
+                      <ListItemText primary={'Estadísticas'} style={{fontSize:'40px',color:'rgb(30, 125, 235)'}}/>
                     </Link>
                   </ListItem></>
                     :null}</>
@@ -329,7 +329,7 @@ const Header =()=>{
                        <ListItem button>
                        <ListItemIcon><ListIcon/></ListItemIcon>
                        <Link to='/form' style={{textDecoration: 'none'}}>
-                         <ListItemText primary={'Formulario'} />
+                         <ListItemText primary={'Formulario'} style={{fontSize:'40px',color:'rgb(30, 125, 235)'}}/>
                        </Link>
                      </ListItem></>
                     :null}</>
@@ -338,7 +338,7 @@ const Header =()=>{
                   <ListItem button>
                     <ListItemIcon><UserIcon/></ListItemIcon>
                     <Link to='/loginGoogle' style={{textDecoration: 'none'}}>
-                      <ListItemText primary={'Cliente'} />
+                      <ListItemText primary={'Cliente'} style={{fontSize:'40px',color:'rgb(30, 125, 235)'}}/>
                     </Link>
                   </ListItem>
                   <Divider />

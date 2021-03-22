@@ -193,10 +193,7 @@ const Foot=()=>{
             title: "Recursos",
             resources: [
                 
-                {
-                    name: "Administración",
-                   
-                },
+               
                 {
                     name: "Contactos",
                     name: "85411756",

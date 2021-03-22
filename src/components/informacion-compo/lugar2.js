@@ -65,7 +65,7 @@ const Lugar2 = () => {
 
 		<div style={{width:'60vw'}} className='imagenes'>
         <img src={amerrique} className='img1' style={{marginLeft:'10px',width:'23vw', marginBottom:'130px'}}/>
-		<img src={amerrique2}  className='img2' style={{width:'23vw', marginLeft:'150px'}}/>
+		  <img src={amerrique2}  className='img2' style={{width:'23vw', marginLeft:'150px'}}/>
 		</div>
 		               
   	</Paper>

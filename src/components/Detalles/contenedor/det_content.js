@@ -76,7 +76,7 @@ const Det_content = (props) => {
         descripcion={descripcion}
         fileUrl={fileUrl}
         />
-        <SimpleDialog user={users}  idActividad={id}/>
+        <SimpleDialog users={users}  idActividad={id}/>
         </>
     );
 }

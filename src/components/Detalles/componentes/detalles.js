@@ -224,9 +224,9 @@ const Detalles = (props) => {
                         <div style={{alignItems:'center', placeItems:'center'}}>
                         {band===true?(<>
                         {users.map((dat)=><>
-                            
+                            {idActividad=== dat.idActividad?<>
                             <button className="btn-cancelar " id="dda" onClick = {()=>{Cancelar(dat.id)}}>
-                            Cancelar</button></>
+                            Cancelar</button></>:null}</>
                         )}
                         
                            </>)

@@ -58,10 +58,11 @@
     position: relative;
     width: 300px;
     height: 200px;
-    background: #00c7ff;
+    background: #ffffff;
     display: flex;
     justify-content: center;
     flex-direction: column;
+   
     overflow: hidden;
 }
 .container1 .card1 .imgBx1 .img1{

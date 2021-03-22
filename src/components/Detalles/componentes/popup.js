@@ -1,5 +1,4 @@
 import React,{useState,useEffect} from 'react';
-import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import Avatar from '@material-ui/core/Avatar';
@@ -10,8 +9,6 @@ import ListItemText from '@material-ui/core/ListItemText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Dialog from '@material-ui/core/Dialog';
 import PersonIcon from '@material-ui/icons/Person';
-import AddIcon from '@material-ui/icons/Add';
-import Typography from '@material-ui/core/Typography';
 import { blue } from '@material-ui/core/colors';
 import firebase from '../../../data/firebase-config'
 
@@ -21,7 +18,7 @@ const useStyles = makeStyles({
       color: blue[600],
     },
   });
-  const emails = ['JoseCastro@gmail.com', 'sestherduarte@gmail.com'];
+ 
   function SimpleDialog(props) {
 
     const [isLogin, setIslogin]=useState(false)
@@ -31,7 +28,7 @@ const useStyles = makeStyles({
     const [foto,setFoto]=useState(null)
     
     const classes = useStyles();
-    const { onClose, open, user, idActividad} = props;
+    const { onClose, open, users, idActividad} = props;
   
     const handleClose = () => {
       onClose();
@@ -61,24 +58,14 @@ const useStyles = makeStyles({
     return (
       <Dialog onClose={handleClose} aria-labelledby="simple-dialog-title" open={open}>
         <DialogTitle id="simple-dialog-title">Participantes</DialogTitle>
-        <List>
-        {emails.map((email) => (
-          <ListItem  key={email}>
-            <ListItemAvatar>
-              <Avatar className={classes.avatar}>
-                <PersonIcon />
-              </Avatar>
-            </ListItemAvatar>
-            <ListItemText primary={email} />
-           
-          </ListItem>
-        ))}
-            {/* {isLogin ==true?<>
+       
+             
 
-            {user?<>
-                             
-                                {user.map((dat)=><>
-                                  {console.log(user,'zdgsdzxcxc')}   
+            {users?<>
+              <List>
+              {console.log(users,'zdgsdzxcxc')}    
+                                {users.map((dat)=><>
+                                   
                                     {idActividad=== dat.idActividad? <>
                                             {dat.id}
                                             
@@ -87,7 +74,15 @@ const useStyles = makeStyles({
                                         {[dat].map(item =>
                                             <>
                                              
-                                                
+                                             <ListItem  key={item.id}>
+                                            <ListItemAvatar>
+                                              <Avatar className={classes.avatar}>
+                                                <PersonIcon />
+                                              </Avatar>
+                                            </ListItemAvatar>
+                                            <ListItemText primary={item.email} />
+                                          
+                                          </ListItem>
                                             </>
                                            
                                         )}</>:null}
@@ -96,10 +91,10 @@ const useStyles = makeStyles({
                                     </>
                                     :null}
                                 </>
-                                )}
-                                </>:<div>no hay usuarios</div>}</>: null} */}
+                                )} </List>
+                                </>:<div>no hay usuarios</div>}
           
-        </List>
+       
       </Dialog>
     );
   }
