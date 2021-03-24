@@ -75,7 +75,10 @@ const Login=(props)=> {
   
   const classes = useStyles();
   
-
+  const Validar=e=>{
+    e.preventDefault();
+    
+    }
 
 
 
@@ -93,7 +96,7 @@ const Login=(props)=> {
         <div className="content">
  
           <div className="text">Inicia Sesion</div>
-            <form action={'#'}>
+            <form onSubmit={Validar}>
               <div className="field">
                 <span className="fas fa-user"></span>
                 <input type="text" placeholder="Correo" required value ={email}
