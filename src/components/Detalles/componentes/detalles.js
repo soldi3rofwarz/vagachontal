@@ -35,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
       
     },
     avatar: {
-        backgroundColor: blue[100],
+     
         color: blue[600],
       },
   }));
@@ -65,13 +65,22 @@ const Detalles = (props) => {
         const [foto,setFoto]=useState(null)
         const [isopen, setisOpen] = useState(false);
         const [abierto, setAbierto]= useState(false)
+        const [cerrar, setcerrar] = useState(false)
 
   const handleClickOpen = () => {
     setisOpen(true);
   };
+  console.log('kkk',stid)
 
   const handleClose = () => {
     setisOpen(false);
+  };
+  const handleClickCancelar = () => {
+    setcerrar(true);
+  };
+
+  const handleCancelar = () => {
+    setcerrar(false);
   };
         
   const handleClickAbrir = () => {
@@ -211,15 +220,23 @@ const Detalles = (props) => {
             </div>
             
             <div style={{boxSizing: 'borderBox',display:'flex', flex:'2', height:'30vh', width:'100vw', textAlign:'center', marginTop:'20px'}}>
-                <div style={{width:'50vw'}}>
-                <h3>Cupos restantes <br/></h3>
-                {<h3>{value}</h3>}
-                </div>
+                
                 {isLogin===true?
                     <>
                         {email=='intur.org@gmail.com'||email=='pateperro@gmail.com'?
                             <> 
-                             
+                             <div style={{width:'50vw'}}>
+                                <h3>Cupos restantes <br/></h3>
+                                
+                                {users?<>
+                                
+                                    {idActividad=== users.idActividad? <>
+                                    {users}
+                                    <h2>{cupos-users.length}</h2>
+                                    </>:null}
+                                
+                                </>:null}
+                                </div>
                              <div>
                                  <button className='btnver'  onClick={handleClickAbrir}>
                                      Ver lista de participantes
@@ -242,7 +259,7 @@ const Detalles = (props) => {
                                                     <ListItem  key={item.id}>
                                                         <ListItemAvatar>
                                                             <Avatar className={classes.avatar}>
-                                                            <img src={item.photoURL}/>
+                                                            <img src={item.foto} style={{width:'34px'}}/>
                                                             </Avatar>
                                                         </ListItemAvatar>
                                                         <ListItemText primary={item.nick} />
@@ -269,17 +286,51 @@ const Detalles = (props) => {
                             
                             </>
                         :
-                        <div style={{alignItems:'center', placeItems:'center'}}>
+                        <div style={{alignItems:'center', placeItems:'center',display:'flex'}}>
                         {band===true?(<>
+                            <div style={{width:'50vw'}}>
+                            <h3>Cupos <br/></h3>
+                            {value===0?<h3>{'cupos llenos'}</h3>:<h2 style={{color:'#00a295'}}>{'Usted esta participando'}</h2>}
+                            </div>
+                            <button className="btn-cancelar " id="dda" onClick = {handleClickCancelar}>
+                            {users?<>
                         {users.map((dat)=><>
                             {idActividad=== dat.idActividad?<>
-                            <button className="btn-cancelar " id="dda" onClick = {()=>{Cancelar(dat.id)}}>
-                            Cancelar</button></>:null}</>
-                        )}
+                            
+                           
+                            
+                            <Dialog
+                            open={cerrar}
+                            onClose={handleCancelar}   
+                            aria-labelledby="alert-dialog-title"
+                            aria-describedby="alert-dialog-description"
+                            >
+                                <DialogTitle id="alert-dialog-title">{"Alerta de cancelacion"}</DialogTitle>
+                                <DialogContent>
+                                <DialogContentText id="alert-dialog-description">
+                                    Estas apunto de cancelar su participacion
+                                </DialogContentText>
+                                </DialogContent>
+                                <DialogActions>
+                                <Button onClick={handleCancelar} color="primary">
+                                    Desacuerdo
+                                </Button>
+                                <Button onClick={()=>{Cancelar(dat.id)}} color="primary" autoFocus>
+                                    De acuerdo
+                                </Button>
+                                </DialogActions>
+                            </Dialog>
+                            </>:null}</>
+                        )}</>:null}Cancelar</button>
                         
                            </>)
                         :
-                        (<><button className="btn-participar"  id="dd"  onClick={handleClickOpen}>
+                        (<>
+                        
+                            <div style={{width:'50vw'}}>
+                           
+                            </div>
+                        <button className="btn-participar"  id="dd"  onClick={handleClickOpen}>
                             Participar</button>
                             <Dialog
                             open={isopen}

@@ -29,10 +29,10 @@ const Det_content = (props) => {
                 setValue()
             }
         }
-        
+        console.log(users.length)
         const Agregado =()=>{ 
             setband(true)
-            setValue(value-1)
+            setValue(value-users.length)
             if (value === 0){
                 
             }
@@ -42,7 +42,7 @@ const Det_content = (props) => {
         const Cancelar =(usersId)=>{
             setband(true)
             if (value > 0){
-            setValue(value-1)
+            setValue(value+1)
             setband(false)
             }
             DeleteU(usersId)

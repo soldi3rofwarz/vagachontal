@@ -31,9 +31,9 @@ const Contacto =()=>{
                     <h4 className='h4'>Jose Castro</h4>
                     <h4 className='h4'>Administrador</h4>
                     <h4 className='h4'>Josejehovanicastroperez@gmail.com</h4>
-                    
-                    <img src={fb} style={{width:'40px'}}/>
-
+                    <a target='_blank' href="https://www.facebook.com/VagaChontal-106399781528009">
+                    <img src={fb}  style={{width:'40px'}}/>
+                    </a>
                 </div>
             </div>
 

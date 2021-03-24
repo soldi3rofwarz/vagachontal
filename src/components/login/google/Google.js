@@ -133,7 +133,7 @@ const Googled =()=>{
           <div style={{}}>
                <img src={foto} style={{width:'150px', borderRadius:'30%', marginLeft:'40%', marginTop:'200px'}}/>
          
-               <Typography component="h1" variant="h5" style={{marginLeft:'20%'}}>
+               <Typography component="h1" variant="h5" style={{marginLeft:'30%'}}>
                    {nick}
                </Typography>
                <Button

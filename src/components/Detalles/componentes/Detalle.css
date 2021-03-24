@@ -55,6 +55,7 @@
     text-decoration: none;
     overflow: hidden;
     cursor: pointer;
+    right: 0;
   }
   
   .btn-participar:after {
