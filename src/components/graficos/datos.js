@@ -1,9 +1,14 @@
 import React, {useState, useEffect} from 'react'
 import {Bar} from 'react-chartjs-2'
 import {GetData} from './../../data/actividades'
+import firebase,{googleAuthProvider} from './../../data/firebase-config'
 
 const Datos=()=>{
   const [estadisticas, setEstadisticas]= useState([])
+  const [foto,setFoto]=useState(null)
+  const [nick, setNick]= useState('')
+  const [isLogin, setIslogin]=useState(false)
+  const [email, setEmail]= useState('')
   
    
 
@@ -12,6 +17,22 @@ const Datos=()=>{
         .then(estadisticas => setEstadisticas(estadisticas) )
        
         .catch(error => console.log("Error:", error))
+
+        firebase.auth().onAuthStateChanged(function(user) {
+            if (user) {
+              console.log('iniciado', user)
+              console.log(user.displayName + '\n' + user.email+ '\n' + user.photoURL)
+              setFoto(user.photoURL)
+              setNick(user.displayName)
+              setIslogin(true)
+              setEmail(user.email)
+
+             
+                
+            } else {
+                console.log('no iniciado')
+            }
+          })
   }, []);
   
  const org=[]
@@ -82,10 +103,35 @@ const Datos=()=>{
             borderWidth: 1,
             heverBackgroundColor: 'rgba(0,255,0,0.2)',
             hoverBorderColor: '#ff0c00',
-            height:'120px',
             data:[30,60,60,46,33,10]
         }]
     }
+
+    const Data3={
+        labels:['Managua','Leon','Granada','Carazo','Matagalpa', 'Rio San Juan'],
+          datasets:[{
+              label: 'Datos no oficiales de turistas de los diferentes departamentos por mes',
+              backgroundColor: 'rgba(30, 125, 235)',
+              borderColor: 'black',
+              borderWidth: 1,
+              heverBackgroundColor: 'rgba(0,255,0,0.2)',
+              hoverBorderColor: '#ff0c00',
+              data:[200,40,95,40,159,300, 0]
+          }]
+      }
+
+      const Data4={
+        labels:['Hato Grande','Amerrique','El salto','El nancital'],
+          datasets:[{
+              label: 'Porcentaje de personas que participan en distitas actividades',
+              backgroundColor: 'rgba(30, 125, 235)',
+              borderColor: 'black',
+              borderWidth: 1,
+              heverBackgroundColor: 'rgba(0,255,0,0.2)',
+              hoverBorderColor: '#ff0c00',
+              data:[35,25,30,10, 0]
+          }]
+      }
 
     const Opciones={
         maintainAspectRatio: false,
@@ -95,11 +141,11 @@ const Datos=()=>{
     return(
         <>
         
-        <section style={{height:'180px'}}></section>
+        <section style={{height:'100px'}}></section>
         
         <div className='datos' style={{width: '100%', height:'auto'}}>
             
-            <h1>Gráficos</h1>
+            <h1 style={{marginLeft:'45%'}}>Gráficos</h1>
             
             <section style={{boxShadow: '5px 5px 5px'}}> 
             {repetidos&&repetidos.map((suma)=>
@@ -132,8 +178,12 @@ const Datos=()=>{
                 }
 
              options={Opciones} style={{width:'50vw',height:'500px'}}/></>)}</section>
-           <section style={{boxShadow: '5px 5px 5px', marginTop:'50px'}}> <Bar data={Data} options={Opciones}/></section>
-           <section style={{boxShadow: '5px 5px 5px', marginTop:'50px'}}> <Bar data={Data1} options={Opciones}/></section>
+           <section style={{boxShadow: '5px 5px 5px', marginTop:'50px', minHeight:'300px'}}> <Bar style={{minHeight:'300px'}} data={Data} options={Opciones}/></section>
+           <section style={{boxShadow: '5px 5px 5px', marginTop:'50px', minHeight:'300px'}}> <Bar style={{minHeight:'300px'}} data={Data1} options={Opciones}/></section>
+           <section style={{boxShadow: '5px 5px 5px', marginTop:'50px', minHeight:'300px'}}> <Bar style={{minHeight:'300px'}} data={Data3} options={Opciones}/></section>
+           {email=='pateperro@gmail.com'?
+            <section style={{boxShadow: '5px 5px 5px', marginTop:'50px', minHeight:'300px'}}> <Bar style={{minHeight:'300px'}} data={Data4} options={Opciones}/></section>
+           :null}
            
         </div>
     
