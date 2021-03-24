@@ -174,13 +174,14 @@ const AgregarActividades=(props) =>{
       <div style={{height: '70px'}}></div>
     <form className={classes.root} noValidate autoComplete="off" 
         onSubmit={Validar} 
-        style={{width: '800px', borderRadius:'15px',height:'auto',background: 'white',  }}
+        style={{width: '600px', borderRadius:'15px',height:'auto',background: 'white',  }}
     >
         
         {error? alert("debe ser numero"): null}
-        <FormControl>
+        <FormControl style={{marginLeft:'200px'}}>
             <Input id="my-input" aria-describedby="my-helper-text" 
                 type="text" value= {actividad} placeholder="Actividad" onChange={handleActividadChange}
+                
             />
          </FormControl>
 
@@ -288,7 +289,7 @@ const AgregarActividades=(props) =>{
             <FormControl>
                 
                 <TextareaAutosize aria-label="minimum height" rowsMin={5} placeholder="Descripcion" 
-                value = {descripcion} onChange={handleDescripcionChange} style={{width:'400px', marginLeft:'180px'}}
+                value = {descripcion} onChange={handleDescripcionChange} style={{width:'400px', marginLeft:'100px'}}
                 />
             </FormControl>
          </div>
@@ -301,7 +302,13 @@ const AgregarActividades=(props) =>{
                 multiple
                 type="file"
                 onChange={handleChange}
+                style={{display:'none'}}
             />
+             <label htmlFor="contained-button-file">
+        <Button variant="contained" color="primary" component="span">
+          Cargar
+        </Button>
+      </label>
              { error && <div className="error">{ error }</div>}
                 { file && <div>{ file.name }</div> }    
                 { file && <ProgressBar file={file} setFile={setFile} setUrl={setFileUrl} /> }
@@ -309,7 +316,7 @@ const AgregarActividades=(props) =>{
             <label htmlFor="contained-button-file">
                 <Button variant="contained" color="primary" component="span" onClick={handleAgregarClick}>
                 <Link to ='/actividades' style={{textDecoration: 'none', color:'white'}}>
-                    Agregar actividad
+                    Agregar
                 </Link>
                 </Button>
             </label>
