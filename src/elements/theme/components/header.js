@@ -320,7 +320,7 @@ const Header =()=>{
                   </ListItem>
                   <Divider />
                   {isLogin===true?<>
-                    {email=='admin@gmail.com'|| 'intur.org@gmail.com'?<>
+                    {email=='admin@gmail.com'||email== 'intur.org@gmail.com'||email=='pateperro@gmail.com'?<>
                     <ListItem button>
                     <ListItemIcon><PollIcon/></ListItemIcon>
                     <Link to='/datos' style={{textDecoration: 'none'}}>

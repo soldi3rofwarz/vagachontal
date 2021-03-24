@@ -56,10 +56,11 @@ export const ClientsRoute = () => {
                 <Route path="/galeria" component={GalleryPage}/>
                 
                 <Route exact path ="/form" component ={Form} />
-                <Route exact path ="/form/:actividadId" component ={Form} />
+                
                 s
                 <Route exact path ="/mapa" component ={MapView} />
                */}
+               <Route exact path ="/form/:actividadId" component ={Form} />
                <Route exact path ="/datos" component ={Datospage} />
                 <Route exact path ="/loginGoogle" component ={GooglePage} />  
                 <Route exact path ="/login" component ={LoginPage} /> 

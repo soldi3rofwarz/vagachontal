@@ -82,6 +82,7 @@ const Datos=()=>{
             borderWidth: 1,
             heverBackgroundColor: 'rgba(0,255,0,0.2)',
             hoverBorderColor: '#ff0c00',
+            height:'120px',
             data:[30,60,60,46,33,10]
         }]
     }
@@ -101,7 +102,7 @@ const Datos=()=>{
             <h1>Gráficos</h1>
             
             <section style={{boxShadow: '5px 5px 5px'}}> 
-            {repetidos.map((suma)=>
+            {repetidos&&repetidos.map((suma)=>
            <>
            {suma}
            
