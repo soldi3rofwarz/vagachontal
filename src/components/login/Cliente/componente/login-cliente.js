@@ -93,7 +93,7 @@ const Login=(props)=> {
         <div className="content">
  
           <div className="text">Inicia Sesion</div>
-            <form action='#'>
+            <form action={'#'}>
               <div className="field">
                 <span className="fas fa-user"></span>
                 <input type="text" placeholder="Correo" required value ={email}

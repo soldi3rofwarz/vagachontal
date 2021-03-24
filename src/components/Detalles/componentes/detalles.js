@@ -19,6 +19,14 @@ import { blue } from '@material-ui/core/colors';
 import SimpleDialog from './popup'
 import { ContactPhoneRounded, StayCurrentLandscape } from '@material-ui/icons';
 
+
+import Avatar from '@material-ui/core/Avatar';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemAvatar from '@material-ui/core/ListItemAvatar';
+import ListItemText from '@material-ui/core/ListItemText';
+import PersonIcon from '@material-ui/icons/Person';
+
 const useStyles = makeStyles((theme) => ({
     paper: {
       border: '1px solid',
@@ -209,15 +217,55 @@ const Detalles = (props) => {
                 </div>
                 {isLogin===true?
                     <>
-                        {email=='intur.org@gmail.com'?
+                        {email=='intur.org@gmail.com'||email=='pateperro@gmail.com'?
                             <> 
                              
                              <div>
                                  <button className='btnver'  onClick={handleClickAbrir}>
                                      Ver lista de participantes
                                  </button>
-                                 <SimpleDialog  open={abierto} onClose={handleCerrar} />
                                  </div>
+                                 <Dialog onClose={handleCerrar} aria-labelledby="simple-dialog-title" open={abierto}>
+                                        <DialogTitle id="simple-dialog-title">Participantes</DialogTitle>
+
+                                        {users?
+                                            <List>
+                                                
+                                            {users.map((dat)=><> 
+                                            
+                                                {idActividad=== dat.idActividad? <>
+                                                                            
+                                                {dat? <>
+                                                                            
+                                                    {[dat].map(item =>
+                                                    <>                     
+                                                    <ListItem  key={item.id}>
+                                                        <ListItemAvatar>
+                                                            <Avatar className={classes.avatar}>
+                                                            <img src={item.photoURL}/>
+                                                            </Avatar>
+                                                        </ListItemAvatar>
+                                                        <ListItemText primary={item.nick} />
+                                                            </ListItem>
+                                                            </>          
+                                                    )}</>
+                                                    :null
+                                                    }             
+                                                    </>
+                                                    :null
+                                                }
+                                                    </>
+                                                )
+                                            } 
+                                            </List>
+                                            :
+                                            
+                                            <div>no jhlllj</div> 
+                                            
+                                        }
+          
+       
+      </Dialog>
                             
                             </>
                         :

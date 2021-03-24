@@ -19,6 +19,13 @@ import {Link}from 'react-router-dom';
 import SwipeableTextMobileStepper from '../../../steeper/stepper'
 //import Detalle from './../../Detalles/componentes/detalles'
 import Anuncios from './../../../anuncios/anuncios'
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogContentText from '@material-ui/core/DialogContentText';
+import DialogTitle from '@material-ui/core/DialogTitle';
+import Button from '@material-ui/core/Button';
+
 
 
 const useStyles = makeStyles((theme) => ({
@@ -65,6 +72,7 @@ export const List = (props) => {
 
   const [isLogin, setIslogin]=useState(false)
   const [email, setEmail]= useState('')
+  const [isopen, setisOpen] = useState(false);
 
   useEffect(()=>{
     firebase.auth().onAuthStateChanged(function(user) {
@@ -86,6 +94,14 @@ export const List = (props) => {
     } = props;
     console.log(listActividades)
     const classes = useStyles();
+
+    const handleClickOpen = () => {
+      setisOpen(true);
+    };
+  
+    const handleClose = () => {
+      setisOpen(false);
+    };
 
     return (
         <>
@@ -138,7 +154,28 @@ export const List = (props) => {
                                 </Link>
                                 <IconButton aria-label="eliminar">
 
-                                    <DeleteIcon onClick = {()=> {onDelete(item.id)}}/>
+                                    <DeleteIcon onClick = {handleClickOpen}/>
+                                    <Dialog
+                                      open={isopen}
+                                      onClose={handleClose}   
+                                      aria-labelledby="alert-dialog-title"
+                                      aria-describedby="alert-dialog-description"
+                                      >
+                                          <DialogTitle id="alert-dialog-title">{"Alerta de confirmacion"}</DialogTitle>
+                                          <DialogContent>
+                                          <DialogContentText id="alert-dialog-description">
+                                              Estas apunto de borrar esta actividad
+                                          </DialogContentText>
+                                          </DialogContent>
+                                          <DialogActions>
+                                          <Button onClick={handleClose} color="primary">
+                                              Desacuerdo
+                                          </Button>
+                                          <Button onClick={()=> {onDelete(item.id)}} color="primary" autoFocus>
+                                              De acuerdo
+                                          </Button>
+                                          </DialogActions>
+                                      </Dialog>
                                 </IconButton></>
                                 :null}
                                   </>

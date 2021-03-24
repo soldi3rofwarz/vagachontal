@@ -56,46 +56,7 @@ const useStyles = makeStyles({
     };
   
     return (
-      <Dialog onClose={handleClose} aria-labelledby="simple-dialog-title" open={open}>
-        <DialogTitle id="simple-dialog-title">Participantes</DialogTitle>
-       
-             
-
-            {users?<>
-              <List>
-              {console.log(users,'zdgsdzxcxc')}    
-                                {users.map((dat)=><>
-                                   
-                                    {idActividad=== dat.idActividad? <>
-                                            {dat.id}
-                                            
-                                         {dat? <>
-                                            
-                                        {[dat].map(item =>
-                                            <>
-                                             
-                                             <ListItem  key={item.id}>
-                                            <ListItemAvatar>
-                                              <Avatar className={classes.avatar}>
-                                                <PersonIcon />
-                                              </Avatar>
-                                            </ListItemAvatar>
-                                            <ListItemText primary={item.email} />
-                                          
-                                          </ListItem>
-                                            </>
-                                           
-                                        )}</>:null}
-                                        
-                                    
-                                    </>
-                                    :null}
-                                </>
-                                )} </List>
-                                </>:<div>no hay usuarios</div>}
-          
-       
-      </Dialog>
+      <p>dd</p>
     );
   }
 

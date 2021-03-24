@@ -157,6 +157,7 @@ const Header =()=>{
     const [nick, setNick]= useState('')
     const [isLogin, setIslogin]=useState(false)
     const [email, setEmail]= useState('')
+    const [cliente, setcliente]= useState('')
 
     const handlelogout = (event) => {
       setAnchorEl(anchorEl ? null : event.currentTarget);
@@ -186,6 +187,11 @@ const Header =()=>{
               setNick(user.displayName)
               setIslogin(true)
               setEmail(user.email)
+
+              if(user.email=='intur.org@gmail.com'|| user.email=='pateperro@gmail.com')
+              {
+                setcliente(user.email)
+              }
                 
             } else {
                 console.log('no iniciado')
@@ -245,7 +251,8 @@ const Header =()=>{
                 </IconButton>
                 <div style={{display:'flex'}}>
                   {isLogin===true?<>
-                    {email=='intur.org@gmail.com'?<>
+                    {email=='intur.org@gmail.com'||email=='pateperro@gmail.com'||email=='admin@gmail.com'?<>
+                      
                       <Typography id='foto' className="user_header" aria-describedby={id2} onClick={handlelogout}>{email}</Typography>
                       <Popper id={id} open={abierto2} anchorEl={anchorEl}>
                         <Link to='/loginGoogle'>
